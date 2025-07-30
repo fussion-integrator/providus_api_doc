@@ -1,0 +1,53 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": "Getting Started",
+      "pages": [
+        {
+          "id": "1-1",
+          "title": "Welcome",
+          "href": "getting-started/welcome",
+          "pathnames": ["welcome"],
+          "type": "document"
+        },
+        {
+          "id": "1-2",
+          "title": "Setup",
+          "href": "getting-started/setup",
+          "pathnames": ["setup"],
+          "type": "group",
+          "descendants": [
+            {
+              "id": "1-2-1",
+              "title": "Installation",
+              "href": "getting-started/setup/installation",
+              "pathnames": ["setup", "installation"],
+              "type": "document"
+            },
+            {
+              "id": "1-2-2",
+              "title": "Configuration",
+              "href": "getting-started/setup/configuration",
+              "pathnames": ["setup", "configuration"],
+              "type": "document"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "API Reference",
+      "pages": [
+        {
+          "id": "2-1",
+          "title": "Endpoints",
+          "href": "api/endpoints",
+          "pathnames": ["endpoints"],
+          "type": "document"
+        }
+      ]
+    }
+  ]
+}
