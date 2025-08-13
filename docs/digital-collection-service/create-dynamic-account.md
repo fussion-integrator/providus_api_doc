@@ -2,66 +2,6 @@
 
 # Create Dynamic Account
 
-## Code Examples
-
-<CodeTabs tabs={[
-  { language: "curl", code: `curl -X POST "https://api.providusbank.com/endpoint" \
-  -H "Authorization: Bearer YOUR_API_KEY" \
-  -H "Content-Type: application/json"` },
-  { language: "javascript", code: `const response = await fetch('https://api.providusbank.com/endpoint', {
-  method: 'POST',
-  headers: {
-    'Authorization': 'Bearer YOUR_API_KEY',
-    'Content-Type': 'application/json'
-  }
-});
-
-const data = await response.json();
-console.log(data);` },
-  { language: "python", code: `import requests
-
-url = "https://api.providusbank.com/endpoint"
-headers = {
-    "Authorization": "Bearer YOUR_API_KEY",
-    "Content-Type": "application/json"
-}
-
-response = requests.post(url, headers=headers)
-print(response.json())` },
-  { language: "java", code: `HttpClient client = HttpClient.newHttpClient();
-HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create("https://api.providusbank.com/endpoint"))
-    .header("Authorization", "Bearer YOUR_API_KEY")
-    .header("Content-Type", "application/json")
-    .POST(HttpRequest.BodyPublishers.noBody())
-    .build();
-
-HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());` },
-  { language: "php", code: `<?php
-$url = "https://api.providusbank.com/endpoint";
-$headers = [
-    "Authorization: Bearer YOUR_API_KEY",
-    "Content-Type: application/json"
-];
-
-$context = stream_context_create([
-    'http' => [
-        'method' => 'POST',
-        'header' => implode("\r\n", $headers)
-    ]
-]);
-
-$response = file_get_contents($url, false, $context);
-echo $response;
-?>` },
-  { language: "csharp", code: `var client = new HttpClient();
-client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
-
-var response = await client.GetAsync("https://api.providusbank.com/endpoint");
-
-var responseContent = await response.Content.ReadAsStringAsync();` }
-]} />
-
 Dynamic accounts are for one-time payments and can be reassigned. They expire 10 minutes after creation by default (extendable up to 48 hours).
 
 Dynamic accounts are designed for one-time payments and can be assigned to different users. By default, they expire 10 minutes after creation (this can be extended up to a maximum of 48 hours) before being reassigned to another user. They must be used for a single payment before expiration.
