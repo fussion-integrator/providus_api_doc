@@ -2,6 +2,22 @@
 
 # Retrieve Account Number
 
+## Request Body
+
+```json
+{
+  "Username": "\"Username_value\"",
+  "Password": "\"Password_value\""
+}
+```
+
+### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|--------------|
+| Username | string | Username of account owner |
+| Password | string | Password of account owner |
+
 Retrieve an Account number.
 
 #### Test Base URL
@@ -22,17 +38,9 @@ GET /account/account
 
 #### Request Body
 
-Username
 
-string
 
-Username of account owner
 
-Password
-
-string
-
-Password of account owner
 
 account_number
 
