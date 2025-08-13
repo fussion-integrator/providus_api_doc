@@ -2,6 +2,22 @@
 
 # Get Transaction Status
 
+## Request Body
+
+```json
+{
+  "Username": "\"Username_value\"",
+  "Password": "\"Password_value\""
+}
+```
+
+### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|--------------|
+| Username | string | Username of account owner |
+| Password | string | Password of account owner |
+
 Get the status of a transaction.
 
 #### Test Base URL
@@ -22,17 +38,9 @@ GET /account/bvn
 
 #### Request Body
 
-Username
 
-string
 
-Username of account owner
 
-Password
-
-string
-
-Password of account owner
 
 number
 
