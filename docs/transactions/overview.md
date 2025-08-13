@@ -1,14 +1,13 @@
-# Transactions API Overview
+# Transactions
 
-The Transactions API enables you to process payments and retrieve transaction history.
+Transaction APIs provide interfaces to create and manage financial transactions. The interface provides the following methods:
 
-## Features
+The transaction API requires an oauth 2.0 authentication type.
 
-- Process payments
-- Query transaction history
-- Handle refunds
-- Transaction status updates
+Request for an oauth client
 
-## Security
+Request for an authorization code for the transaction API
 
-All transaction endpoints use enhanced security measures.
+Exchange authorization code for access token for the transaction API
+
+Last updated 25 days ago
