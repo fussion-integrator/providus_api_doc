@@ -2,6 +2,66 @@
 
 # Get Categories
 
+## Code Examples
+
+<CodeTabs tabs={[
+  { language: "curl", code: `curl -X GET "https://api.providusbank.com/endpoint" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"` },
+  { language: "javascript", code: `const response = await fetch('https://api.providusbank.com/endpoint', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  }
+});
+
+const data = await response.json();
+console.log(data);` },
+  { language: "python", code: `import requests
+
+url = "https://api.providusbank.com/endpoint"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+}
+
+response = requests.get(url, headers=headers)
+print(response.json())` },
+  { language: "java", code: `HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.providusbank.com/endpoint"))
+    .header("Authorization", "Bearer YOUR_API_KEY")
+    .header("Content-Type", "application/json")
+    .GET(HttpRequest.BodyPublishers.noBody())
+    .build();
+
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());` },
+  { language: "php", code: `<?php
+$url = "https://api.providusbank.com/endpoint";
+$headers = [
+    "Authorization: Bearer YOUR_API_KEY",
+    "Content-Type: application/json"
+];
+
+$context = stream_context_create([
+    'http' => [
+        'method' => 'GET',
+        'header' => implode("\r\n", $headers)
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
+echo $response;
+?>` },
+  { language: "csharp", code: `var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
+
+var response = await client.GetAsync("https://api.providusbank.com/endpoint");
+
+var responseContent = await response.Content.ReadAsStringAsync();` }
+]} />
+
 **Endpoint**`GET /categories`Description: Retrieves a list of available bill categories.
 
 **Description**Authentication: Basic Auth (Username, Password)
@@ -16,21 +76,7 @@
 curl --request GET \
   --url 'http://154.113.16.142:9999/provipay/webapi/categories' \
   --header 'Authorization: Basic <base64-encoded-username:password>'
-```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-import requests
-
-headers = {
-    'Authorization': 'Basic <base64-encoded-username:password>'
-}
-
-response = requests.get('http://154.113.16.142:9999/provipay/webapi/categories', headers=headers)
-if response.status_code == 200:
-    print(response.json())
-else:
-    print(response.reason)
-```
 
 ```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 import java.net.HttpURLConnection;
@@ -60,26 +106,7 @@ public class Main {
         }
     }
 }
-```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-const headers = {
-    'Authorization': 'Basic <base64-encoded-username:password>'
-};
-
-fetch('http://154.113.16.142:9999/provipay/webapi/categories', {
-    method: 'GET',
-    headers: headers
-})
-.then(response => {
-    if (response.ok) {
-        return response.json();
-    }
-    throw new Error(response.statusText);
-})
-.then(data => console.log(data))
-.catch(error => console.error(error));
-```
 
 ```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 <?php
@@ -102,13 +129,7 @@ if ($httpCode == 200) {
 
 curl_close($ch);
 ?>
-```
-
-> The above command returns JSON structured like this:
-
-The above command returns JSON structured like this:
-
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 {
     "banks":[
         {"bankCode":"000014","bankName":"ACCESS BANK"},
@@ -135,35 +156,7 @@ The above command returns JSON structured like this:
     ],
     "responseMessage":"SUCCESS",
     "responseCode":"00"}
-```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-using System;
-using System.Net.Http;
-using System.Threading.Tasks;
-
-class Program
-{
-    static async Task Main(string[] args)
-    {
-        using (var client = new HttpClient())
-        {
-            client.DefaultRequestHeaders.Add("Authorization", "Basic <base64-encoded-username:password>");
-
-            var response = await client.GetAsync("http://154.113.16.142:9999/provipay/webapi/categories");
-            if (response.IsSuccessStatusCode)
-            {
-                var content = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(content);
-            }
-            else
-            {
-                Console.WriteLine(response.ReasonPhrase);
-            }
-        }
-    }
-}
-```
 
 Example Response:
 
