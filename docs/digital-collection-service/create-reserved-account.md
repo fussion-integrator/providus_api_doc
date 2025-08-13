@@ -2,66 +2,6 @@
 
 # Create Reserved Account
 
-## Code Examples
-
-<CodeTabs tabs={[
-  { language: "curl", code: `curl -X POST "https://api.providusbank.com/endpoint" \
-  -H "Authorization: Bearer YOUR_API_KEY" \
-  -H "Content-Type: application/json"` },
-  { language: "javascript", code: `const response = await fetch('https://api.providusbank.com/endpoint', {
-  method: 'POST',
-  headers: {
-    'Authorization': 'Bearer YOUR_API_KEY',
-    'Content-Type': 'application/json'
-  }
-});
-
-const data = await response.json();
-console.log(data);` },
-  { language: "python", code: `import requests
-
-url = "https://api.providusbank.com/endpoint"
-headers = {
-    "Authorization": "Bearer YOUR_API_KEY",
-    "Content-Type": "application/json"
-}
-
-response = requests.post(url, headers=headers)
-print(response.json())` },
-  { language: "java", code: `HttpClient client = HttpClient.newHttpClient();
-HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create("https://api.providusbank.com/endpoint"))
-    .header("Authorization", "Bearer YOUR_API_KEY")
-    .header("Content-Type", "application/json")
-    .POST(HttpRequest.BodyPublishers.noBody())
-    .build();
-
-HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());` },
-  { language: "php", code: `<?php
-$url = "https://api.providusbank.com/endpoint";
-$headers = [
-    "Authorization: Bearer YOUR_API_KEY",
-    "Content-Type: application/json"
-];
-
-$context = stream_context_create([
-    'http' => [
-        'method' => 'POST',
-        'header' => implode("\r\n", $headers)
-    ]
-]);
-
-$response = file_get_contents($url, false, $context);
-echo $response;
-?>` },
-  { language: "csharp", code: `var client = new HttpClient();
-client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
-
-var response = await client.GetAsync("https://api.providusbank.com/endpoint");
-
-var responseContent = await response.Content.ReadAsStringAsync();` }
-]} />
-
 Reserved accounts are static accounts assigned to a specific user. They do not expire, but should be used judiciously, as there is a limit to the number of virtual accounts that can be created.
 
 #### Production Base URL
