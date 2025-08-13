@@ -1,52 +1,64 @@
-# Welcome to ProvidusBank API
+# Welcome!
 
-ProvidusBank provides a comprehensive suite of APIs that enable businesses to integrate banking services seamlessly into their applications.
+Welcome to ProvidusBank API Documentation. The platform provides explicit details on services exposed by the bank for use in developing your digital innovative products.
 
-## Getting Started
+Here, you will find everything you need to get your first application off the ground, including some sample codes. This section is intended as a reference for those working with APIs for the first time, but it should also serve as a guide with references for common use cases. We recommend going through the various sections contained in this documentation in order to successfuly build your product.
 
-Our APIs are designed to be developer-friendly with clear documentation, code examples, and comprehensive guides to help you get started quickly.
+Currently, each API is protected by either a token authentication type or an oauth authentication type.
 
-### What you can build
+### Accessing a token Protected API
 
-- **Payment Processing**: Accept payments from customers
-- **Account Management**: Manage customer accounts and balances  
-- **Fund Transfers**: Enable money transfers between accounts
-- **Bill Payments**: Process utility and service bill payments
-- **Virtual Accounts**: Create dynamic and reserved virtual accounts
-- **Transaction Monitoring**: Track and verify transactions
+To access a token Protected API follow the steps below :
 
-## Authentication
+- You need to subscribe to the API by requesting for an access token to the API.
+- Access the token protected API by passing the token in an authorization header.
 
-All API requests require authentication. ProvidusBank supports two authentication methods:
+You need to subscribe to the API by requesting for an access token to the API.
 
-- **Token Authentication**: For simple API access
-- **OAuth 2.0**: For secure user authorization flows
+Access the token protected API by passing the token in an authorization header.
 
-## Base URLs
+### Accessing an Oauth Protected API :
 
-**Sandbox Environment**
-```
+To access an Oauth Protected API , you need to subscribe to the API by through the following steps :
+
+- Request for an oauth clientRequest for an oauth client and API access token
+- Request for an Authorization code using your oauth client by making an API call to the authorization URL of the API. You will be redirected to a login page to provide their credentials. On successful login, the authorization code will be made available at the redirect URL registered on the oauth client. Find documentation of this request any oauth protected API under the documentation of that API.
+- Exchange authorization code for token by making an API call to the token URL of the API. Find documentation of this request any oauth protected API under the documentation of that API.
+- Access the oauth API by passing the token in an authorization header.
+
+Request for an oauth client
+
+Request for an oauth client and API access token
+
+Request for an Authorization code using your oauth client by making an API call to the authorization URL of the API. You will be redirected to a login page to provide their credentials. On successful login, the authorization code will be made available at the redirect URL registered on the oauth client. Find documentation of this request any oauth protected API under the documentation of that API.
+
+Exchange authorization code for token by making an API call to the token URL of the API. Find documentation of this request any oauth protected API under the documentation of that API.
+
+Access the oauth API by passing the token in an authorization header.
+
+### Notes :
+
+- The authentication url and token url can be found on the documentation for each API.
+- Sample API calls in different languages are documented for each API below.
+
+The authentication url and token url can be found on the documentation for each API.
+
+Sample API calls in different languages are documented for each API below.
+
+Test Base URL
+
+```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 https://api-staging.providusbank.com
 ```
 
-**Production Environment**  
-```
+### Production Base URL
+
+```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 https://api.providusbank.com
 ```
 
-## Quick Start Guide
+The authentication url and token url can be found on the documentation for each API.
 
-1. **Get API Credentials**: Request access tokens from our developer portal
-2. **Choose Your Environment**: Start with sandbox for testing
-3. **Make Your First Call**: Try our account information endpoint
-4. **Integrate**: Build your application with our comprehensive APIs
+Note : Sample API calls in different languages are documented for each API below.
 
-## Support
-
-Need help? Our developer support team is here to assist you:
-
-- **Documentation**: Comprehensive guides and API references
-- **Code Examples**: Sample implementations in multiple languages
-- **Developer Support**: Direct access to our technical team
-
-Ready to get started? Check out our [Quick Start](/quick-start) guide or explore our API documentation.
+Last updated 4 months ago
