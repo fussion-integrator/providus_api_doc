@@ -2,6 +2,66 @@
 
 # Get Providus Transaction Status
 
+## Code Examples
+
+<CodeTabs tabs={[
+  { language: "curl", code: `curl -X GET "https://api-staging.providusbank.com" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"` },
+  { language: "javascript", code: `const response = await fetch('https://api-staging.providusbank.com', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  }
+});
+
+const data = await response.json();
+console.log(data);` },
+  { language: "python", code: `import requests
+
+url = "https://api-staging.providusbank.com"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+}
+
+response = requests.get(url, headers=headers)
+print(response.json())` },
+  { language: "java", code: `HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api-staging.providusbank.com"))
+    .header("Authorization", "Bearer YOUR_API_KEY")
+    .header("Content-Type", "application/json")
+    .GET(HttpRequest.BodyPublishers.noBody())
+    .build();
+
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());` },
+  { language: "php", code: `<?php
+$url = "https://api-staging.providusbank.com";
+$headers = [
+    "Authorization: Bearer YOUR_API_KEY",
+    "Content-Type: application/json"
+];
+
+$context = stream_context_create([
+    'http' => [
+        'method' => 'GET',
+        'header' => implode("\r\n", $headers)
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
+echo $response;
+?>` },
+  { language: "csharp", code: `var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
+
+var response = await client.GetAsync("https://api-staging.providusbank.com");
+
+var responseContent = await response.Content.ReadAsStringAsync();` }
+]} />
+
 Get the status of a transaction .
 
 #### Test Base URL
@@ -47,7 +107,15 @@ curl -x GET "https://api-staging.providusbank.com/payment/status?transactionRefe
   -H "Authorization: {{Authentication token}}"
   -H "userName: userName"
   -H "password: password"
-```
+inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+{
+    "amount":"100.0",
+    "creditAccount":"1700263070",
+    "debitAccount":"5900085856", "transactionReference":"2345677777", "transactionDateTime":"2020-05-04 14:12:11.0", "currency":"NGN", "responseMessage":
+    "OPERATION SUCCESSFUL",
+    "responseCode":"00"
+}
+
 
 > The above command returns JSON structured like this:
 
@@ -61,24 +129,7 @@ The above command returns JSON structured like this:
     "OPERATION SUCCESSFUL",
     "responseCode":"00"
 }
-```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-import requests
-from requests.structures import CaseInsensitiveDict
-
-url = "https://api-staging.providusbank.com/payment/NIP/status?transactionReference=prov9988zzjzj11"
-
-headers = CaseInsensitiveDict()
-headers["Authorization"] = "{{Authentication token}}"
-headers["userName"] = "userName"
-headers["password"] = "password"
-
-
-resp = requests.get(url, headers=headers)
-
-print(resp.status_code)
-```
 
 > The above command returns JSON structured like this:
 
@@ -92,18 +143,7 @@ The above command returns JSON structured like this:
     "OPERATION SUCCESSFUL",
     "responseCode":"00"
 }
-```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-URL url = new URL("https://api-staging.providusbank.com/payment/NIP/status?transactionReference=prov9988zzjzj11");
-HttpURLConnection http = (HttpURLConnection)url.openConnection();
-http.setRequestProperty("Authorization", "{{Authentication token}}");
-http.setRequestProperty("userName", "Username");
-http.setRequestProperty("password", "Password");
-
-System.out.println(http.getResponseCode() + " " + http.getResponseMessage());
-http.disconnect();
-```
 
 > The above command returns JSON structured like this:
 
@@ -117,23 +157,7 @@ The above command returns JSON structured like this:
     "OPERATION SUCCESSFUL",
     "responseCode":"00"
 }
-```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-
-xhr.addEventListener("readystatechange", function() {
-  if(this.readyState === 4) {
-    console.log(this.responseText);
-  }
-});
-xhr.open("GET", "https://api-staging.providusbank.com/payment/NIP/status?transactionReference=prov9988zzjzj11");
-xhr.setRequestHeader("Authorization", "{{Authentication token}}");
-xhr.setRequestHeader("userName", "Username");
-xhr.setRequestHeader("password", "Password");
-xhr.send();
-```
 
 > The above command returns JSON structured like this:
 
@@ -147,62 +171,7 @@ The above command returns JSON structured like this:
     "OPERATION SUCCESSFUL",
     "responseCode":"00"
 }
-```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-<?php
-require_once 'HTTP/Request2.php';
-$request = new HTTP_Request2();
-$request->setUrl('https://api-staging.providusbank.com/payment/NIP/status?transactionReference=prov9988zzjzj11');
-$request->setMethod(HTTP_Request2::METHOD_GET);
-$request->setConfig(array(
-  'follow_redirects' => TRUE
-));
-$request->setHeader(array(
-  'Authorization' => '{{Authentication token}}',
-  'userName' => 'Username',
-  'password' => 'Password'
-));
-try {
-  $response = $request->send();
-  if ($response->getStatus() == 200) {
-    echo $response->getBody();
-  }
-  else {
-    echo 'Unexpected HTTP status: ' . $response->getStatus() . ' ' .
-    $response->getReasonPhrase();
-  }
-}
-catch(HTTP_Request2_Exception $e) {
-  echo 'Error: ' . $e->getMessage();
-}
-?>
-```
-
-> The above command returns JSON structured like this:
-
-The above command returns JSON structured like this:
-
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-{
-    "amount":"100.0",
-    "creditAccount":"1700263070",
-    "debitAccount":"5900085856", "transactionReference":"2345677777", "transactionDateTime":"2020-05-04 14:12:11.0", "currency":"NGN", "responseMessage":
-    "OPERATION SUCCESSFUL",
-    "responseCode":"00"
-}
-```
-
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-var client = new RestClient("https://api-staging.providusbank.com/payment/NIP/status?transactionReference=prov9988zzjzj11");
-client.Timeout = -1;
-var request = new RestRequest(Method.GET);
-request.AddHeader("Authorization", "{{Authentication token}}");
-request.AddHeader("userName", "Username");
-request.AddHeader("password", "Password");
-IRestResponse response = client.Execute(request);
-Console.WriteLine(response.Content);
-```
 
 > The above command returns JSON structured like this:
 
