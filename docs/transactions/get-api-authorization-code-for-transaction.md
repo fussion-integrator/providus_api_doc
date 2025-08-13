@@ -2,6 +2,20 @@
 
 # Get API authorization code for transaction
 
+## Request Body
+
+```json
+{
+  "redirect_uri": "\"redirect_uri_value\""
+}
+```
+
+### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|--------------|
+| redirect_uri | string | The OAuth client redirect URI ( must be URL encoded ) |
+
 Get an authorization code for the Transaction API.
 
 #### Test Base URL
@@ -38,11 +52,7 @@ String
 
 The OAuth client id
 
-redirect_uri
 
-string
-
-The OAuth client redirect URI ( must be URL encoded )
 
 ### Sample Implementation
 
