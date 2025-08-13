@@ -2,6 +2,22 @@
 
 # Get Providus Account
 
+## Request Body
+
+```json
+{
+  "Username": "\"Username_value\"",
+  "Password": "\"Password_value\""
+}
+```
+
+### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|--------------|
+| Username | string | Username of account owner |
+| Password | string | Password of account owner |
+
 Get a Providus bank user account.
 
 #### Test Base URL
@@ -22,17 +38,9 @@ POST /GetProvidusAccount
 
 #### Request Body
 
-Username
 
-string
 
-Username of account owner
 
-Password
-
-string
-
-Password of account owner
 
 account_number
 
