@@ -2,6 +2,66 @@
 
 # Create Reserved Account
 
+## Code Examples
+
+<CodeTabs tabs={[
+  { language: "curl", code: `curl -X POST "https://api.providusbank.com/endpoint" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"` },
+  { language: "javascript", code: `const response = await fetch('https://api.providusbank.com/endpoint', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  }
+});
+
+const data = await response.json();
+console.log(data);` },
+  { language: "python", code: `import requests
+
+url = "https://api.providusbank.com/endpoint"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+}
+
+response = requests.post(url, headers=headers)
+print(response.json())` },
+  { language: "java", code: `HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.providusbank.com/endpoint"))
+    .header("Authorization", "Bearer YOUR_API_KEY")
+    .header("Content-Type", "application/json")
+    .POST(HttpRequest.BodyPublishers.noBody())
+    .build();
+
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());` },
+  { language: "php", code: `<?php
+$url = "https://api.providusbank.com/endpoint";
+$headers = [
+    "Authorization: Bearer YOUR_API_KEY",
+    "Content-Type: application/json"
+];
+
+$context = stream_context_create([
+    'http' => [
+        'method' => 'POST',
+        'header' => implode("\r\n", $headers)
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
+echo $response;
+?>` },
+  { language: "csharp", code: `var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
+
+var response = await client.GetAsync("https://api.providusbank.com/endpoint");
+
+var responseContent = await response.Content.ReadAsStringAsync();` }
+]} />
+
 Reserved accounts are static accounts assigned to a specific user. They do not expire, but should be used judiciously, as there is a limit to the number of virtual accounts that can be created.
 
 #### Production Base URL
@@ -21,18 +81,7 @@ POST http://154.113.16.142:8088/appdevapi/api/PiPCreateReservedAccountNumber
   "account_name": "lemuel",
   "bvn": ""
 }
-```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-{
-  "account_number": "9977577067",
-  "account_name": "MERCHANT(lemuel)",
-  "bvn": "",
-  "requestSuccessful": true,
-  "responseMessage": "Reserved Account Generated Successfully",
-  "responseCode": "00"
-}
-```
 
 ```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 {
@@ -40,7 +89,7 @@ POST http://154.113.16.142:8088/appdevapi/api/PiPCreateReservedAccountNumber
   "responseMessage": "Error Completing Operation",
   "responseCode": "11"
 }
-```
+
 
 ```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 {
@@ -48,44 +97,13 @@ POST http://154.113.16.142:8088/appdevapi/api/PiPCreateReservedAccountNumber
   "responseMessage": "Error Completing Operation",
   "responseCode": "11"
 }
-```
-
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-{
-  "requestSuccessful": false,
-  "responseMessage": "Error Completing Operation",
-  "responseCode": "11"
-}
-```
-
-### Sample Implementation
-
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap whitespace-pre-wrap
+inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap whitespace-pre-wrap
 curl -X POST http://154.113.16.142:8088/appdevapi/api/PiPCreateReservedAccountNumber \
 -H "Client-Id: dGVzdF9Qcm92aWR1cw==" \
 -H "X-Auth-Signature: BE09BEE831CF262226B426E39BD109f2AF84DC63076D4174FAC78A2261F9A3D6E59744983B8326B69CDF2963FE314DFC89635CFA37A40596508DD6EAAB09402C7" \
 -H "Content-Type: application/json" \
 -d '{"account_name":"lemuel","bvn":""}'
-```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-import requests
-import hashlib
-
-client_id = "dGVzdF9Qcm92aWR1cw=="
-client_secret = "29A492021F4B709A8D1152C3EF4D32DC5A7092723ECAC4C511781003584B48873CCBFEBDEAE89CF22ED1CB1A836213549BC6638A3B563CA7FC009BEB3BC30CF8"
-signature = hashlib.sha512(f"{client_id}:{client_secret}".encode()).hexdigest().upper()
-
-url = "http://154.113.16.142:8088/appdevapi/api/PiPCreateReservedAccountNumber"
-headers = {
-    "Client-Id": client_id,
-    "X-Auth-Signature": signature,
-    "Content-Type": "application/json"
-}
-data = {"account_name": "lemuel", "bvn": ""}
-response = requests.post(url, json=data, headers=headers)
-print(response.json())
-```
 
 ```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 import java.net.HttpURLConnection;
@@ -126,13 +144,7 @@ public class CreateReservedAccount {
         System.out.println(response.toString());
     }
 }
-```
-
-> The above command returns JSON structured like this:
-
-The above command returns JSON structured like this:
-
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 {
     "bankCode":"57",
     "accountName":"NNAJI, JOSHUA & VIVIAN",
@@ -142,33 +154,7 @@ The above command returns JSON structured like this:
     "accountNumber":"3041004406",
     "responseCode":"00"
 }
-```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-const fetch = require('node-fetch');
-const crypto = require('crypto');
-
-const clientId = 'dGVzdF9Qcm92aWR1cw==';
-const clientSecret = '29A492021F4B709A8D1152C3EF4D32DC5A7092723ECAC4C511781003584B48873CCBFEBDEAE89CF22ED1CB1A836213549BC6638A3B563CA7FC009BEB3BC30CF8';
-const signature = crypto.createHash('sha512').update(`${clientId}:${clientSecret}`).digest('hex').toUpperCase();
-
-const url = 'http://154.113.16.142:8088/appdevapi/api/PiPCreateReservedAccountNumber';
-const headers = {
-    'Client-Id': clientId,
-    'X-Auth-Signature': signature,
-    'Content-Type': 'application/json'
-};
-const data = { account_name: 'lemuel', bvn: '' };
-
-fetch(url, {
-    method: 'POST',
-    headers: headers,
-    body: JSON.stringify(data)
-})
-.then(response => response.json())
-.then(data => console.log(data))
-.catch(error => console.error('Error:', error));
-```
 
 ```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 <?php
@@ -193,13 +179,7 @@ $response = curl_exec($ch);
 curl_close($ch);
 echo $response;
 ?>
-```
-
-> The above command returns JSON structured like this:
-
-The above command returns JSON structured like this:
-
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 {
     "bankCode":"57",
     "accountName":"NNAJI, JOSHUA & VIVIAN",
@@ -209,44 +189,7 @@ The above command returns JSON structured like this:
     "accountNumber":"3041004406",
     "responseCode":"00"
 }
-```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-using System;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using System.Security.Cryptography;
-
-class Program
-{
-    static async Task Main()
-    {
-        string clientId = "dGVzdF9Qcm92aWR1cw==";
-        string clientSecret = "29A492021F4B709A8D1152C3EF4D32DC5A7092723ECAC4C511781003584B48873CCBFEBDEAE89CF22ED1CB1A836213549BC6638A3B563CA7FC009BEB3BC30CF8";
-        using (var sha512 = SHA512.Create())
-        {
-            byte[] bytes = Encoding.UTF8.GetBytes(clientId + ":" + clientSecret);
-            byte[] hash = sha512.ComputeHash(bytes);
-            string signature = BitConverter.ToString(hash).Replace("-", "").ToUpper();
-
-            using (var client = new HttpClient())
-            {
-                client.DefaultRequestHeaders.Add("Client-Id", clientId);
-                client.DefaultRequestHeaders.Add("X-Auth-Signature", signature);
-                var content = new StringContent(
-                    "{\"account_name\":\"lemuel\",\"bvn\":\"\"}",
-                    Encoding.UTF8,
-                    "application/json"
-                );
-                var response = await client.PostAsync("http://154.113.16.142:8088/appdevapi/api/PiPCreateReservedAccountNumber", content);
-                var responseString = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(responseString);
-            }
-        }
-    }
-}
-```
 
 The above command returns JSON structured like this:
 
