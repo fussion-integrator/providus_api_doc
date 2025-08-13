@@ -2,6 +2,22 @@
 
 # Get NIP Account
 
+## Request Body
+
+```json
+{
+  "userName": "\"userName_value\"",
+  "password": "\"password_value\""
+}
+```
+
+### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|--------------|
+| userName | string | Username of account owner |
+| password | string | Password of account owner |
+
 Get the details of an NIP account.
 
 #### Test Base URL
@@ -34,17 +50,9 @@ string
 
 code of the bank
 
-userName
 
-string
 
-Username of account owner
 
-password
-
-string
-
-Password of account owner
 
 ```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 {
