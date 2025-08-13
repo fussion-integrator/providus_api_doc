@@ -2,6 +2,24 @@
 
 # Initiate a Transaction Request
 
+## Request Body
+
+```json
+{
+  "bank_code": "\"bank_code_value\"",
+  "Username": "\"Username_value\"",
+  "Password": "\"Password_value\""
+}
+```
+
+### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|--------------|
+| bank_code | string | code of the bank |
+| Username | string | Username of account owner |
+| Password | string | Password of account owner |
+
 Get statement of transactions on an account.
 
 #### Test Base URL
@@ -28,23 +46,11 @@ string
 
 account number for the account
 
-bank_code
 
-string
 
-code of the bank
 
-Username
 
-string
 
-Username of account owner
-
-Password
-
-string
-
-Password of account owner
 
 ```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 {
