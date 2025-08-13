@@ -1,0 +1,3 @@
+# Authentication
+
+API authentication methods.
