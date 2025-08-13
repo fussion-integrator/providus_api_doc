@@ -2,6 +2,22 @@
 
 # Exchange authorization code for access token
 
+## Request Body
+
+```json
+{
+  "Username": "\"Username_value\"",
+  "Password": "\"Password_value\""
+}
+```
+
+### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|--------------|
+| Username | string | Username of account owner |
+| Password | string | Password of account owner |
+
 Exchange authorization code for access token for the Transaction API.
 
 #### Test Base URL
@@ -22,17 +38,9 @@ GET /account/NIP/banks
 
 #### Request Body
 
-Username
 
-string
 
-Username of account owner
 
-Password
-
-string
-
-Password of account owner
 
 ```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 {
