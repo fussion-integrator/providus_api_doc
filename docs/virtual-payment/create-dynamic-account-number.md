@@ -2,6 +2,24 @@
 
 # Create Dynamic Account Number
 
+## Request Body
+
+```json
+{
+  "bank_code": "\"bank_code_value\"",
+  "Username": "\"Username_value\"",
+  "Password": "\"Password_value\""
+}
+```
+
+### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|--------------|
+| bank_code | string | code of the bank |
+| Username | string | Username of account owner |
+| Password | string | Password of account owner |
+
 Endpoint Create Dynamic Account Number: This method is to create dynamic account number. Dynamic accounts are for one time payment after which the account goes inactive and ready to be reassigned, It
 
 #### Test Base URL
@@ -28,23 +46,11 @@ string
 
 account number for the account
 
-bank_code
 
-string
 
-code of the bank
 
-Username
 
-string
 
-Username of account owner
-
-Password
-
-string
-
-Password of account owner
 
 ```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 {
