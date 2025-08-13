@@ -2,6 +2,66 @@
 
 # Payment
 
+## Code Examples
+
+<CodeTabs tabs={[
+  { language: "curl", code: `curl -X POST "https://api.providusbank.com/endpoint" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"` },
+  { language: "javascript", code: `const response = await fetch('https://api.providusbank.com/endpoint', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  }
+});
+
+const data = await response.json();
+console.log(data);` },
+  { language: "python", code: `import requests
+
+url = "https://api.providusbank.com/endpoint"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+}
+
+response = requests.post(url, headers=headers)
+print(response.json())` },
+  { language: "java", code: `HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.providusbank.com/endpoint"))
+    .header("Authorization", "Bearer YOUR_API_KEY")
+    .header("Content-Type", "application/json")
+    .POST(HttpRequest.BodyPublishers.noBody())
+    .build();
+
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());` },
+  { language: "php", code: `<?php
+$url = "https://api.providusbank.com/endpoint";
+$headers = [
+    "Authorization: Bearer YOUR_API_KEY",
+    "Content-Type: application/json"
+];
+
+$context = stream_context_create([
+    'http' => [
+        'method' => 'POST',
+        'header' => implode("\r\n", $headers)
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
+echo $response;
+?>` },
+  { language: "csharp", code: `var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
+
+var response = await client.GetAsync("https://api.providusbank.com/endpoint");
+
+var responseContent = await response.Content.ReadAsStringAsync();` }
+]} />
+
 **Endpoint**`POST /makepayment`Description: Initiates a payment for a specific bill.
 
 **Description**Authentication: Basic Auth (Username, Password)
@@ -36,11 +96,7 @@
     "customerAccountNo": "1700415109",
     "channel_ref": "122433"
 }
-```
-
-### Sample Implementation
-
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap whitespace-pre-wrap
+inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap whitespace-pre-wrap
 curl --request POST \
   --url 'http://154.113.16.142:9999/provipay/webapi/makepayment' \
   --header 'Authorization: Basic <base64-encoded-username:password>' \
@@ -72,35 +128,7 @@ curl --request POST \
     "customerAccountNo": "1700415109",
     "channel_ref": "122433"
 }'
-```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-import requests
-
-headers = {
-    'Authorization': 'Basic <base64-encoded-username:password>',
-    'Content-Type': 'application/json'
-}
-
-data = {
-    "inputs": [
-        {"value": "2", "key": "merchantFK"},
-        {"value": "1", "key": "accountType"},
-        {"value": "1234567", "key": "customerId"},
-        {"value": "dot", "key": "customerName"},
-        {"value": "100", "key": "amount"}
-    ],
-    "billId": "1099",
-    "customerAccountNo": "1700415109",
-    "channel_ref": "122433"
-}
-
-response = requests.post('http://154.113.16.142:9999/provipay/webapi/makepayment', headers=headers, json=data)
-if response.status_code == 200:
-    print(response.json())
-else:
-    print(response.reason)
-```
 
 ```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 import java.net.HttpURLConnection;
@@ -139,39 +167,7 @@ public class Main {
         }
     }
 }
-```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-const headers = {
-    'Authorization': 'Basic <base64-encoded-username:password>',
-    'Content-Type': 'application/json'
-};
-
-fetch('http://154.113.16.142:9999/provipay/webapi/makepayment', {
-    method: 'POST',
-    headers: headers,
-    body: JSON.stringify({
-        inputs: [
-            { value: "2", key: "merchantFK" },
-            { value: "1", key: "accountType" },
-            { value: "1234567", key: "customerId" },
-            { value: "dot", key: "customerName" },
-            { value: "100", key: "amount" }
-        ],
-        billId: "1099",
-        customerAccountNo: "1700415109",
-        channel_ref: "122433"
-    })
-})
-.then(response => {
-    if (response.ok) {
-        return response.json();
-    }
-    throw new Error(response.statusText);
-})
-.then(data => console.log(data))
-.catch(error => console.error(error));
-```
 
 ```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 <?php
@@ -197,42 +193,7 @@ if ($httpCode == 200) {
 
 curl_close($ch);
 ?>
-```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-using System;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-
-class Program
-{
-    static async Task Main(string[] args)
-    {
-        using (var client = new HttpClient())
-        {
-            client.DefaultRequestHeaders.Add("Authorization", "Basic <base64-encoded-username:password>");
-
-            var content = new StringContent(
-                "{\"inputs\": [{\"value\": \"2\", \"key\": \"merchantFK\"}, {\"value\": \"1\", \"key\": \"accountType\"}, {\"value\": \"1234567\", \"key\": \"customerId\"}, {\"value\": \"dot\", \"key\": \"customerName\"}, {\"value\": \"100\", \"key\": \"amount\"}], \"billId\": \"1099\", \"customerAccountNo\": \"1700415109\", \"channel_ref\": \"122433\"}",
-                Encoding.UTF8,
-                "application/json"
-            );
-
-            var response = await client.PostAsync("http://154.113.16.142:9999/provipay/webapi/makepayment", content);
-            if (response.IsSuccessStatusCode)
-            {
-                var responseContent = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(responseContent);
-            }
-            else
-            {
-                Console.WriteLine(response.ReasonPhrase);
-            }
-        }
-    }
-}
-```
 
 Response:
 
