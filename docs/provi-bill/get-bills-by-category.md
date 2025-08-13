@@ -2,66 +2,6 @@
 
 # Get Bills by Category
 
-## Code Examples
-
-<CodeTabs tabs={[
-  { language: "curl", code: `curl -X GET "https://api.providusbank.com/endpoint" \
-  -H "Authorization: Bearer YOUR_API_KEY" \
-  -H "Content-Type: application/json"` },
-  { language: "javascript", code: `const response = await fetch('https://api.providusbank.com/endpoint', {
-  method: 'GET',
-  headers: {
-    'Authorization': 'Bearer YOUR_API_KEY',
-    'Content-Type': 'application/json'
-  }
-});
-
-const data = await response.json();
-console.log(data);` },
-  { language: "python", code: `import requests
-
-url = "https://api.providusbank.com/endpoint"
-headers = {
-    "Authorization": "Bearer YOUR_API_KEY",
-    "Content-Type": "application/json"
-}
-
-response = requests.get(url, headers=headers)
-print(response.json())` },
-  { language: "java", code: `HttpClient client = HttpClient.newHttpClient();
-HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create("https://api.providusbank.com/endpoint"))
-    .header("Authorization", "Bearer YOUR_API_KEY")
-    .header("Content-Type", "application/json")
-    .GET(HttpRequest.BodyPublishers.noBody())
-    .build();
-
-HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());` },
-  { language: "php", code: `<?php
-$url = "https://api.providusbank.com/endpoint";
-$headers = [
-    "Authorization: Bearer YOUR_API_KEY",
-    "Content-Type: application/json"
-];
-
-$context = stream_context_create([
-    'http' => [
-        'method' => 'GET',
-        'header' => implode("\r\n", $headers)
-    ]
-]);
-
-$response = file_get_contents($url, false, $context);
-echo $response;
-?>` },
-  { language: "csharp", code: `var client = new HttpClient();
-client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
-
-var response = await client.GetAsync("https://api.providusbank.com/endpoint");
-
-var responseContent = await response.Content.ReadAsStringAsync();` }
-]} />
-
 **Endpoint**`GET /bill/assigned/byCategoryId/{categoryId}`Description: Retrieves a list of bills associated with a specific category ID.
 
 **Description**Authentication: Basic Auth (Username, Password)
