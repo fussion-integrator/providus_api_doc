@@ -10,9 +10,7 @@ Retrieve the balance and limits of a customer's card.
         
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -23,9 +21,7 @@ Retrieve the balance and limits of a customer's card.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -50,9 +46,7 @@ Retrieve the balance and limits of a customer's card.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
