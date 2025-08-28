@@ -10,8 +10,6 @@ Logs in a merchant user and returns user and merchant details.
 
 **Request Body:**
 
-Copy
-
 ```
 {
   "email": "bWVyY2hhbnQxQG1haWxpbmF0b3IuY29t",
@@ -20,8 +18,6 @@ Copy
 ```
 
 **Example Request (Dart - http):**
-
-Copy
 
 ```
 var request = http.Request('POST', Uri.parse('{{base-url}}/auth/login'));
@@ -36,8 +32,6 @@ if (response.statusCode == 200) {
 ```
 
 **Response (200 OK):**
-
-Copy
 
 ```
 {
