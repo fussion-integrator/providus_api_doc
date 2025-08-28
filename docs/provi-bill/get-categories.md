@@ -42,15 +42,11 @@ C#
 
 [](#tab-c)
 
-Copy
-
 ```
 curl --request GET \
   --url 'http://154.113.16.142:9999/provipay/webapi/categories' \
   --header 'Authorization: Basic <base64-encoded-username:password>'
 ```
-
-Copy
 
 ```
 import requests
@@ -65,8 +61,6 @@ if response.status_code == 200:
 else:
     print(response.reason)
 ```
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -98,8 +92,6 @@ public class Main {
 }
 ```
 
-Copy
-
 ```
 const headers = {
     'Authorization': 'Basic <base64-encoded-username:password>'
@@ -118,8 +110,6 @@ fetch('http://154.113.16.142:9999/provipay/webapi/categories', {
 .then(data => console.log(data))
 .catch(error => console.error(error));
 ```
-
-Copy
 
 ```
 <?php
@@ -145,8 +135,6 @@ curl_close($ch);
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
 
 ```
 {
@@ -177,8 +165,6 @@ Copy
     "responseCode":"00"}
 ```
 
-Copy
-
 ```
 using System;
 using System.Net.Http;
@@ -208,8 +194,6 @@ class Program
 ```
 
 **Example Response**:
-
-Copy
 
 ```
 [
