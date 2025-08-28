@@ -15,8 +15,6 @@
 
 **Request body** (JSON):
 
-Copy
-
 ```
 {
   "transactionReference": "2345677777",
@@ -41,8 +39,6 @@ Copy
 
 [](#tab-id-500-internal-server-error)
 
-Copy
-
 ```
 {
   "amount": "100.0",
@@ -56,8 +52,6 @@ Copy
 }
 ```
 
-Copy
-
 ```
 {
   "responseMessage": "Transaction does not exist.",
@@ -65,16 +59,12 @@ Copy
 }
 ```
 
-Copy
-
 ```
 {
   "responseMessage": "Transaction does not exist.",
   "responseCode": "01"
 }
 ```
-
-Copy
 
 ```
 {
@@ -115,16 +105,12 @@ C#
 
 [](#tab-c)
 
-Copy
-
 ```
 curl -X POST http://154.113.16.142:8882/postingrest/GetProvidusTransactionStatus \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -d '{"transactionReference":"2345677777","userName":"test","password":"test"}'
 ```
-
-Copy
 
 ```
 import requests
@@ -139,8 +125,6 @@ data = {
 response = requests.post(url, json=data, headers=headers)
 print(response.json())
 ```
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -175,8 +159,6 @@ public class GetProvidusTransactionStatus {
 }
 ```
 
-Copy
-
 ```
 const fetch = require('node-fetch');
 
@@ -201,8 +183,6 @@ fetch(url, {
 .catch(error => console.error('Error:', error));
 ```
 
-Copy
-
 ```
 <?php
 $url = "http://154.113.16.142:8882/postingrest/GetProvidusTransactionStatus";
@@ -226,8 +206,6 @@ curl_close($ch);
 echo $response;
 ?>
 ```
-
-Copy
 
 ```
 using System;
@@ -256,8 +234,6 @@ class Program
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
 
 ```
 {
