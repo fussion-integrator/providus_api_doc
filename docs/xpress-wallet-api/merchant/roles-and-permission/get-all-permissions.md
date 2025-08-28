@@ -5,9 +5,7 @@ Retrieve a list of all available permissions.
 *   **Endpoint**: `GET {{base-url}}/team/permissions`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -18,9 +16,7 @@ Retrieve a list of all available permissions.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -35,9 +31,7 @@ Retrieve a list of all available permissions.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
