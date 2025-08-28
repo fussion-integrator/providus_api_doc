@@ -10,9 +10,7 @@ Update a customer's profile information.
         
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -21,9 +19,7 @@ Update a customer's profile information.
     ```
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     {
       "firstName": "Updated",
@@ -39,9 +35,7 @@ Update a customer's profile information.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -57,9 +51,7 @@ Update a customer's profile information.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
