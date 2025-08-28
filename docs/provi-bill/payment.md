@@ -8,8 +8,6 @@
 
 **Request Body** (JSON):
 
-Copy
-
 ```
 {
     "inputs": [
@@ -72,8 +70,6 @@ C#
 
 [](#tab-c)
 
-Copy
-
 ```
 curl --request POST \
   --url 'http://154.113.16.142:9999/provipay/webapi/makepayment' \
@@ -108,8 +104,6 @@ curl --request POST \
 }'
 ```
 
-Copy
-
 ```
 import requests
 
@@ -137,8 +131,6 @@ if response.status_code == 200:
 else:
     print(response.reason)
 ```
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -179,8 +171,6 @@ public class Main {
 }
 ```
 
-Copy
-
 ```
 const headers = {
     'Authorization': 'Basic <base64-encoded-username:password>',
@@ -213,8 +203,6 @@ fetch('http://154.113.16.142:9999/provipay/webapi/makepayment', {
 .catch(error => console.error(error));
 ```
 
-Copy
-
 ```
 <?php
 $ch = curl_init();
@@ -240,8 +228,6 @@ if ($httpCode == 200) {
 curl_close($ch);
 ?>
 ```
-
-Copy
 
 ```
 using System;
@@ -281,9 +267,6 @@ class Program
 **Response**:
 
 *   **200 OK**: Returns a JSON object with validation results.
-    
-
-Copy
 
 ```
 {
