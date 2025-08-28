@@ -17,8 +17,6 @@
 
 * * *
 
-Copy
-
 ```
 {
   "accountNumber": "1018996198",
@@ -44,8 +42,6 @@ Copy
 
 [](#tab-id-500-internal-server-error)
 
-Copy
-
 ```
 {
   "bankCode": "110000",
@@ -58,8 +54,6 @@ Copy
 }
 ```
 
-Copy
-
 ```
 {
   "requestSuccessful": false,
@@ -68,8 +62,6 @@ Copy
 }
 ```
 
-Copy
-
 ```
 {
   "requestSuccessful": false,
@@ -77,8 +69,6 @@ Copy
   "responseCode": "11"
 }
 ```
-
-Copy
 
 ```
 {
@@ -120,16 +110,12 @@ C#
 
 [](#tab-c)
 
-Copy
-
 ```
 curl -X POST http://154.113.16.142:8882/postingrest/GetNIPAccount \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -d '{"accountNumber":"1018996198","beneficiaryBank":"110000","userName":"test","password":"test"}'
 ```
-
-Copy
 
 ```
 import requests
@@ -145,8 +131,6 @@ data = {
 response = requests.post(url, json=data, headers=headers)
 print(response.json())
 ```
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -181,8 +165,6 @@ public class GetNIPAccount {
 }
 ```
 
-Copy
-
 ```
 const fetch = require('node-fetch');
 
@@ -208,8 +190,6 @@ fetch(url, {
 .catch(error => console.error('Error:', error));
 ```
 
-Copy
-
 ```
 <?php
 $url = "http://154.113.16.142:8882/postingrest/GetNIPAccount";
@@ -234,8 +214,6 @@ curl_close($ch);
 echo $response;
 ?>
 ```
-
-Copy
 
 ```
 using System;
@@ -264,8 +242,6 @@ class Program
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
 
 ```
 {
