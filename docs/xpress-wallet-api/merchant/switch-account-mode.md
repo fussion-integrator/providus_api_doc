@@ -5,9 +5,7 @@ Switch the merchant's account mode between SANDBOX and PRODUCTION.
 *   **Endpoint**: `POST {{base-url}}/merchant/account-mode`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -16,9 +14,7 @@ Switch the merchant's account mode between SANDBOX and PRODUCTION.
     ```
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     {
       "mode": "PRODUCTION"
@@ -30,9 +26,7 @@ Switch the merchant's account mode between SANDBOX and PRODUCTION.
     *   **200 OK**: (Successful switch)
         
     *   **400 Bad Request**:
-        
-        Copy
-        
+
         ```
         {
           "status": false,
@@ -42,9 +36,7 @@ Switch the merchant's account mode between SANDBOX and PRODUCTION.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
