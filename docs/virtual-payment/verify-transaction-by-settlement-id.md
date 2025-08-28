@@ -1,26 +1,56 @@
-1. Virtual Payment
-
 # Verify Transaction by Settlement Id
 
-This is the end point to verify transactions by passing the session id.
+* * *
 
-#### Test Base URL
+#### 
 
-https://api-staging.providusbank.com
+[](#test-base-url)
 
-#### Production Base URL
+Test Base URL
 
-https://api.providusbank.com
+[https://api-staging.providusbank.com](https://api-staging.providusbank.com
 
-#### HTTP Request
+)
+
+#### 
+
+[](#production-base-url)
+
+Production Base URL
+
+[https://api.providusbank.com](https://api.providusbank.com)
+
+#### 
+
+[](#http-request)
+
+HTTP Request
 
 GET /account/NIP/banks
 
-## NIP Bank.
+* * *
 
-`GET``https://api-staging.providusbank.com/v1/account/NIP/banks`Get NIP Account.
+## 
 
-#### Request Body
+[](#nip-bank)
+
+NIP Bank.
+
+`GET` `https://api-staging.providusbank.com/v1/account/NIP/banks`
+
+Get NIP Account.
+
+#### 
+
+[](#request-body)
+
+Request Body
+
+Name
+
+Type
+
+Description
 
 Username
 
@@ -34,7 +64,25 @@ string
 
 Password of account owner
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+200 Account successfully retrieved
+
+[](#tab-id-200-account-successfully-retrieved)
+
+401: Unauthorized Permission denied
+
+[](#tab-id-401-unauthorized-permission-denied)
+
+400: Bad Request The server cannot process the request due to a client error, such as malformed syntax or invalid parameters in the request.
+
+[](#tab-id-400-bad-request-the-server-cannot-process-the-request-due-to-a-client-error-such-as-malformed-syntax)
+
+500: Internal Server Error Server encountered an unexpected error
+
+[](#tab-id-500-internal-server-error-server-encountered-an-unexpected-error)
+
+Copy
+
+```
 {
     "banks":[
         {"bankCode":"000014","bankName":"ACCESS BANK"},
@@ -64,9 +112,41 @@ Password of account owner
 }
 ```
 
-### Sample Implementation
+* * *
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap whitespace-pre-wrap
+### 
+
+[](#sample-implementation)
+
+Sample Implementation
+
+Curl
+
+[](#tab-curl)
+
+Python
+
+[](#tab-python)
+
+Java
+
+[](#tab-java)
+
+JavaScript
+
+[](#tab-javascript)
+
+PHP
+
+[](#tab-php)
+
+C#
+
+[](#tab-c)
+
+Copy
+
+```
 curl -x GET "https://api-demo.providusbank/account/NIP/banks"
   -H "Authorization: {{Authentication token}}"
   -H "Username: Username"
@@ -75,9 +155,9 @@ curl -x GET "https://api-demo.providusbank/account/NIP/banks"
 
 > The above command returns JSON structured like this:
 
-The above command returns JSON structured like this:
+Copy
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "banks":[
         {"bankCode":"000014","bankName":"ACCESS BANK"},
@@ -106,7 +186,9 @@ The above command returns JSON structured like this:
     "responseCode":"00"}
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 import requests
 from requests.structures import CaseInsensitiveDict
 
@@ -120,9 +202,9 @@ headers["Password"] = "Password"
 
 > The above command returns JSON structured like this:
 
-The above command returns JSON structured like this:
+Copy
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "banks":[
         {"bankCode":"000014","bankName":"ACCESS BANK"},
@@ -151,7 +233,9 @@ The above command returns JSON structured like this:
     "responseCode":"00"}
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 URL url = new URL("https://api-demo.providusbank/account/NIP/banks");
 HttpURLConnection http = (HttpURLConnection)url.openConnection();
 http.setRequestProperty("Authorization", "{{Authentication token}}");
@@ -164,9 +248,9 @@ http.disconnect();
 
 > The above command returns JSON structured like this:
 
-The above command returns JSON structured like this:
+Copy
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "banks":[
         {"bankCode":"000014","bankName":"ACCESS BANK"},
@@ -195,7 +279,9 @@ The above command returns JSON structured like this:
     "responseCode":"00"}
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 
@@ -213,9 +299,9 @@ xhr.send();
 
 > The above command returns JSON structured like this:
 
-The above command returns JSON structured like this:
+Copy
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "banks":[
         {"bankCode":"000014","bankName":"ACCESS BANK"},
@@ -244,7 +330,9 @@ The above command returns JSON structured like this:
     "responseCode":"00"}
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 <?php
 require_once 'HTTP/Request2.php';
 $request = new HTTP_Request2();
@@ -276,9 +364,9 @@ catch(HTTP_Request2_Exception $e) {
 
 > The above command returns JSON structured like this:
 
-The above command returns JSON structured like this:
+Copy
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "banks":[
         {"bankCode":"000014","bankName":"ACCESS BANK"},
@@ -307,7 +395,9 @@ The above command returns JSON structured like this:
     "responseCode":"00"}
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 var client = new RestClient("https://api-staging.providusbank.com/account/NIP/banks");
 client.Timeout = -1;
 var request = new RestRequest(Method.GET);
@@ -320,9 +410,9 @@ Console.WriteLine(response.Content);
 
 > The above command returns JSON structured like this:
 
-The above command returns JSON structured like this:
+Copy
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "banks":[
         {"bankCode":"000014","bankName":"ACCESS BANK"},
@@ -350,5 +440,7 @@ The above command returns JSON structured like this:
     "responseMessage":"SUCCESS",
     "responseCode":"00"}
 ```
+
+[PreviousVerify Transaction](/virtual-payment/verify-transaction)[NextVerify Transaction by Session Id](/virtual-payment/verify-transaction-by-session-id)
 
 Last updated 1 year ago
