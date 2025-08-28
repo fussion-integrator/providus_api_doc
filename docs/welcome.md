@@ -1,64 +1,113 @@
-# Welcome!
+# API Documentation
 
-Welcome to ProvidusBank API Documentation. The platform provides explicit details on services exposed by the bank for use in developing your digital innovative products.
+![Page cover](https://developer.providusbank.com/~gitbook/image?url=https%3A%2F%2F2119891020-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F3Mem2V59Q9QG7Pj32lJe%252Fuploads%252Fc4rYwoWCkcWbeWfo5rvG%252Fhero-section.png%3Falt%3Dmedia%26token%3D38c5cc63-9013-412a-a4d5-5b082da200e9&width=1248&dpr=4&quality=100&sign=706e3f63&sv=2)
 
-Here, you will find everything you need to get your first application off the ground, including some sample codes. This section is intended as a reference for those working with APIs for the first time, but it should also serve as a guide with references for common use cases. We recommend going through the various sections contained in this documentation in order to successfuly build your product.
+Explore a comprehensive suite of integration solutions tailored to simplify and optimize your business processes, empowering greater efficiency, seamless automation, and smarter workflows across your organization
 
 Currently, each API is protected by either a token authentication type or an oauth authentication type.
 
-### Accessing a token Protected API
+### 
 
-To access a token Protected API follow the steps below :
+[](#get-started)
 
-- You need to subscribe to the API by requesting for an access token to the API.
-- Access the token protected API by passing the token in an authorization header.
+Get Started
 
-You need to subscribe to the API by requesting for an access token to the API.
+ProvidusBank’s API documentation is organized to ensure easy access to all the resources you need for a smooth integration with your platform.
 
-Access the token protected API by passing the token in an authorization header.
+![Cover](https://developer.providusbank.com/~gitbook/image?url=https%3A%2F%2F2119891020-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F3Mem2V59Q9QG7Pj32lJe%252Fuploads%252FLwmCzdp559gO3E9qkQAa%252FImage_fx.jpg%3Falt%3Dmedia%26token%3D3cc08243-d380-422b-b306-f4462152ff15&width=245&dpr=4&quality=100&sign=3c35418e&sv=2)
 
-### Accessing an Oauth Protected API :
+### 
 
-To access an Oauth Protected API , you need to subscribe to the API by through the following steps :
+[](#accessing-an-oauth-protected-api-1)
 
-- Request for an oauth clientRequest for an oauth client and API access token
-- Request for an Authorization code using your oauth client by making an API call to the authorization URL of the API. You will be redirected to a login page to provide their credentials. On successful login, the authorization code will be made available at the redirect URL registered on the oauth client. Find documentation of this request any oauth protected API under the documentation of that API.
-- Exchange authorization code for token by making an API call to the token URL of the API. Find documentation of this request any oauth protected API under the documentation of that API.
-- Access the oauth API by passing the token in an authorization header.
+Virtual Accounts
 
-Request for an oauth client
+This API enables you create tailored accounts to seamlessly receive customer payments.
 
-Request for an oauth client and API access token
+[Account](/account)
 
-Request for an Authorization code using your oauth client by making an API call to the authorization URL of the API. You will be redirected to a login page to provide their credentials. On successful login, the authorization code will be made available at the redirect URL registered on the oauth client. Find documentation of this request any oauth protected API under the documentation of that API.
+![Cover](https://developer.providusbank.com/~gitbook/image?url=https%3A%2F%2F2119891020-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F3Mem2V59Q9QG7Pj32lJe%252Fuploads%252FgqX0CfjxRdFBRcdkiey7%252FImage_fx%2520%281%29.jpg%3Falt%3Dmedia%26token%3D22592c4f-dd4f-416a-a8a7-97af688701bd&width=245&dpr=4&quality=100&sign=acad01d1&sv=2)
 
-Exchange authorization code for token by making an API call to the token URL of the API. Find documentation of this request any oauth protected API under the documentation of that API.
+### 
 
-Access the oauth API by passing the token in an authorization header.
+[](#accessing-an-oauth-protected-api)
 
-### Notes :
+Payment
 
-- The authentication url and token url can be found on the documentation for each API.
-- Sample API calls in different languages are documented for each API below.
+This APIs provide interfaces to create and manage financial Payments.
 
-The authentication url and token url can be found on the documentation for each API.
+[Payment](/payment)
 
-Sample API calls in different languages are documented for each API below.
+![Cover](https://developer.providusbank.com/~gitbook/image?url=https%3A%2F%2F2119891020-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F3Mem2V59Q9QG7Pj32lJe%252Fuploads%252Fm0YtqKB13jNnPYzMsfBr%252FImage_fx%2520%2811%29.jpg%3Falt%3Dmedia%26token%3D8f239de1-24b2-4d1f-b275-d1dd1f7317a4&width=245&dpr=4&quality=100&sign=31bbaf5&sv=2)
 
-Test Base URL
+### 
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-https://api-staging.providusbank.com
-```
+[](#accessing-an-oauth-protected-api-2)
 
-### Production Base URL
+Transactions
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-https://api.providusbank.com
-```
+This APIs provide interfaces to create and manage financial transactions.
 
-The authentication url and token url can be found on the documentation for each API.
+[Transactions](/transactions)
 
-Note : Sample API calls in different languages are documented for each API below.
+![Cover](https://developer.providusbank.com/~gitbook/image?url=https%3A%2F%2F2119891020-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F3Mem2V59Q9QG7Pj32lJe%252Fuploads%252FcWpLOxWKM0D8qw0zFamv%252FImage_fx%2520%286%29.jpg%3Falt%3Dmedia%26token%3D510b05c2-d492-4571-ac5a-7e3f22914237&width=245&dpr=4&quality=100&sign=628bde1b&sv=2)
 
-Last updated 4 months ago
+### 
+
+[](#accessing-an-oauth-protected-api-3)
+
+Provi Bill
+
+This section provide bill payment solutions and features.
+
+[Provi Bill](/provi-bill)
+
+![Cover](https://developer.providusbank.com/~gitbook/image?url=https%3A%2F%2F2119891020-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F3Mem2V59Q9QG7Pj32lJe%252Fuploads%252FpFntQxPb70EkDOK4d5gq%252FImage_fx%2520%2813%29.jpg%3Falt%3Dmedia%26token%3Debc140d2-6658-42da-8bfd-354ab0818f54&width=245&dpr=4&quality=100&sign=82f7f6af&sv=2)
+
+### 
+
+[](#accessing-an-oauth-protected-api-4)
+
+Virtual Payment
+
+This API enables fund transfer.
+
+[Virtual Payment](/virtual-payment)
+
+![Cover](https://developer.providusbank.com/~gitbook/image?url=https%3A%2F%2F2119891020-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F3Mem2V59Q9QG7Pj32lJe%252Fuploads%252FpFntQxPb70EkDOK4d5gq%252FImage_fx%2520%2813%29.jpg%3Falt%3Dmedia%26token%3Debc140d2-6658-42da-8bfd-354ab0818f54&width=245&dpr=4&quality=100&sign=82f7f6af&sv=2)
+
+### 
+
+[](#accessing-an-oauth-protected-api-5)
+
+Digital Collection Service (DCS)
+
+This enables fintechs to create and manage virtual accounts.
+
+[Digital Collection Service (DCS)](/digital-collection-service-dcs)
+
+![Cover](https://developer.providusbank.com/~gitbook/image?url=https%3A%2F%2F2119891020-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F3Mem2V59Q9QG7Pj32lJe%252Fuploads%252FsFlN6zhB3E9q4eFSVjmQ%252FImage_fx%2520%2812%29.jpg%3Falt%3Dmedia%26token%3D6e2c9ef5-0d84-4ae1-914f-adf9597e9975&width=245&dpr=4&quality=100&sign=5a26843a&sv=2)
+
+### 
+
+[](#accessing-an-oauth-protected-api-6)
+
+Third Party Generic API
+
+This API is designed for designed to offer a secure integration interface for THIRD PARTY partners.
+
+[THIRD PARTY GENERIC API](/third-party-generic-api)
+
+![Cover](https://developer.providusbank.com/~gitbook/image?url=https%3A%2F%2F2119891020-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F3Mem2V59Q9QG7Pj32lJe%252Fuploads%252FEWsKWfaiG9KxgHXjpbOy%252FImage_fx%2520%2815%29.jpg%3Falt%3Dmedia%26token%3D60fa7146-1f00-47fa-b9aa-f776ae86f7e1&width=245&dpr=4&quality=100&sign=ab7f36c1&sv=2)
+
+### 
+
+[](#accessing-an-oauth-protected-api-7)
+
+Xpress Wallet API
+
+The Xpress Wallet API allows seamless integration of wallet functionalities into your products.
+
+[Xpress Wallet API](/xpress-wallet-api)
+
+[NextQuick Start](/quick-start)
