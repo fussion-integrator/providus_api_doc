@@ -125,9 +125,7 @@ If your Sandbox requires authentication:
     *   Input request parameters or payload.
         
     *   **Sample JSON Body:**
-        
-        Copy
-        
+
         ```
         {
           "key1": "value1",
