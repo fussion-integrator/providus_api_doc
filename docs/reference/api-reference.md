@@ -58,8 +58,6 @@ List and describe the parameters required for this endpoint:
 
 Provide an example of how to structure the API request:
 
-Copy
-
 ```
 GET https://api.example.com/v1/endpoint/path?parameter1=value1&parameter2=value2
 ```
@@ -67,8 +65,6 @@ GET https://api.example.com/v1/endpoint/path?parameter1=value1&parameter2=value2
 **Response**
 
 Describe the structure of the response, including possible status codes and response body:
-
-Copy
 
 ```
 jsonCopy code{
@@ -80,8 +76,6 @@ jsonCopy code{
 **Example Response**
 
 Provide an example of a typical API response:
-
-Copy
 
 ```
 jsonCopy code{
