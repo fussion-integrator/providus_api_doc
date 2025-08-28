@@ -10,9 +10,7 @@ Update a team member's information.
         
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -21,9 +19,7 @@ Update a team member's information.
     ```
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     {
       "approvalLimit": 500,
@@ -34,9 +30,7 @@ Update a team member's information.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -46,9 +40,7 @@ Update a team member's information.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
