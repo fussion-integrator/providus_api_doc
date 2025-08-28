@@ -5,9 +5,7 @@ Retrieve a list of team members.
 *   **Endpoint**: `GET {{base-url}}/team/members`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -18,9 +16,7 @@ Retrieve a list of team members.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -47,9 +43,7 @@ Retrieve a list of team members.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
