@@ -56,86 +56,210 @@ The OAuth client id
 
 ### Sample Implementation
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap whitespace-pre-wrap
-curl --location --request POST 'https://mgw-staging.providusbank.com/transaction/oauth/authorize/' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---header 'Authorization: Basic NGNlMjQ5YmIzMTFmNGFlZWFmYzNlNDA2OTBjNzc4ZGM6WkRjMVlUbGxNRGd0WVdKa1lpMDBOalJqTFdKak5qUXROV0poTVRnMU16aGpZV1Zt' \
---data-urlencode 'grant_type=authorization_code' \
---data-urlencode 'client_id=091ddd8ca61c488aafcd078f2989eee0' \
---data-urlencode 'code=ZDc1YTllMDgtYWJkYi00NjRjLWJjNjQtNWJhMTg1MzhjYWVm' \
---data-urlencode 'redirect_uri=http%3A%2F%2F192.81.212.28%3A4003%2Foauth'
-inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-import requests
-from requests.structures import CaseInsensitiveDict
-url = "https://api-staging.providusbank.com/account/NIP?account_number=3041004406&bank_code=57"
-headers = CaseInsensitiveDict()
-headers["Authorization"] = "{{Authentication token}}"
-headers["Username"] = "Username"
-headers["Password"] = "Password"
-resp = requests.get(url, headers=headers)
-print(resp.status_code)
-inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-URL url = new URL("https://api-staging.providusbank.com/account/NIP?account_number=3041004406&bank_code=57");
-HttpURLConnection http = (HttpURLConnection)url.openConnection();
-http.setRequestProperty("Authorization", "{{Authentication token}}");
-http.setRequestProperty("Username", "Username");
-http.setRequestProperty("Password", "Password");
-System.out.println(http.getResponseCode() + " " + http.getResponseMessage());
-http.disconnect();
-inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
+### Curl
 
-xhr.addEventListener("readystatechange", function() {
-  if(this.readyState === 4) {
-    console.log(this.responseText);
-  }
-});
-xhr.open("GET", "https://api-staging.providusbank.com/account/NIP?account_number=3041004406&bank_code=57");
-xhr.setRequestHeader("Authorization", "{{Authentication token}}");
-xhr.setRequestHeader("Username", "Username");
-xhr.setRequestHeader("Password", "Password");
-xhr.send();
-inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-<?php
-require_once 'HTTP/Request2.php';
-$request = new HTTP_Request2();
-$request->setUrl('https://api-staging.providusbank.com/account/NIP?account_number=3041004406&bank_code=57');
-$request->setMethod(HTTP_Request2::METHOD_GET);
-$request->setConfig(array(
-  'follow_redirects' => TRUE
-));
-$request->setHeader(array(
-  'Authorization' => '{{Authentication token}}',
-  'Username' => 'Username',
-  'Password' => 'Password'
-));
-try {
-  $response = $request->send();
-  if ($response->getStatus() == 200) {
-    echo $response->getBody();
-  }
-  else {
-    echo 'Unexpected HTTP status: ' . $response->getStatus() . ' ' .
-    $response->getReasonPhrase();
-  }
-}
-catch(HTTP_Request2_Exception $e) {
-  echo 'Error: ' . $e->getMessage();
-}
-inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-var client = new RestClient("https://api-staging.providusbank.com/account/NIP?account_number=3041004406&bank_code=57");
-client.Timeout = -1;
-var request = new RestRequest(Method.GET);
-request.AddHeader("Authorization", "{{Authentication token}}");
-request.AddHeader("Username", "Username");
-request.AddHeader("Password", "Password");
-IRestResponse response = client.Execute(request);
-Console.WriteLine(response.Content);
+```curl
+curl -X POST "https://api.providusbank.com/transaction/oauth/authorize/'" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"
 ```
 
-> The above command returns JSON structured like this:
+### Python
 
-The above command returns JSON structured like this:
+```python
+import requests
 
-Last updated 1 year ago
+url = "https://api.providusbank.com/transaction/oauth/authorize/'"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+}
+
+response = requests.post(url, headers=headers)
+print(response.json())
+```
+
+### Javascript
+
+```javascript
+const response = await fetch('https://api.providusbank.com/transaction/oauth/authorize/'', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  }
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+### Nodejs
+
+```nodejs
+const axios = require('axios');
+
+const config = {
+  method: 'post',
+  url: 'https://api.providusbank.com/transaction/oauth/authorize/'',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  }
+};
+
+axios(config)
+  .then(response => console.log(response.data))
+  .catch(error => console.error(error));
+```
+
+### Php
+
+```php
+<?php
+$url = "https://api.providusbank.com/transaction/oauth/authorize/'";
+$headers = [
+    "Authorization: Bearer YOUR_API_KEY",
+    "Content-Type: application/json"
+];
+
+$context = stream_context_create([
+    'http' => [
+        'method' => 'POST',
+        'header' => implode("\r\n", $headers)
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
+echo $response;
+?>
+```
+
+### Java
+
+```java
+import java.net.http.*;
+import java.net.URI;
+import java.time.Duration;
+
+public class ApiClient {
+    public static void main(String[] args) throws Exception {
+        HttpClient client = HttpClient.newBuilder()
+            .connectTimeout(Duration.ofSeconds(10))
+            .build();
+            
+        HttpRequest request = HttpRequest.newBuilder()
+            .uri(URI.create("https://api.providusbank.com/transaction/oauth/authorize/'"))
+            .header("Authorization", "Bearer YOUR_API_KEY")
+            .header("Content-Type", "application/json")
+            .POST(HttpRequest.BodyPublishers.noBody())
+            .build();
+
+        HttpResponse<String> response = client.send(request, 
+            HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.body());
+    }
+}
+```
+
+### Csharp
+
+```csharp
+using System;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+
+class Program
+{
+    private static readonly HttpClient client = new HttpClient();
+    
+    static async Task Main()
+    {
+        client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
+        
+        var response = await client.GetAsync("https://api.providusbank.com/transaction/oauth/authorize/'");
+        
+        var responseContent = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(responseContent);
+    }
+}
+```
+
+### Dart
+
+```dart
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+Future<void> makeApiCall() async {
+  final url = Uri.parse('https://api.providusbank.com/transaction/oauth/authorize/'');
+  final headers = {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json',
+  };
+  
+  final response = await http.post(url, headers: headers);
+  
+  if (response.statusCode == 200) {
+    final data = jsonDecode(response.body);
+    print(data);
+  } else {
+    print('Error: ${response.statusCode}');
+  }
+}
+```
+
+### Go
+
+```go
+package main
+
+import (
+    "bytes"
+    "encoding/json"
+    "fmt"
+    "io"
+    "net/http"
+)
+
+func main() {
+    url := "https://api.providusbank.com/transaction/oauth/authorize/'"
+    
+    req, _ := http.NewRequest("POST", url, nil)
+    
+    req.Header.Set("Authorization", "Bearer YOUR_API_KEY")
+    req.Header.Set("Content-Type", "application/json")
+    
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    if err != nil {
+        panic(err)
+    }
+    defer resp.Body.Close()
+    
+    body, _ := io.ReadAll(resp.Body)
+    fmt.Println(string(body))
+}
+```
+
+### Ruby
+
+```ruby
+require 'net/http'
+require 'json'
+
+uri = URI('https://api.providusbank.com/transaction/oauth/authorize/'')
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+
+request = Net::HTTP::Post.new(uri)
+request['Authorization'] = 'Bearer YOUR_API_KEY'
+request['Content-Type'] = 'application/json'
+
+
+
+response = http.request(request)
+puts JSON.parse(response.body)
+```
+
