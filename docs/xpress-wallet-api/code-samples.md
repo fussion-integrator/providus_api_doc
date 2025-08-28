@@ -23,9 +23,6 @@ Customer Management
 Get All Customers
 
 *   **cURL**:
-    
-
-Copy
 
 ```
 curl --request GET \
@@ -35,9 +32,6 @@ curl --request GET \
 ```
 
 *   **Python**:
-    
-
-Copy
 
 ```
 import requests
@@ -55,9 +49,6 @@ else:
 ```
 
 *   **Java**:
-    
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -91,9 +82,6 @@ public class Main {
 ```
 
 *   **JavaScript**:
-    
-
-Copy
 
 ```
 const headers = {
@@ -116,9 +104,6 @@ fetch('{{base-url}}/customer?page=1', {
 ```
 
 *   **PHP**:
-    
-
-Copy
 
 ```
 <?php
@@ -145,9 +130,6 @@ curl_close($ch);
 ```
 
 *   **C#**:
-    
-
-Copy
 
 ```
 using System;
@@ -185,9 +167,6 @@ class Program
 Get Customer Details
 
 *   **cURL**:
-    
-
-Copy
 
 ```
 curl --request GET \
@@ -197,9 +176,6 @@ curl --request GET \
 ```
 
 *   **Python**:
-    
-
-Copy
 
 ```
 import requests
@@ -217,9 +193,6 @@ else:
 ```
 
 *   **Java**:
-    
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -253,9 +226,6 @@ public class Main {
 ```
 
 *   **JavaScript**:
-    
-
-Copy
 
 ```
 const headers = {
@@ -278,9 +248,6 @@ fetch('{{base-url}}/customer/1149d065-c5c9-4382-aec6-323090f31d9d', {
 ```
 
 *   **PHP**:
-    
-
-Copy
 
 ```
 <?php
@@ -307,9 +274,6 @@ curl_close($ch);
 ```
 
 *   **C#**:
-    
-
-Copy
 
 ```
 using System;
@@ -347,9 +311,6 @@ class Program
 Find Customer by Phone Number
 
 *   **cURL**:
-    
-
-Copy
 
 ```
 curl --request GET \
@@ -359,9 +320,6 @@ curl --request GET \
 ```
 
 *   **Python**:
-    
-
-Copy
 
 ```
 import requests
@@ -379,9 +337,6 @@ else:
 ```
 
 *   **Java**:
-    
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -415,9 +370,6 @@ public class Main {
 ```
 
 *   **JavaScript**:
-    
-
-Copy
 
 ```
 const headers = {
@@ -440,9 +392,6 @@ fetch('{{base-url}}/customer/phone?phoneNumber=08030223346', {
 ```
 
 *   **PHP**:
-    
-
-Copy
 
 ```
 <?php
@@ -469,9 +418,6 @@ curl_close($ch);
 ```
 
 *   **C#**:
-    
-
-Copy
 
 ```
 using System;
@@ -509,9 +455,6 @@ class Program
 Update Customer Profile
 
 *   **cURL**:
-    
-
-Copy
 
 ```
 curl --request PUT \
@@ -525,9 +468,6 @@ curl --request PUT \
 ```
 
 *   **Python**:
-    
-
-Copy
 
 ```
 import requests
@@ -550,9 +490,6 @@ else:
 ```
 
 *   **Java**:
-    
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -595,9 +532,6 @@ public class Main {
 ```
 
 *   **JavaScript**:
-    
-
-Copy
 
 ```
 const headers = {
@@ -624,9 +558,6 @@ fetch('{{base-url}}/customer/49d4ea6d-d3dc-490c-800d-7c50b89cf8ff', {
 ```
 
 *   **PHP**:
-    
-
-Copy
 
 ```
 <?php
@@ -656,9 +587,6 @@ curl_close($ch);
 ```
 
 *   **C#**:
-    
-
-Copy
 
 ```
 using System;
@@ -709,9 +637,6 @@ Wallet Management
 Create Customer Wallet
 
 *   **cURL**:
-    
-
-Copy
 
 ```
 curl --request POST \
@@ -734,9 +659,6 @@ curl --request POST \
 ```
 
 *   **Python**:
-    
-
-Copy
 
 ```
 import requests
@@ -768,9 +690,6 @@ else:
 ```
 
 *   **Java**:
-    
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -813,9 +732,6 @@ public class Main {
 ```
 
 *   **JavaScript**:
-    
-
-Copy
 
 ```
 const headers = {
@@ -851,9 +767,6 @@ fetch('{{base-url}}/wallet', {
 ```
 
 *   **PHP**:
-    
-
-Copy
 
 ```
 <?php
@@ -883,9 +796,6 @@ curl_close($ch);
 ```
 
 *   **C#**:
-    
-
-Copy
 
 ```
 using System;
@@ -930,9 +840,6 @@ class Program
 Get All Wallets
 
 *   **cURL**:
-    
-
-Copy
 
 ```
 curl --request GET \
@@ -942,9 +849,6 @@ curl --request GET \
 ```
 
 *   **Python**:
-    
-
-Copy
 
 ```
 import requests
@@ -962,9 +866,6 @@ else:
 ```
 
 *   **Java**:
-    
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -998,9 +899,6 @@ public class Main {
 ```
 
 *   **JavaScript**:
-    
-
-Copy
 
 ```
 const headers = {
@@ -1023,9 +921,6 @@ fetch('{{base-url}}/wallet', {
 ```
 
 *   **PHP**:
-    
-
-Copy
 
 ```
 <?php
@@ -1052,9 +947,6 @@ curl_close($ch);
 ```
 
 *   **C#**:
-    
-
-Copy
 
 ```
 using System;
@@ -1092,9 +984,6 @@ class Program
 Get Customer Wallet
 
 *   **cURL**:
-    
-
-Copy
 
 ```
 curl --request GET \
@@ -1104,9 +993,6 @@ curl --request GET \
 ```
 
 *   **Python**:
-    
-
-Copy
 
 ```
 import requests
@@ -1124,9 +1010,6 @@ else:
 ```
 
 *   **Java**:
-    
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -1160,9 +1043,6 @@ public class Main {
 ```
 
 *   **JavaScript**:
-    
-
-Copy
 
 ```
 const headers = {
@@ -1185,9 +1065,6 @@ fetch('{{base-url}}/wallet/customer?customerId=5de468b7-de5f-414e-b948-1f2f336c3
 ```
 
 *   **PHP**:
-    
-
-Copy
 
 ```
 <?php
@@ -1214,9 +1091,6 @@ curl_close($ch);
 ```
 
 *   **C#**:
-    
-
-Copy
 
 ```
 using System;
@@ -1254,9 +1128,6 @@ class Program
 Credit Wallet
 
 *   **cURL**:
-    
-
-Copy
 
 ```
 curl --request POST \
@@ -1276,9 +1147,6 @@ curl --request POST \
 ```
 
 *   **Python**:
-    
-
-Copy
 
 ```
 import requests
@@ -1307,9 +1175,6 @@ else:
 ```
 
 *   **Java**:
-    
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -1352,9 +1217,6 @@ public class Main {
 ```
 
 *   **JavaScript**:
-    
-
-Copy
 
 ```
 const headers = {
@@ -1387,9 +1249,6 @@ fetch('{{base-url}}/wallet/credit', {
 ```
 
 *   **PHP**:
-    
-
-Copy
 
 ```
 <?php
@@ -1419,9 +1278,6 @@ curl_close($ch);
 ```
 
 *   **C#**:
-    
-
-Copy
 
 ```
 using System;
@@ -1466,9 +1322,6 @@ class Program
 Debit Wallet
 
 *   **cURL**:
-    
-
-Copy
 
 ```
 curl --request POST \
@@ -1488,9 +1341,6 @@ curl --request POST \
 ```
 
 *   **Python**:
-    
-
-Copy
 
 ```
 import requests
@@ -1519,9 +1369,6 @@ else:
 ```
 
 *   **Java**:
-    
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -1564,9 +1411,6 @@ public class Main {
 ```
 
 *   **JavaScript**:
-    
-
-Copy
 
 ```
 const headers = {
@@ -1599,9 +1443,6 @@ fetch('{{base-url}}/wallet/debit', {
 ```
 
 *   **PHP**:
-    
-
-Copy
 
 ```
 <?php
@@ -1631,9 +1472,6 @@ curl_close($ch);
 ```
 
 *   **C#**:
-    
-
-Copy
 
 ```
 using System;
@@ -1678,9 +1516,6 @@ class Program
 Freeze Customer Wallet
 
 *   **cURL**:
-    
-
-Copy
 
 ```
 curl --request POST \
@@ -1694,9 +1529,6 @@ curl --request POST \
 ```
 
 *   **Python**:
-    
-
-Copy
 
 ```
 import requests
@@ -1719,9 +1551,6 @@ else:
 ```
 
 *   **Java**:
-    
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -1764,9 +1593,6 @@ public class Main {
 ```
 
 *   **JavaScript**:
-    
-
-Copy
 
 ```
 const headers = {
@@ -1793,9 +1619,6 @@ fetch('{{base-url}}/wallet/close', {
 ```
 
 *   **PHP**:
-    
-
-Copy
 
 ```
 <?php
@@ -1825,9 +1648,6 @@ curl_close($ch);
 ```
 
 *   **C#**:
-    
-
-Copy
 
 ```
 using System;
@@ -1872,9 +1692,6 @@ class Program
 Unfreeze Customer Wallet
 
 *   **cURL**:
-    
-
-Copy
 
 ```
 curl --request POST \
@@ -1888,9 +1705,6 @@ curl --request POST \
 ```
 
 *   **Python**:
-    
-
-Copy
 
 ```
 import requests
@@ -1913,9 +1727,6 @@ else:
 ```
 
 *   **Java**:
-    
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -1958,9 +1769,6 @@ public class Main {
 ```
 
 *   **JavaScript**:
-    
-
-Copy
 
 ```
 const headers = {
@@ -1987,9 +1795,6 @@ fetch('{{base-url}}/wallet/enable', {
 ```
 
 *   **PHP**:
-    
-
-Copy
 
 ```
 <?php
@@ -2019,9 +1824,6 @@ curl_close($ch);
 ```
 
 *   **C#**:
-    
-
-Copy
 
 ```
 using System;
@@ -2066,9 +1868,6 @@ class Program
 Batch Credit Customer Wallets
 
 *   **cURL**:
-    
-
-Copy
 
 ```
 curl --request POST \
@@ -2094,9 +1893,6 @@ curl --request POST \
 ```
 
 *   **Python**:
-    
-
-Copy
 
 ```
 import requests
@@ -2131,9 +1927,6 @@ else:
 ```
 
 *   **Java**:
-    
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -2176,9 +1969,6 @@ public class Main {
 ```
 
 *   **JavaScript**:
-    
-
-Copy
 
 ```
 const headers = {
@@ -2217,9 +2007,6 @@ fetch('{{base-url}}/wallet/batch-credit-customer-wallet', {
 ```
 
 *   **PHP**:
-    
-
-Copy
 
 ```
 <?php
@@ -2249,9 +2036,6 @@ curl_close($ch);
 ```
 
 *   **C#**:
-    
-
-Copy
 
 ```
 using System;
@@ -2296,9 +2080,6 @@ class Program
 Batch Debit Customer Wallets
 
 *   **cURL**:
-    
-
-Copy
 
 ```
 curl --request POST \
@@ -2324,9 +2105,6 @@ curl --request POST \
 ```
 
 *   **Python**:
-    
-
-Copy
 
 ```
 import requests
@@ -2361,9 +2139,6 @@ else:
 ```
 
 *   **Java**:
-    
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -2406,9 +2181,6 @@ public class Main {
 ```
 
 *   **JavaScript**:
-    
-
-Copy
 
 ```
 const headers = {
@@ -2447,9 +2219,6 @@ fetch('{{base-url}}/wallet/batch-debit-customer-wallet', {
 ```
 
 *   **PHP**:
-    
-
-Copy
 
 ```
 <?php
@@ -2479,9 +2248,6 @@ curl_close($ch);
 ```
 
 *   **C#**:
-    
-
-Copy
 
 ```
 using System;
@@ -2526,9 +2292,6 @@ class Program
 Customer Batch Credit Customer Wallets
 
 *   **cURL**:
-    
-
-Copy
 
 ```
 curl --request POST \
@@ -2555,9 +2318,6 @@ curl --request POST \
 ```
 
 *   **Python**:
-    
-
-Copy
 
 ```
 import requests
@@ -2593,9 +2353,6 @@ else:
 ```
 
 *   **Java**:
-    
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
