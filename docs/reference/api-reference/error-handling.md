@@ -27,8 +27,6 @@ Handling Errors
 
 When an error occurs, the API response includes a JSON object with an `error` field containing the error message. Example:
 
-Copy
-
 ```
 {
   "error": "Invalid API key. Please provide a valid key."
