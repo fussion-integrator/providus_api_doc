@@ -12,8 +12,6 @@ Logs out the authenticated user.
 
 **Example Request (Dart - http):**
 
-Copy
-
 ```
 var request = http.Request('POST', Uri.parse('{{base-url}}/auth/logout'));
 http.StreamedResponse response = await request.send();
