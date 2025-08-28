@@ -16,9 +16,7 @@ Retrieve details of a specific batch transaction using a reference ID.
         
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -29,9 +27,7 @@ Retrieve details of a specific batch transaction using a reference ID.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -51,9 +47,7 @@ Retrieve details of a specific batch transaction using a reference ID.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
