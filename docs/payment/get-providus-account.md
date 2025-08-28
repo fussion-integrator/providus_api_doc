@@ -1,54 +1,94 @@
-1. Payment
-
 # Get Providus Account
 
-## Request Body
+* * *
 
-```json
-{
-  "Username": "\"Username_value\"",
-  "Password": "\"Password_value\""
-}
-```
+#### 
 
-### Parameters
+[](#test-base-url)
 
-| Parameter | Type | Description |
-|-----------|------|--------------|
-| Username | string | Username of account owner |
-| Password | string | Password of account owner |
+Test Base URL
 
-Get a Providus bank user account.
+[https://api-staging.providusbank.com](https://api-staging.providusbank.com
 
-#### Test Base URL
+)
 
-https://api-staging.providusbank.com
+#### 
 
-#### Production Base URL
+[](#production-base-url)
 
-https://api.providusbank.com
+Production Base URL
 
-#### HTTP Request
+[https://api.providusbank.com](https://api.providusbank.com)
+
+#### 
+
+[](#http-request)
+
+HTTP Request
 
 POST /GetProvidusAccount
 
-## Providus Account.
+* * *
 
-`POST``https://api-staging.providusbank.com/v1/GetProvidusAccount`Get Providus Account.
+## 
 
-#### Request Body
+[](#providus-account)
 
+Providus Account.
 
+`POST` `https://api-staging.providusbank.com/v1/GetProvidusAccount`
 
+Get Providus Account.
 
+#### 
 
-account_number
+[](#request-body)
+
+Request Body
+
+Name
+
+Type
+
+Description
+
+Username
+
+string
+
+Username of account owner
+
+Password
+
+string
+
+Password of account owner
+
+account\_number
 
 String
 
 account number for the account
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+200 Account successfully retrieved
+
+[](#tab-id-200-account-successfully-retrieved)
+
+401: Unauthorized Permission denied
+
+[](#tab-id-401-unauthorized-permission-denied)
+
+400: Bad Request The server cannot process the request due to a client error, such as malformed syntax or invalid parameters in the request.
+
+[](#tab-id-400-bad-request-the-server-cannot-process-the-request-due-to-a-client-error-such-as-malformed-syntax)
+
+500: Internal Server Error Server encountered an unexpected error
+
+[](#tab-id-500-internal-server-error-server-encountered-an-unexpected-error)
+
+Copy
+
+```
 {
     "accountStatus":"ACTIVE",
     "emailAddress":"[email protected]",
@@ -61,7 +101,43 @@ account number for the account
     "availableBalance":"468520.951",
     "responseCode":"00"
 }
-inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap whitespace-pre-wrap
+```
+
+* * *
+
+### 
+
+[](#sample-implementation)
+
+Sample Implementation
+
+Curl
+
+[](#tab-curl)
+
+Python
+
+[](#tab-python)
+
+Java
+
+[](#tab-java)
+
+JavaScript
+
+[](#tab-javascript)
+
+PHP
+
+[](#tab-php)
+
+C#
+
+[](#tab-c)
+
+Copy
+
+```
 curl --location 'https://api-staging.providusbank.com/GetProvidusAccount' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
@@ -70,102 +146,13 @@ curl --location 'https://api-staging.providusbank.com/GetProvidusAccount' \
     "userName" : "test",
     "password" : "test" 
 }'
-inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-{
-    "accountStatus":"ACTIVE",
-    "emailAddress":"[email protected]",
-    "phoneNumber":"08054477605",
-    "accountName":"CHARLY ODUMODU BLACK",
-    "bvn":"22100477606",
-    "accountNumber":"5900043856",
-    "cbaCustomerID":"45139",
-    "responseMessage":"SUCCESSFUL",
-    "availableBalance":"468520.951",
-    "responseCode":"00"
-}
-
+```
 
 > The above command returns JSON structured like this:
 
-The above command returns JSON structured like this:
+Copy
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-{
-    "accountStatus":"ACTIVE",
-    "emailAddress":"[email protected]",
-    "phoneNumber":"08054477605",
-    "accountName":"CHARLY ODUMODU BLACK",
-    "bvn":"22100477606",
-    "accountNumber":"5900043856",
-    "cbaCustomerID":"45139",
-    "responseMessage":"SUCCESSFUL",
-    "availableBalance":"468520.951",
-    "responseCode":"00"
-}
-
-
-> The above command returns JSON structured like this:
-
-The above command returns JSON structured like this:
-
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-{
-    "accountStatus":"ACTIVE",
-    "emailAddress":"[email protected]",
-    "phoneNumber":"08054477605",
-    "accountName":"CHARLY ODUMODU BLACK",
-    "bvn":"22100477606",
-    "accountNumber":"5900043856",
-    "cbaCustomerID":"45139",
-    "responseMessage":"SUCCESSFUL",
-    "availableBalance":"468520.951",
-    "responseCode":"00"
-}
-
-
-> The above command returns JSON structured like this:
-
-The above command returns JSON structured like this:
-
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-{
-    "accountStatus":"ACTIVE",
-    "emailAddress":"[email protected]",
-    "phoneNumber":"08054477605",
-    "accountName":"CHARLY ODUMODU BLACK",
-    "bvn":"22100477606",
-    "accountNumber":"5900043856",
-    "cbaCustomerID":"45139",
-    "responseMessage":"SUCCESSFUL",
-    "availableBalance":"468520.951",
-    "responseCode":"00"
-}
-
-
-> The above command returns JSON structured like this:
-
-The above command returns JSON structured like this:
-
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-{
-    "accountStatus":"ACTIVE",
-    "emailAddress":"[email protected]",
-    "phoneNumber":"08054477605",
-    "accountName":"CHARLY ODUMODU BLACK",
-    "bvn":"22100477606",
-    "accountNumber":"5900043856",
-    "cbaCustomerID":"45139",
-    "responseMessage":"SUCCESSFUL",
-    "availableBalance":"468520.951",
-    "responseCode":"00"
-}
-
-
-> The above command returns JSON structured like this:
-
-The above command returns JSON structured like this:
-
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "accountStatus":"ACTIVE",
     "emailAddress":"[email protected]",
@@ -179,5 +166,218 @@ The above command returns JSON structured like this:
     "responseCode":"00"
 }
 ```
+
+Copy
+
+```
+import requests
+import json
+
+url = "https://api-staging.providusbank.com/GetProvidusAccount"
+
+payload = json.dumps({
+  "accountNumber": "1700263070",
+  "userName": "test",
+  "password": "test"
+})
+headers = {
+  'Accept': 'application/json',
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+print(response.text)
+```
+
+> The above command returns JSON structured like this:
+
+Copy
+
+```
+{
+    "accountStatus":"ACTIVE",
+    "emailAddress":"[email protected]",
+    "phoneNumber":"08054477605",
+    "accountName":"CHARLY ODUMODU BLACK",
+    "bvn":"22100477606",
+    "accountNumber":"5900043856",
+    "cbaCustomerID":"45139",
+    "responseMessage":"SUCCESSFUL",
+    "availableBalance":"468520.951",
+    "responseCode":"00"
+}
+```
+
+Copy
+
+```
+OkHttpClient client = new OkHttpClient().newBuilder()
+  .build();
+MediaType mediaType = MediaType.parse("application/json");
+RequestBody body = RequestBody.create(mediaType, "{\n    \"accountNumber\": \"1700263070\",\n    \"userName\" : \"test\",\n    \"password\" : \"test\" \n}");
+Request request = new Request.Builder()
+  .url("https://api-staging.providusbank.com/GetProvidusAccount")
+  .method("POST", body)
+  .addHeader("Accept", "application/json")
+  .addHeader("Content-Type", "application/json")
+  .build();
+Response response = client.newCall(request).execute();
+```
+
+> The above command returns JSON structured like this:
+
+Copy
+
+```
+{
+    "accountStatus":"ACTIVE",
+    "emailAddress":"[email protected]",
+    "phoneNumber":"08054477605",
+    "accountName":"CHARLY ODUMODU BLACK",
+    "bvn":"22100477606",
+    "accountNumber":"5900043856",
+    "cbaCustomerID":"45139",
+    "responseMessage":"SUCCESSFUL",
+    "availableBalance":"468520.951",
+    "responseCode":"00"
+}
+```
+
+Copy
+
+```
+var data = JSON.stringify({
+  "accountNumber": "1700263070",
+  "userName": "test",
+  "password": "test"
+});
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function() {
+  if(this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("POST", "https://api-staging.providusbank.com/GetProvidusAccount");
+xhr.setRequestHeader("Accept", "application/json");
+xhr.setRequestHeader("Content-Type", "application/json");
+
+xhr.send(data);
+```
+
+> The above command returns JSON structured like this:
+
+Copy
+
+```
+{
+    "accountStatus":"ACTIVE",
+    "emailAddress":"[email protected]",
+    "phoneNumber":"08054477605",
+    "accountName":"CHARLY ODUMODU BLACK",
+    "bvn":"22100477606",
+    "accountNumber":"5900043856",
+    "cbaCustomerID":"45139",
+    "responseMessage":"SUCCESSFUL",
+    "availableBalance":"468520.951",
+    "responseCode":"00"
+}
+```
+
+Copy
+
+```
+<?php
+require_once 'HTTP/Request2.php';
+$request = new HTTP_Request2();
+$request->setUrl('https://api-staging.providusbank.com/GetProvidusAccount');
+$request->setMethod(HTTP_Request2::METHOD_POST);
+$request->setConfig(array(
+  'follow_redirects' => TRUE
+));
+$request->setHeader(array(
+  'Accept' => 'application/json',
+  'Content-Type' => 'application/json'
+));
+$request->setBody('{\n    "accountNumber": "1700263070",\n    "userName" : "test",\n    "password" : "test" \n}');
+try {
+  $response = $request->send();
+  if ($response->getStatus() == 200) {
+    echo $response->getBody();
+  }
+  else {
+    echo 'Unexpected HTTP status: ' . $response->getStatus() . ' ' .
+    $response->getReasonPhrase();
+  }
+}
+catch(HTTP_Request2_Exception $e) {
+  echo 'Error: ' . $e->getMessage();
+}
+```
+
+> The above command returns JSON structured like this:
+
+Copy
+
+```
+{
+    "accountStatus":"ACTIVE",
+    "emailAddress":"[email protected]",
+    "phoneNumber":"08054477605",
+    "accountName":"CHARLY ODUMODU BLACK",
+    "bvn":"22100477606",
+    "accountNumber":"5900043856",
+    "cbaCustomerID":"45139",
+    "responseMessage":"SUCCESSFUL",
+    "availableBalance":"468520.951",
+    "responseCode":"00"
+}
+```
+
+Copy
+
+```
+var options = new RestClientOptions("https://api-staging.providusbank.com")
+{
+  MaxTimeout = -1,
+};
+var client = new RestClient(options);
+var request = new RestRequest("/GetProvidusAccount", Method.Post);
+request.AddHeader("Accept", "application/json");
+request.AddHeader("Content-Type", "application/json");
+var body = @"{" + "\n" +
+@"    ""accountNumber"": ""1700263070""," + "\n" +
+@"    ""userName"" : ""test""," + "\n" +
+@"    ""password"" : ""test"" " + "\n" +
+@"}";
+request.AddStringBody(body, DataFormat.Json);
+RestResponse response = await client.ExecuteAsync(request);
+Console.WriteLine(response.Content);
+```
+
+> The above command returns JSON structured like this:
+
+Copy
+
+```
+{
+    "accountStatus":"ACTIVE",
+    "emailAddress":"[email protected]",
+    "phoneNumber":"08054477605",
+    "accountName":"CHARLY ODUMODU BLACK",
+    "bvn":"22100477606",
+    "accountNumber":"5900043856",
+    "cbaCustomerID":"45139",
+    "responseMessage":"SUCCESSFUL",
+    "availableBalance":"468520.951",
+    "responseCode":"00"
+}
+```
+
+[PreviousGet BVN Details](/payment/get-bvn-details)[NextGet NIP Transaction Status](/payment/get-nip-transaction-status)
 
 Last updated 1 year ago
