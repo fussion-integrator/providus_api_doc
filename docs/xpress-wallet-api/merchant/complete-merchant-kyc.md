@@ -16,9 +16,7 @@ Submit KYC documents for merchant registration.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -28,9 +26,7 @@ Submit KYC documents for merchant registration.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var request = http.MultipartRequest('PUT', Uri.parse('{{base-url}}/merchant/complete-merchant-registration'));
     request.fields.addAll({
