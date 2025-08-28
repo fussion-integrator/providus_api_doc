@@ -86,8 +86,6 @@ account number for the account
 
 [](#tab-id-500-internal-server-error-server-encountered-an-unexpected-error)
 
-Copy
-
 ```
 {
     "accountStatus":"ACTIVE",
@@ -135,8 +133,6 @@ C#
 
 [](#tab-c)
 
-Copy
-
 ```
 curl -x GET "https://api-demo.providusbank/account/?account_number=00017000" 
   -H "Authorization: {{Authentication token}}"
@@ -145,8 +141,6 @@ curl -x GET "https://api-demo.providusbank/account/?account_number=00017000"
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
 
 ```
 {
@@ -162,8 +156,6 @@ Copy
     "responseCode":"00"
 }
 ```
-
-Copy
 
 ```
 import requests
@@ -183,8 +175,6 @@ print(resp.status_code)
 
 > The above command returns JSON structured like this:
 
-Copy
-
 ```
 {
     "accountStatus":"ACTIVE",
@@ -199,8 +189,6 @@ Copy
     "responseCode":"00"
 }
 ```
-
-Copy
 
 ```
 URL url = new URL("https://api-demo.providusbank/account/?account_number=02030870010017000");
@@ -215,8 +203,6 @@ http.disconnect();
 
 > The above command returns JSON structured like this:
 
-Copy
-
 ```
 {
     "accountStatus":"ACTIVE",
@@ -231,8 +217,6 @@ Copy
     "responseCode":"00"
 }
 ```
-
-Copy
 
 ```
 var xhr = new XMLHttpRequest();
@@ -252,8 +236,6 @@ xhr.send();
 
 > The above command returns JSON structured like this:
 
-Copy
-
 ```
 {
     "accountStatus":"ACTIVE",
@@ -268,8 +250,6 @@ Copy
     "responseCode":"00"
 }
 ```
-
-Copy
 
 ```
 <?php
@@ -302,8 +282,6 @@ catch(HTTP_Request2_Exception $e) {
 
 > The above command returns JSON structured like this:
 
-Copy
-
 ```
 {
     "accountStatus":"ACTIVE",
@@ -319,8 +297,6 @@ Copy
 }
 ```
 
-Copy
-
 ```
 var client = new RestClient("https://api-staging.providusbank.com/account/?account_number=020300678870010017000");
 client.Timeout = -1;
@@ -333,8 +309,6 @@ Console.WriteLine(response.Content);
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
 
 ```
 {
