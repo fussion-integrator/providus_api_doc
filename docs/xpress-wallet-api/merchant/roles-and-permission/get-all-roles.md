@@ -5,9 +5,7 @@ Retrieve a list of all roles.
 *   **Endpoint**: `GET {{base-url}}/team/roles`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -18,9 +16,7 @@ Retrieve a list of all roles.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -37,9 +33,7 @@ Retrieve a list of all roles.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
