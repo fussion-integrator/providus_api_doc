@@ -5,9 +5,7 @@ Initiate multiple bank transfers in a single batch.
 *   **Endpoint**: `POST {{base-url}}/transfer/bank/batch`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -16,9 +14,7 @@ Initiate multiple bank transfers in a single batch.
     ```
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     [
       {
@@ -43,9 +39,7 @@ Initiate multiple bank transfers in a single batch.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -55,9 +49,7 @@ Initiate multiple bank transfers in a single batch.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
