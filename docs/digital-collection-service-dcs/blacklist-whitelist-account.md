@@ -32,8 +32,6 @@ To Blacklist an account, set the blacklist\_flag to 1, set to 0 if you want to w
 
 **Request (Blacklist)**
 
-Copy
-
 ```
 {
   "account_number": "9977708171",
@@ -42,8 +40,6 @@ Copy
 ```
 
 **Request (Whitelist)**
-
-Copy
 
 ```
 {
@@ -68,8 +64,6 @@ Copy
 
 [](#tab-id-500-internal-server-error)
 
-Copy
-
 ```
 {
   "requestSuccessful": true,
@@ -78,8 +72,6 @@ Copy
 }
 ```
 
-Copy
-
 ```
 {
   "requestSuccessful": false,
@@ -88,8 +80,6 @@ Copy
 }
 ```
 
-Copy
-
 ```
 {
   "requestSuccessful": false,
@@ -97,8 +87,6 @@ Copy
   "responseCode": "03"
 }
 ```
-
-Copy
 
 ```
 {
@@ -140,8 +128,6 @@ C#
 
 [](#tab-c)
 
-Copy
-
 ```
 curl -X POST http://154.113.16.142:8088/appdevapi/api/PiPBlacklistAccount \
 -H "Client-Id: dGVzdF9Qcm92aWR1cw==" \
@@ -149,8 +135,6 @@ curl -X POST http://154.113.16.142:8088/appdevapi/api/PiPBlacklistAccount \
 -H "Content-Type: application/json" \
 -d '{"account_number":"9977708171","blacklist_flg":1}'
 ```
-
-Copy
 
 ```
 import requests
@@ -170,8 +154,6 @@ data = {"account_number": "9977708171", "blacklist_flg": 1}
 response = requests.post(url, json=data, headers=headers)
 print(response.json())
 ```
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -214,8 +196,6 @@ public class BlacklistAccount {
 }
 ```
 
-Copy
-
 ```
 const fetch = require('node-fetch');
 const crypto = require('crypto');
@@ -242,8 +222,6 @@ fetch(url, {
 .catch(error => console.error('Error:', error));
 ```
 
-Copy
-
 ```
 <?php
 $clientId = "dGVzdF9Qcm92aWR1cw==";
@@ -268,8 +246,6 @@ curl_close($ch);
 echo $response;
 ?>
 ```
-
-Copy
 
 ```
 using System;
@@ -309,8 +285,6 @@ class Program
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
 
 ```
 {
