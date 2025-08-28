@@ -17,8 +17,6 @@ Changes the password of the authenticated user.
 
 **Request Body:**
 
-Copy
-
 ```
 {
   "password": "password"
@@ -26,8 +24,6 @@ Copy
 ```
 
 **Example Request (Dart - http):**
-
-Copy
 
 ```
 var headers = {
@@ -46,8 +42,6 @@ if (response.statusCode == 200) {
 ```
 
 **Response (200 OK):**
-
-Copy
 
 ```
 {
