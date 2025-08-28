@@ -17,8 +17,6 @@
 
 * * *
 
-Copy
-
 ```
 {
   "accountNumber": "1700263070",
@@ -45,8 +43,6 @@ Response body (JSON)
 
 [](#tab-id-500-internal-server-error-server-encountered-an-unexpected-error)
 
-Copy
-
 ```
 {
   "accountStatus": "ACTIVE",
@@ -62,8 +58,6 @@ Copy
 }
 ```
 
-Copy
-
 ```
 {
   "responseMessage": "Account does not exist.",
@@ -71,16 +65,12 @@ Copy
 }
 ```
 
-Copy
-
 ```
 {
   "responseMessage": "Account does not exist.",
   "responseCode": "01"
 }
 ```
-
-Copy
 
 ```
 {
@@ -121,16 +111,12 @@ C#
 
 [](#tab-c)
 
-Copy
-
 ```
 curl -X POST http://154.113.16.142:8882/postingrest/GetProvidusAccount \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -d '{"accountNumber":"1700263070","userName":"test","password":"test"}'
 ```
-
-Copy
 
 ```
 import requests
@@ -145,8 +131,6 @@ data = {
 response = requests.post(url, json=data, headers=headers)
 print(response.json())
 ```
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -181,8 +165,6 @@ public class GetProvidusAccount {
 }
 ```
 
-Copy
-
 ```
 const fetch = require('node-fetch');
 
@@ -207,8 +189,6 @@ fetch(url, {
 .catch(error => console.error('Error:', error));
 ```
 
-Copy
-
 ```
 <?php
 $url = "http://154.113.16.142:8882/postingrest/GetProvidusAccount";
@@ -232,8 +212,6 @@ curl_close($ch);
 echo $response;
 ?>
 ```
-
-Copy
 
 ```
 using System;
@@ -262,8 +240,6 @@ class Program
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
 
 ```
 {
