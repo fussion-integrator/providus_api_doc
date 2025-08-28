@@ -26,8 +26,6 @@ Post http://154.113.16.142:8088/appdevapi/api/`PiPUpdateAccountName`
 
 **Request (Custom Reference)**
 
-Copy
-
 ```
 {
   "account_number": "9977702760",
@@ -51,8 +49,6 @@ Copy
 
 [](#tab-id-500-internal-server-error)
 
-Copy
-
 ```
 {
   "requestSuccessful": true,
@@ -61,8 +57,6 @@ Copy
 }
 ```
 
-Copy
-
 ```
 {
 "requestSuccessful": false,
@@ -72,8 +66,6 @@ Copy
 }
 ```
 
-Copy
-
 ```
 {
 "requestSuccessful": false,
@@ -82,8 +74,6 @@ Copy
 "initiationTranRef": ""
 }
 ```
-
-Copy
 
 ```
 {
@@ -126,8 +116,6 @@ C#
 
 [](#tab-c)
 
-Copy
-
 ```
 curl -X POST http://154.113.16.142:8088/appdevapi/api/PiPUpdateAccountName \
 -H "Client-Id: dGVzdF9Qcm92aWR1cw==" \
@@ -135,8 +123,6 @@ curl -X POST http://154.113.16.142:8088/appdevapi/api/PiPUpdateAccountName \
 -H "Content-Type: application/json" \
 -d '{"account_number":"9977702760","account_name":"Jack"}'
 ```
-
-Copy
 
 ```
 import requests
@@ -156,8 +142,6 @@ data = {"account_number": "9977702760", "account_name": "Jack"}
 response = requests.post(url, json=data, headers=headers)
 print(response.json())
 ```
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -200,8 +184,6 @@ public class UpdateAccountName {
 }
 ```
 
-Copy
-
 ```
 const fetch = require('node-fetch');
 const crypto = require('crypto');
@@ -228,8 +210,6 @@ fetch(url, {
 .catch(error => console.error('Error:', error));
 ```
 
-Copy
-
 ```
 <?php
 $clientId = "dGVzdF9Qcm92aWR1cw==";
@@ -254,8 +234,6 @@ curl_close($ch);
 echo $response;
 ?>
 ```
-
-Copy
 
 ```
 using System;
@@ -295,8 +273,6 @@ class Program
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
 
 ```
 {
