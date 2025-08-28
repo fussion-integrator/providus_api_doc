@@ -46,102 +46,210 @@ Request (Auto-gen Reference)
 
 ### Sample Implementation
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap whitespace-pre-wrap
-curl -X POST http://154.113.16.142:8088/appdevapi/api/PiPCreateDynamicAccountNumber \
--H "Client-Id: dGVzdF9Qcm92aWR1cw==" \
--H "X-Auth-Signature: BE09BEE831CF262226B426E39BD109f2AF84DC63076D4174FAC78A2261F9A3D6E59744983B8326B69CDF2963FE314DFC89635CFA37A40596508DD6EAAB09402C7" \
--H "Content-Type: application/json" \
--d '{"account_name":"lemuel","payment_ref":"Prov2312"}'
+### Curl
 
+```curl
+curl -X POST "https://api.providusbank.com/api/endpoint" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"
+```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.io.OutputStream;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.security.MessageDigest;
+### Python
 
-public class CreateDynamicAccount {
-    public static void main(String[] args) throws Exception {
-        String clientId = "dGVzdF9Qcm92aWR1cw==";
-        String clientSecret = "29A492021F4B709A8D1152C3EF4D32DC5A7092723ECAC4C511781003584B48873CCBFEBDEAE89CF22ED1CB1A836213549BC6638A3B563CA7FC009BEB3BC30CF8";
-        String signature = MessageDigest.getInstance("SHA-512")
-            .digest((clientId + ":" + clientSecret).getBytes("UTF-8"))
-            .toString().toUpperCase();
+```python
+import requests
 
-        URL url = new URL("http://154.113.16.142:8088/appdevapi/api/PiPCreateDynamicAccountNumber");
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestMethod("POST");
-        conn.setRequestProperty("Client-Id", clientId);
-        conn.setRequestProperty("X-Auth-Signature", signature);
-        conn.setRequestProperty("Content-Type", "application/json");
-        conn.setDoOutput(true);
-
-        String jsonInput = "{\"account_name\":\"lemuel\",\"payment_ref\":\"Prov2312\"}";
-        try (OutputStream os = conn.getOutputStream()) {
-            byte[] input = jsonInput.getBytes("utf-8");
-            os.write(input, 0, input.length);
-        }
-
-        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"));
-        StringBuilder response = new StringBuilder();
-        String responseLine;
-        while ((responseLine = br.readLine()) != null) {
-            response.append(responseLine.trim());
-        }
-        System.out.println(response.toString());
-    }
-}
-inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-{
-  "account_number": "9978012701",
-  "account_name": "lemuel",
-  "requestSuccessful": true,
-  "responseMessage": "OPERATION SUCCESSFUL",
-  "responseCode": "00",
-  "initiationTranRef": "Prov2312"
+url = "https://api.providusbank.com/api/endpoint"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
 }
 
+response = requests.post(url, headers=headers)
+print(response.json())
+```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+### Javascript
+
+```javascript
+const response = await fetch('https://api.providusbank.com/api/endpoint', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  }
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+### Nodejs
+
+```nodejs
+const axios = require('axios');
+
+const config = {
+  method: 'post',
+  url: 'https://api.providusbank.com/api/endpoint',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  }
+};
+
+axios(config)
+  .then(response => console.log(response.data))
+  .catch(error => console.error(error));
+```
+
+### Php
+
+```php
 <?php
-$clientId = "dGVzdF9Qcm92aWR1cw==";
-$clientSecret = "29A492021F4B709A8D1152C3EF4D32DC5A7092723ECAC4C511781003584B48873CCBFEBDEAE89CF22ED1CB1A836213549BC6638A3B563CA7FC009BEB3BC30CF8";
-$signature = strtoupper(hash('sha512', $clientId . ':' . $clientSecret));
-
-$url = "http://154.113.16.142:8088/appdevapi/api/PiPCreateDynamicAccountNumber";
+$url = "https://api.providusbank.com/api/endpoint";
 $headers = [
-    "Client-Id: $clientId",
-    "X-Auth-Signature: $signature",
+    "Authorization: Bearer YOUR_API_KEY",
     "Content-Type: application/json"
 ];
-$data = ["account_name" => "lemuel", "payment_ref" => "Prov2312"];
 
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$response = curl_exec($ch);
-curl_close($ch);
+$context = stream_context_create([
+    'http' => [
+        'method' => 'POST',
+        'header' => implode("\r\n", $headers)
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
 echo $response;
 ?>
+```
 
+### Java
 
-> The above command returns JSON structured like this
+```java
+import java.net.http.*;
+import java.net.URI;
+import java.time.Duration;
 
-The above command returns JSON structured like this
+public class ApiClient {
+    public static void main(String[] args) throws Exception {
+        HttpClient client = HttpClient.newBuilder()
+            .connectTimeout(Duration.ofSeconds(10))
+            .build();
+            
+        HttpRequest request = HttpRequest.newBuilder()
+            .uri(URI.create("https://api.providusbank.com/api/endpoint"))
+            .header("Authorization", "Bearer YOUR_API_KEY")
+            .header("Content-Type", "application/json")
+            .POST(HttpRequest.BodyPublishers.noBody())
+            .build();
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-{
-  "account_number": "9978012701",
-  "account_name": "lemuel",
-  "requestSuccessful": true,
-  "responseMessage": "OPERATION SUCCESSFUL",
-  "responseCode": "00",
-  "initiationTranRef": "Prov2312"
+        HttpResponse<String> response = client.send(request, 
+            HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.body());
+    }
 }
 ```
 
-Last updated 23 days ago
+### Csharp
+
+```csharp
+using System;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+
+class Program
+{
+    private static readonly HttpClient client = new HttpClient();
+    
+    static async Task Main()
+    {
+        client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
+        
+        var response = await client.GetAsync("https://api.providusbank.com/api/endpoint");
+        
+        var responseContent = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(responseContent);
+    }
+}
+```
+
+### Dart
+
+```dart
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+Future<void> makeApiCall() async {
+  final url = Uri.parse('https://api.providusbank.com/api/endpoint');
+  final headers = {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json',
+  };
+  
+  final response = await http.post(url, headers: headers);
+  
+  if (response.statusCode == 200) {
+    final data = jsonDecode(response.body);
+    print(data);
+  } else {
+    print('Error: ${response.statusCode}');
+  }
+}
+```
+
+### Go
+
+```go
+package main
+
+import (
+    "bytes"
+    "encoding/json"
+    "fmt"
+    "io"
+    "net/http"
+)
+
+func main() {
+    url := "https://api.providusbank.com/api/endpoint"
+    
+    req, _ := http.NewRequest("POST", url, nil)
+    
+    req.Header.Set("Authorization", "Bearer YOUR_API_KEY")
+    req.Header.Set("Content-Type", "application/json")
+    
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    if err != nil {
+        panic(err)
+    }
+    defer resp.Body.Close()
+    
+    body, _ := io.ReadAll(resp.Body)
+    fmt.Println(string(body))
+}
+```
+
+### Ruby
+
+```ruby
+require 'net/http'
+require 'json'
+
+uri = URI('https://api.providusbank.com/api/endpoint')
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+
+request = Net::HTTP::Post.new(uri)
+request['Authorization'] = 'Bearer YOUR_API_KEY'
+request['Content-Type'] = 'application/json'
+
+
+
+response = http.request(request)
+puts JSON.parse(response.body)
+```
+
