@@ -1,36 +1,66 @@
-1. Payment
-
 # NIP Fund Transfer Multiple Debit Accounts
 
-Get the status of a transaction .
+* * *
 
-#### Test Base URL
+#### 
 
-https://api-staging.providusbank.com
+[](#test-base-url)
 
-#### Production Base URL
+Test Base URL
 
-https://api.providusbank.com
+[https://api-staging.providusbank.com](https://api-staging.providusbank.com
 
-#### HTTP Request
+)
+
+#### 
+
+[](#production-base-url)
+
+Production Base URL
+
+[https://api.providusbank.com](https://api.providusbank.com)
+
+#### 
+
+[](#http-request)
+
+HTTP Request
 
 POST /NIPFundTransferMultipleDebitAccounts
 
-## NIP Bank.
+* * *
 
-`POST``https://api-staging.providusbank.com/v1/NIPFundTransferMultipleDebitAccounts`NIP Fund Transfer Multiple Debit Accounts.
+## 
 
-#### Request Body
+[](#nip-bank)
 
-transactionAmount*
+NIP Bank.
+
+`POST` `https://api-staging.providusbank.com/v1/NIPFundTransferMultipleDebitAccounts`
+
+NIP Fund Transfer Multiple Debit Accounts.
+
+#### 
+
+[](#request-body)
+
+Request Body
+
+Name
+
+Type
+
+Description
+
+transactionAmount\*
 
 String
 
-currencyCode*
+currencyCode\*
 
 String
 
-beneficiaryAccountName*
+beneficiaryAccountName\*
 
 String
 
@@ -38,37 +68,87 @@ narration
 
 String
 
-debitAccount*
+debitAccount\*
 
 String
 
-sourceAccountName*
+sourceAccountName\*
 
 String
 
-beneficiaryAccountNumber*
+beneficiaryAccountNumber\*
 
 String
 
-beneficiaryBank*
+beneficiaryBank\*
 
 String
 
-transactionReference*
+transactionReference\*
 
 String
 
-userName*
+userName\*
 
 String
 
-password*
+password\*
 
 String
 
-### Sample Implementation
+200 Status successfully retrieved
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap whitespace-pre-wrap
+[](#tab-id-200-status-successfully-retrieved)
+
+401: Unauthorized Permission denied
+
+[](#tab-id-401-unauthorized-permission-denied)
+
+400: Bad Request The server cannot process the request due to a client error, such as malformed syntax or invalid parameters in the request.
+
+[](#tab-id-400-bad-request-the-server-cannot-process-the-request-due-to-a-client-error-such-as-malformed-syntax)
+
+500: Internal Server Error Server encountered an unexpected error
+
+[](#tab-id-500-internal-server-error-server-encountered-an-unexpected-error)
+
+Copy
+
+* * *
+
+### 
+
+[](#sample-implementation)
+
+Sample Implementation
+
+Curl
+
+[](#tab-curl)
+
+Python
+
+[](#tab-python)
+
+Java
+
+[](#tab-java)
+
+JavaScript
+
+[](#tab-javascript)
+
+PHP
+
+[](#tab-php)
+
+C#
+
+[](#tab-c)
+
+Copy
+
+```
 curl --location 'https://api-staging.providusbank.com/NIPFundTransferMultipleDebitAccounts' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
@@ -82,9 +162,9 @@ curl --location 'https://api-staging.providusbank.com/NIPFundTransferMultipleDeb
 
 > The above command returns JSON structured like this:
 
-The above command returns JSON structured like this:
+Copy
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "transactionReference": "35326323fghn", 
     "responseMessage": " Approved or completed successfully", 
@@ -92,7 +172,9 @@ The above command returns JSON structured like this:
 }
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 import requests
 import json
 
@@ -119,14 +201,13 @@ headers = {
 response = requests.request("POST", url, headers=headers, data=payload)
 
 print(response.text)
-
 ```
 
 > The above command returns JSON structured like this:
 
-The above command returns JSON structured like this:
+Copy
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "transactionReference": "35326323fghn", 
     "responseMessage": " Approved or completed successfully", 
@@ -134,7 +215,9 @@ The above command returns JSON structured like this:
 }
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 OkHttpClient client = new OkHttpClient().newBuilder()
   .build();
 MediaType mediaType = MediaType.parse("application/json");
@@ -150,9 +233,9 @@ Response response = client.newCall(request).execute();
 
 > The above command returns JSON structured like this:
 
-The above command returns JSON structured like this:
+Copy
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "transactionReference": "35326323fghn", 
     "responseMessage": " Approved or completed successfully", 
@@ -160,7 +243,9 @@ The above command returns JSON structured like this:
 }
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 var data = JSON.stringify({
   "beneficiaryAccountName": "Nathan Agbara",
   "transactionAmount": "50",
@@ -193,9 +278,9 @@ xhr.send(data);
 
 > The above command returns JSON structured like this:
 
-The above command returns JSON structured like this:
+Copy
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "transactionReference": "35326323fghn", 
     "responseMessage": " Approved or completed successfully", 
@@ -203,7 +288,9 @@ The above command returns JSON structured like this:
 }
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 <?php
 require_once 'HTTP/Request2.php';
 $request = new HTTP_Request2();
@@ -234,9 +321,9 @@ catch(HTTP_Request2_Exception $e) {
 
 > The above command returns JSON structured like this:
 
-The above command returns JSON structured like this:
+Copy
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "transactionReference": "35326323fghn", 
     "responseMessage": " Approved or completed successfully", 
@@ -244,7 +331,9 @@ The above command returns JSON structured like this:
 }
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 var options = new RestClientOptions("https://api-staging.providusbank.com")
 {
   MaxTimeout = -1,
@@ -266,14 +355,16 @@ Console.WriteLine(response.Content);
 
 > The above command returns JSON structured like this:
 
-The above command returns JSON structured like this:
+Copy
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "transactionReference": "35326323fghn", 
     "responseMessage": " Approved or completed successfully", 
     "responseCode": "00"
 }
 ```
+
+[PreviousGet Providus Transaction Status](/payment/get-providus-transaction-status)[NextNIP Fund Transfer](/payment/nip-fund-transfer)
 
 Last updated 1 year ago
