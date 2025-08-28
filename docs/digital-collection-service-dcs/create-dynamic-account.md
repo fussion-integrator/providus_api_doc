@@ -26,8 +26,6 @@ Post http://154.113.16.142:8088/appdevapi/api/PiPCreateDnamicAccountNumber
 
 **Request (Auto-gen Reference)**
 
-Copy
-
 ```
 {
   "account_name": "lemuel"
@@ -35,8 +33,6 @@ Copy
 ```
 
 **Request (Custom Reference)**
-
-Copy
 
 ```
 {
@@ -61,8 +57,6 @@ Copy
 
 [](#tab-id-500-internal-server-error)
 
-Copy
-
 ```
 {
   "account_number": "9978012701",
@@ -74,8 +68,6 @@ Copy
 }
 ```
 
-Copy
-
 ```
 {
 "requestSuccessful": false,
@@ -85,8 +77,6 @@ Copy
 }
 ```
 
-Copy
-
 ```
 {
 "requestSuccessful": false,
@@ -95,8 +85,6 @@ Copy
 "initiationTranRef": ""
 }
 ```
-
-Copy
 
 ```
 {
@@ -139,8 +127,6 @@ C#
 
 [](#tab-c)
 
-Copy
-
 ```
 curl -X POST http://154.113.16.142:8088/appdevapi/api/PiPCreateDynamicAccountNumber \
 -H "Client-Id: dGVzdF9Qcm92aWR1cw==" \
@@ -148,8 +134,6 @@ curl -X POST http://154.113.16.142:8088/appdevapi/api/PiPCreateDynamicAccountNum
 -H "Content-Type: application/json" \
 -d '{"account_name":"lemuel","payment_ref":"Prov2312"}'
 ```
-
-Copy
 
 ```
 import requests
@@ -169,8 +153,6 @@ data = {"account_name": "lemuel", "payment_ref": "Prov2312"}
 response = requests.post(url, json=data, headers=headers)
 print(response.json())
 ```
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -215,8 +197,6 @@ public class CreateDynamicAccount {
 
 > The above command returns JSON structured like this:
 
-Copy
-
 ```
 {
   "account_number": "9978012701",
@@ -227,8 +207,6 @@ Copy
   "initiationTranRef": "Prov2312"
 }
 ```
-
-Copy
 
 ```
 const fetch = require('node-fetch');
@@ -256,8 +234,6 @@ fetch(url, {
 .catch(error => console.error('Error:', error));
 ```
 
-Copy
-
 ```
 <?php
 $clientId = "dGVzdF9Qcm92aWR1cw==";
@@ -282,8 +258,6 @@ curl_close($ch);
 echo $response;
 ?>
 ```
-
-Copy
 
 ```
 using System;
@@ -323,8 +297,6 @@ class Program
 ```
 
 > The above command returns JSON structured like this
-
-Copy
 
 ```
 {
