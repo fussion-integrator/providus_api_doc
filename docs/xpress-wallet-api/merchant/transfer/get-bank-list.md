@@ -5,9 +5,7 @@ Retrieve a list of supported banks.
 *   **Endpoint**: `GET {{base-url}}/transfer/banks`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -18,9 +16,7 @@ Retrieve a list of supported banks.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -35,9 +31,7 @@ Retrieve a list of supported banks.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
