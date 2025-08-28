@@ -86,8 +86,6 @@ bvn number of account owner
 
 [](#tab-id-500-internal-server-error-server-encountered-an-unexpected-error)
 
-Copy
-
 * * *
 
 ### 
@@ -120,8 +118,6 @@ C#
 
 [](#tab-c)
 
-Copy
-
 ```
 curl -x GET "https://api-demo.providusbank/account/NIP/banks"
   -H "Authorization: {{Authentication token}}"
@@ -130,8 +126,6 @@ curl -x GET "https://api-demo.providusbank/account/NIP/banks"
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
 
 ```
 {
@@ -161,8 +155,6 @@ Copy
     "responseMessage":"SUCCESS",
     "responseCode":"00"}
 ```
-
-Copy
 
 ```
 import requests
@@ -178,8 +170,6 @@ headers["Password"] = "Password"
 
 > The above command returns JSON structured like this:
 
-Copy
-
 ```
 {
     "banks":[
@@ -208,8 +198,6 @@ Copy
     "responseMessage":"SUCCESS",
     "responseCode":"00"}
 ```
-
-Copy
 
 ```
 URL url = new URL("https://api-demo.providusbank/account/NIP/banks");
@@ -224,8 +212,6 @@ http.disconnect();
 
 > The above command returns JSON structured like this:
 
-Copy
-
 ```
 {
     "banks":[
@@ -254,8 +240,6 @@ Copy
     "responseMessage":"SUCCESS",
     "responseCode":"00"}
 ```
-
-Copy
 
 ```
 var xhr = new XMLHttpRequest();
@@ -275,8 +259,6 @@ xhr.send();
 
 > The above command returns JSON structured like this:
 
-Copy
-
 ```
 {
     "banks":[
@@ -305,8 +287,6 @@ Copy
     "responseMessage":"SUCCESS",
     "responseCode":"00"}
 ```
-
-Copy
 
 ```
 <?php
@@ -340,8 +320,6 @@ catch(HTTP_Request2_Exception $e) {
 
 > The above command returns JSON structured like this:
 
-Copy
-
 ```
 {
     "banks":[
@@ -371,8 +349,6 @@ Copy
     "responseCode":"00"}
 ```
 
-Copy
-
 ```
 var client = new RestClient("https://api-staging.providusbank.com/account/NIP/banks");
 client.Timeout = -1;
@@ -385,8 +361,6 @@ Console.WriteLine(response.Content);
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
 
 ```
 {
