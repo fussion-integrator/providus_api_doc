@@ -5,9 +5,7 @@ Retrieve the merchant's access keys.
 *   **Endpoint**: `GET {{base-url}}/merchant/my-access-keys`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -18,9 +16,7 @@ Retrieve the merchant's access keys.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -33,9 +29,7 @@ Retrieve the merchant's access keys.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
