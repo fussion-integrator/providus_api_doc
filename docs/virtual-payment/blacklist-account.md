@@ -1,5 +1,3 @@
-1. Virtual Payment
-
 # Blacklist Account
 
-Endpoint Blacklist Account: This endpoint is for blacklisting an account, in the case where an account is reported to be involved in fradulent activity.
+[PreviousCreate Reserved Account Number](/virtual-payment/create-reserved-account-number)[NextDigital Collection Service (DCS)](/digital-collection-service-dcs)
