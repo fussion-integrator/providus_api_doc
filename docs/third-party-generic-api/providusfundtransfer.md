@@ -15,8 +15,6 @@
 
 **Request** (JSON):
 
-Copy
-
 ```
 {
   "creditAccount": "5900174721",
@@ -46,8 +44,6 @@ Copy
 
 [](#tab-id-500-internal-server-error)
 
-Copy
-
 ```
 {
   "amount": "100.0",
@@ -58,8 +54,6 @@ Copy
 }
 ```
 
-Copy
-
 ```
 {
   "transactionReference": "20191119143501",
@@ -68,8 +62,6 @@ Copy
 }
 ```
 
-Copy
-
 ```
 {
   "transactionReference": "20191119143501",
@@ -77,8 +69,6 @@ Copy
   "responseCode": "7709"
 }
 ```
-
-Copy
 
 ```
 {
@@ -120,16 +110,12 @@ C#
 
 [](#tab-c)
 
-Copy
-
 ```
 curl -X POST http://154.113.16.142:8882/postingrest/ProvidusFundTransfer \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -d '{"creditAccount":"5900174721","debitAccount":"1700313889","transactionAmount":"2000.45","currencyCode":"NGN","narration":"Testing","transactionReference":"20191119143501","userName":"test","password":"test"}'
 ```
-
-Copy
 
 ```
 import requests
@@ -149,8 +135,6 @@ data = {
 response = requests.post(url, json=data, headers=headers)
 print(response.json())
 ```
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -185,8 +169,6 @@ public class ProvidusFundTransfer {
 }
 ```
 
-Copy
-
 ```
 const fetch = require('node-fetch');
 
@@ -215,8 +197,6 @@ fetch(url, {
 .then(data => console.log(data))
 .catch(error => console.error('Error:', error));
 ```
-
-Copy
 
 ```
 <?php
@@ -247,8 +227,6 @@ echo $response;
 ?>
 ```
 
-Copy
-
 ```
 using System;
 using System.Net.Http;
@@ -276,8 +254,6 @@ class Program
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
 
 ```
 {
