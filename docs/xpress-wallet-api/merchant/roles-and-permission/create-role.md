@@ -5,9 +5,7 @@ Create a new role with specified permissions.
 *   **Endpoint**: `POST {{base-url}}/team/roles`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -16,9 +14,7 @@ Create a new role with specified permissions.
     ```
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     {
       "name": "Customer Representative",
@@ -29,9 +25,7 @@ Create a new role with specified permissions.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -46,9 +40,7 @@ Create a new role with specified permissions.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
