@@ -1,32 +1,64 @@
-1. Provi Bill
-
 # Get Field
 
-**Endpoint**`GET /field/assigned/byBillId/{billId}`Description: Retrieves the fields required for a specific bill ID.
+**Endpoint**: `GET /field/assigned/byBillId/{billId}`
 
-**Description**Authentication: Basic Auth (Username, Password)
+**Description**: Retrieves the fields required for a specific bill ID.
 
-**Authentication**Path Parameters:
+**Authentication**: Basic Auth (Username, Password)
 
-**Path Parameters**- billId (required): The ID of the bill (e.g., 1099 for Ikeja Prepaid).
+**Path Parameters**:
 
-billId (required): The ID of the bill (e.g., 1099 for Ikeja Prepaid).
+*   billId (required): The ID of the bill (e.g., 1099 for Ikeja Prepaid).
+    
 
-Response:
+**Response**:
 
-**Response**- 200 OK: Returns a JSON object containing the bill ID, fee, field ID, fields, type, and validation status.
+*   **200 OK**: Returns a JSON object containing the bill ID, fee, field ID, fields, type, and validation status.
+    
 
-200 OK: Returns a JSON object containing the bill ID, fee, field ID, fields, type, and validation status.
+* * *
 
-**200 OK**### Sample Implementation
+### 
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap whitespace-pre-wrap
+[](#sample-implementation)
+
+Sample Implementation
+
+Curl
+
+[](#tab-curl)
+
+Python
+
+[](#tab-python)
+
+Java
+
+[](#tab-java)
+
+JavaScript
+
+[](#tab-javascript)
+
+PHP
+
+[](#tab-php)
+
+C#
+
+[](#tab-c)
+
+Copy
+
+```
 curl --request GET \
   --url 'http://154.113.16.142:9999/provipay/webapi/field/assigned/byBillId/1099' \
   --header 'Authorization: Basic <base64-encoded-username:password>'
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 import requests
 
 headers = {
@@ -40,7 +72,9 @@ else:
     print(response.reason)
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.io.BufferedReader;
@@ -70,7 +104,9 @@ public class Main {
 }
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 const headers = {
     'Authorization': 'Basic <base64-encoded-username:password>'
 };
@@ -89,7 +125,9 @@ fetch('http://154.113.16.142:9999/provipay/webapi/field/assigned/byBillId/1099',
 .catch(error => console.error(error));
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 <?php
 $ch = curl_init();
 
@@ -112,7 +150,9 @@ curl_close($ch);
 ?>
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -140,9 +180,11 @@ class Program
 }
 ```
 
-Example Response:
+**Example Response**:
 
-**Example Response**```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 {
     "bill_id": 1099,
     "fee": 0,
@@ -170,4 +212,6 @@ Example Response:
 }
 ```
 
-Last updated 8 days ago
+[PreviousGet Bills by Category](/provi-bill/get-bills-by-category)[NextValidate](/provi-bill/validate)
+
+Last updated 24 days ago
