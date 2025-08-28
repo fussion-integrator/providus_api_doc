@@ -104,8 +104,6 @@ The OAuth client redirect URI ( must be URL encoded )
 
 [](#tab-id-500-internal-server-error-server-encountered-an-unexpected-error)
 
-Copy
-
 * * *
 
 ### 
@@ -138,8 +136,6 @@ C#
 
 [](#tab-c)
 
-Copy
-
 ```
 curl --location --request POST 'https://mgw-staging.providusbank.com/transaction/oauth/authorize/' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
@@ -151,10 +147,6 @@ curl --location --request POST 'https://mgw-staging.providusbank.com/transaction
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
-
-Copy
 
 ```
 import requests
@@ -170,10 +162,6 @@ print(resp.status_code)
 
 > The above command returns JSON structured like this:
 
-Copy
-
-Copy
-
 ```
 URL url = new URL("https://api-staging.providusbank.com/account/NIP?account_number=3041004406&bank_code=57");
 HttpURLConnection http = (HttpURLConnection)url.openConnection();
@@ -185,10 +173,6 @@ http.disconnect();
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
-
-Copy
 
 ```
 var xhr = new XMLHttpRequest();
@@ -207,10 +191,6 @@ xhr.send();
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
-
-Copy
 
 ```
 <?php
@@ -243,10 +223,6 @@ catch(HTTP_Request2_Exception $e) {
 
 > The above command returns JSON structured like this:
 
-Copy
-
-Copy
-
 ```
 var client = new RestClient("https://api-staging.providusbank.com/account/NIP?account_number=3041004406&bank_code=57");
 client.Timeout = -1;
@@ -259,8 +235,6 @@ Console.WriteLine(response.Content);
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
 
 [PreviousTransactions](/transactions)[NextExchange authorization code for access token](/transactions/exchange-authorization-code-for-access-token)
 
