@@ -5,9 +5,7 @@ Resend an invitation to a team member.
 *   **Endpoint**: `POST {{base-url}}/team/invitations/resend`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -16,9 +14,7 @@ Resend an invitation to a team member.
     ```
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     {
       "email": "[email protected]"
@@ -28,9 +24,7 @@ Resend an invitation to a team member.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -40,9 +34,7 @@ Resend an invitation to a team member.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
