@@ -5,9 +5,7 @@ Generate new access keys for the merchant.
 *   **Endpoint**: `POST {{base-url}}/merchant/generate-access-keys`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -18,9 +16,7 @@ Generate new access keys for the merchant.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -33,9 +29,7 @@ Generate new access keys for the merchant.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
