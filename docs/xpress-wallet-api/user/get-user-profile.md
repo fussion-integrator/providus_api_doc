@@ -17,8 +17,6 @@ Retrieves the profile details of the authenticated merchant.
 
 **Example Request (Dart - http):**
 
-Copy
-
 ```
 var headers = {
   'X-Access-Token': '{{access-token}}',
@@ -35,8 +33,6 @@ if (response.statusCode == 200) {
 ```
 
 **Response (200 OK):**
-
-Copy
 
 ```
 {
