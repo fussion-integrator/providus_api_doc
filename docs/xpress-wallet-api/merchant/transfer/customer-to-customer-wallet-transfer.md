@@ -5,9 +5,7 @@ Transfer funds between customer wallets.
 *   **Endpoint**: `POST {{base-url}}/transfer/wallet`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "Authorization": "Bearer {{vault:authorization-secret}}",
@@ -17,9 +15,7 @@ Transfer funds between customer wallets.
     ```
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     {
       "amount": 200,
@@ -31,9 +27,7 @@ Transfer funds between customer wallets.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -54,9 +48,7 @@ Transfer funds between customer wallets.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
