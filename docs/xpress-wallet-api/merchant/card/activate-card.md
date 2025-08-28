@@ -5,9 +5,7 @@ Activate a card for a customer.
 *   **Endpoint**: `POST {{base-url}}/card/activate`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -16,9 +14,7 @@ Activate a card for a customer.
     ```
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     {
       "amount": 200,
@@ -30,9 +26,7 @@ Activate a card for a customer.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -42,9 +36,7 @@ Activate a card for a customer.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
