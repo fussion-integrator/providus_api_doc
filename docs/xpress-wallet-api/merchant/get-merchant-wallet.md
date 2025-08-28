@@ -5,9 +5,7 @@ Retrieve the merchant's wallet details.
 *   **Endpoint**: `GET {{base-url}}/merchant/wallet`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "Authorization": "Bearer {{vault:authorization-secret}}",
@@ -19,9 +17,7 @@ Retrieve the merchant's wallet details.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -44,9 +40,7 @@ Retrieve the merchant's wallet details.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
