@@ -1,157 +1,114 @@
-1. Payment
-
 # Get NIP Transaction Status
 
-Get the status of an NIP transaction.
+* * *
 
-#### Test Base URL
+#### 
 
-https://api-staging.providusbank.com
+[](#test-base-url)
 
-#### Production Base URL
+Test Base URL
 
-https://api.providusbank.com
+[https://api-staging.providusbank.com](https://api-staging.providusbank.com
 
-#### HTTP Request
+)
+
+#### 
+
+[](#production-base-url)
+
+Production Base URL
+
+[https://api.providusbank.com](https://api.providusbank.com)
+
+#### 
+
+[](#http-request)
+
+HTTP Request
 
 POST /GetNIPTransactionStatus
 
-## NIP Transaction Account.
+* * *
 
-`POST``https://api-staging.providusbank.com/v1/GetNIPTransactionStatus`Get NIP Transaction Account Status.
+## 
 
-#### Headers
+[](#nip-transaction-account)
 
-Accept*
+NIP Transaction Account.
+
+`POST` `https://api-staging.providusbank.com/v1/GetNIPTransactionStatus`
+
+Get NIP Transaction Account Status.
+
+#### 
+
+[](#headers)
+
+Headers
+
+Name
+
+Type
+
+Description
+
+Accept\*
 
 application/json
 
-Content-Type*
+Content-Type\*
 
 application/json
 
-#### Request Body
+#### 
 
-transactionReference*
+[](#request-body)
+
+Request Body
+
+Name
+
+Type
+
+Description
+
+transactionReference\*
 
 String
 
 Reference to the transaction
 
-userName*
+userName\*
 
 String
 
 Username of account owner
 
-password*
+password\*
 
 String
 
 Password of account owner
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-{
-    "amount":"100.00",
-    "recipientBankCode":"000004",
-    "recipientAccountNumber":"1020808489",
-    "transactionReference":"prov9988zzjzj11| 000023211018133747005000003198",
-    "transactionDateTime":"2021-10-18 13:32:28",
-    "currency":"1",
-    "responseMessage":" Approved or completed successfully",
-    "responseCode":"00"
-}
-inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap whitespace-pre-wrap
-curl -x GET "https://api-staging.providusbank.com/payment/NIP/status?transaction_reference=prov9988zzjzj11"
-  -H "Authorization: {{Authentication token}}"
-  -H "Username: Username"
-  -H "Password: Password"
-inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-{
-    "amount":"100.00",
-    "recipientBankCode":"000004",
-    "recipientAccountNumber":"1020808489",
-    "transactionReference":"prov9988zzjzj11| 000023211018133747005000003198",
-    "transactionDateTime":"2021-10-18 13:32:28",
-    "currency":"1",
-    "responseMessage":" Approved or completed successfully",
-    "responseCode":"00"
-}
+200 Successfully retrieved
 
+[](#tab-id-200-successfully-retrieved)
 
-> The above command returns JSON structured like this:
+401: Unauthorized Permission denied
 
-The above command returns JSON structured like this:
+[](#tab-id-401-unauthorized-permission-denied)
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-{
-    "amount":"100.00",
-    "recipientBankCode":"000004",
-    "recipientAccountNumber":"1020808489",
-    "transactionReference":"prov9988zzjzj11| 000023211018133747005000003198",
-    "transactionDateTime":"2021-10-18 13:32:28",
-    "currency":"1",
-    "responseMessage":" Approved or completed successfully",
-    "responseCode":"00"
-}
+400: Bad Request The server cannot process the request due to a client error, such as malformed syntax or invalid parameters in the request.
 
+[](#tab-id-400-bad-request-the-server-cannot-process-the-request-due-to-a-client-error-such-as-malformed-syntax)
 
-> The above command returns JSON structured like this:
+500: Internal Server Error Server encountered an unexpected error
 
-The above command returns JSON structured like this:
+[](#tab-id-500-internal-server-error-server-encountered-an-unexpected-error)
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-{
-    "amount":"100.00",
-    "recipientBankCode":"000004",
-    "recipientAccountNumber":"1020808489",
-    "transactionReference":"prov9988zzjzj11| 000023211018133747005000003198",
-    "transactionDateTime":"2021-10-18 13:32:28",
-    "currency":"1",
-    "responseMessage":" Approved or completed successfully",
-    "responseCode":"00"
-}
+Copy
 
-
-> The above command returns JSON structured like this:
-
-The above command returns JSON structured like this:
-
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-{
-    "amount":"100.00",
-    "recipientBankCode":"000004",
-    "recipientAccountNumber":"1020808489",
-    "transactionReference":"prov9988zzjzj11| 000023211018133747005000003198",
-    "transactionDateTime":"2021-10-18 13:32:28",
-    "currency":"1",
-    "responseMessage":" Approved or completed successfully",
-    "responseCode":"00"
-}
-
-
-> The above command returns JSON structured like this:
-
-The above command returns JSON structured like this:
-
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-{
-    "amount":"100.00",
-    "recipientBankCode":"000004",
-    "recipientAccountNumber":"1020808489",
-    "transactionReference":"prov9988zzjzj11| 000023211018133747005000003198",
-    "transactionDateTime":"2021-10-18 13:32:28",
-    "currency":"1",
-    "responseMessage":" Approved or completed successfully",
-    "responseCode":"00"
-}
-
-
-> The above command returns JSON structured like this:
-
-The above command returns JSON structured like this:
-
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "amount":"100.00",
     "recipientBankCode":"000004",
@@ -163,5 +120,243 @@ The above command returns JSON structured like this:
     "responseCode":"00"
 }
 ```
+
+* * *
+
+### 
+
+[](#sample-implementation)
+
+Sample Implementation
+
+Curl
+
+[](#tab-curl)
+
+Python
+
+[](#tab-python)
+
+Java
+
+[](#tab-java)
+
+JavaScript
+
+[](#tab-javascript)
+
+PHP
+
+[](#tab-php)
+
+C#
+
+[](#tab-c)
+
+Copy
+
+```
+curl -x GET "https://api-staging.providusbank.com/payment/NIP/status?transaction_reference=prov9988zzjzj11"
+  -H "Authorization: {{Authentication token}}"
+  -H "Username: Username"
+  -H "Password: Password"
+```
+
+> The above command returns JSON structured like this:
+
+Copy
+
+```
+{
+    "amount":"100.00",
+    "recipientBankCode":"000004",
+    "recipientAccountNumber":"1020808489",
+    "transactionReference":"prov9988zzjzj11| 000023211018133747005000003198",
+    "transactionDateTime":"2021-10-18 13:32:28",
+    "currency":"1",
+    "responseMessage":" Approved or completed successfully",
+    "responseCode":"00"
+}
+```
+
+Copy
+
+```
+import requests
+from requests.structures import CaseInsensitiveDict
+
+url = "https://api-staging.providusbank.com/payment/NIP/status?transaction_reference=prov9988zzjzj11"
+
+headers = CaseInsensitiveDict()
+headers["Authorization"] = "{{Authentication token}}"
+headers["Username"] = "Username"
+headers["Password"] = "Password"
+
+resp = requests.get(url, headers=headers)
+
+print(resp.status_code)
+```
+
+> The above command returns JSON structured like this:
+
+Copy
+
+```
+{
+    "amount":"100.00",
+    "recipientBankCode":"000004",
+    "recipientAccountNumber":"1020808489",
+    "transactionReference":"prov9988zzjzj11| 000023211018133747005000003198",
+    "transactionDateTime":"2021-10-18 13:32:28",
+    "currency":"1",
+    "responseMessage":" Approved or completed successfully",
+    "responseCode":"00"
+}
+```
+
+Copy
+
+```
+URL url = new URL("https://api-staging.providusbank.com/payment/NIP/status?transaction_reference=prov9988zzjzj11");
+HttpURLConnection http = (HttpURLConnection)url.openConnection();
+http.setRequestProperty("Authorization", "{{Authentication token}}");
+http.setRequestProperty("Username", "Username");
+http.setRequestProperty("Password", "Password");
+
+System.out.println(http.getResponseCode() + " " + http.getResponseMessage());
+http.disconnect();
+```
+
+> The above command returns JSON structured like this:
+
+Copy
+
+```
+{
+    "amount":"100.00",
+    "recipientBankCode":"000004",
+    "recipientAccountNumber":"1020808489",
+    "transactionReference":"prov9988zzjzj11| 000023211018133747005000003198",
+    "transactionDateTime":"2021-10-18 13:32:28",
+    "currency":"1",
+    "responseMessage":" Approved or completed successfully",
+    "responseCode":"00"
+}
+```
+
+Copy
+
+```
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function() {
+  if(this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("GET", "https://api-staging.providusbank.com/payment/NIP/status?transaction_reference=prov9988zzjzj11");
+xhr.setRequestHeader("Authorization", "{{Authentication token}}");
+xhr.setRequestHeader("Username", "Username");
+xhr.setRequestHeader("Password", "Password");
+xhr.send();
+```
+
+> The above command returns JSON structured like this:
+
+Copy
+
+```
+{
+    "amount":"100.00",
+    "recipientBankCode":"000004",
+    "recipientAccountNumber":"1020808489",
+    "transactionReference":"prov9988zzjzj11| 000023211018133747005000003198",
+    "transactionDateTime":"2021-10-18 13:32:28",
+    "currency":"1",
+    "responseMessage":" Approved or completed successfully",
+    "responseCode":"00"
+}
+```
+
+Copy
+
+```
+<?php
+require_once 'HTTP/Request2.php';
+$request = new HTTP_Request2();
+$request->setUrl('https://api-staging.providusbank.com/payment/NIP/status?transaction_reference=prov9988zzjzj11');
+$request->setMethod(HTTP_Request2::METHOD_GET);
+$request->setConfig(array(
+  'follow_redirects' => TRUE
+));
+$request->setHeader(array(
+  'Authorization' => '{{Authentication token}}',
+  'Username' => 'Username',
+  'Password' => 'Password'
+));
+try {
+  $response = $request->send();
+  if ($response->getStatus() == 200) {
+    echo $response->getBody();
+  }
+  else {
+    echo 'Unexpected HTTP status: ' . $response->getStatus() . ' ' .
+    $response->getReasonPhrase();
+  }
+}
+catch(HTTP_Request2_Exception $e) {
+  echo 'Error: ' . $e->getMessage();
+}
+```
+
+> The above command returns JSON structured like this:
+
+Copy
+
+```
+{
+    "amount":"100.00",
+    "recipientBankCode":"000004",
+    "recipientAccountNumber":"1020808489",
+    "transactionReference":"prov9988zzjzj11| 000023211018133747005000003198",
+    "transactionDateTime":"2021-10-18 13:32:28",
+    "currency":"1",
+    "responseMessage":" Approved or completed successfully",
+    "responseCode":"00"
+}
+```
+
+Copy
+
+```
+var client = new RestClient("https://api-staging.providusbank.com/account/NIP?account_number=3041004406&bank_code=57");
+client.Timeout = -1;
+var request = new RestRequest(Method.GET);
+request.AddHeader("Authorization", "{{Authentication token}}");
+request.AddHeader("Username", "Username");
+request.AddHeader("Password", "Password");
+IRestResponse response = client.Execute(request);
+Console.WriteLine(response.Content);
+```
+
+> The above command returns JSON structured like this:
+
+Copy
+
+```
+{
+    "amount":"100.00",
+    "recipientBankCode":"000004",
+    "recipientAccountNumber":"1020808489",
+    "transactionReference":"prov9988zzjzj11| 000023211018133747005000003198",
+    "transactionDateTime":"2021-10-18 13:32:28",
+    "currency":"1",
+    "responseMessage":" Approved or completed successfully",
+    "responseCode":"00"
+}
+```
+
+[PreviousGet Providus Account](/payment/get-providus-account)[NextGet Providus Transaction Status](/payment/get-providus-transaction-status)
 
 Last updated 1 year ago
