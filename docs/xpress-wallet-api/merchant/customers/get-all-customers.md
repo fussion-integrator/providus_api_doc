@@ -12,8 +12,6 @@ Retrieve a paginated list of all customers associated with the merchant.
 
 **Headers**:
 
-Copy
-
 ```
 {
   "Authorization": "Bearer {{vault:authorization-secret}}",
@@ -25,8 +23,6 @@ Copy
 **Response**:
 
 **200 OK**:
-
-Copy
 
 ```
 {
@@ -87,8 +83,6 @@ PHP
 
 [](#tab-php)
 
-Copy
-
 ```
 curl --request GET \
   --url '{{base-url}}/customer?page=1' \
@@ -96,13 +90,9 @@ curl --request GET \
   --header 'X-Refresh-Token: {{refresh-token}}'
 ```
 
-Copy
-
 ```
 // Some code
 ```
-
-Copy
 
 ```
 import requests
@@ -118,8 +108,6 @@ if response.status_code == 200:
 else:
     print(response.reason)
 ```
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
