@@ -15,8 +15,6 @@
 
 **Request body**
 
-Copy
-
 ```
 {
   "beneficiaryAccountName": "UGBO, CHARLES UMORE",
@@ -48,8 +46,6 @@ Copy
 
 [](#tab-id-500-internal-server-error)
 
-Copy
-
 ```
 {
   "transactionReference": "20191119143854",
@@ -59,8 +55,6 @@ Copy
 }
 ```
 
-Copy
-
 ```
 {
   "transactionReference": "20191119143501",
@@ -69,8 +63,6 @@ Copy
 }
 ```
 
-Copy
-
 ```
 {
   "transactionReference": "20191119143501",
@@ -78,8 +70,6 @@ Copy
   "responseCode": "7709"
 }
 ```
-
-Copy
 
 ```
 {
@@ -121,16 +111,12 @@ C#
 
 [](#tab-c)
 
-Copy
-
 ```
 curl -X POST http://154.113.16.142:8882/postingrest/NIPFundTransfer \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -d '{"beneficiaryAccountName":"UGBO, CHARLES UMORE","transactionAmount":"2000.45","currencyCode":"NGN","narration":"Testing","sourceAccountName":"Nnamdi Adebayo Hamzat","beneficiaryAccountNumber":"0045434120","beneficiaryBank":"000013","transactionReference":"20191119143854","userName":"test","password":"test"}'
 ```
-
-Copy
 
 ```
 import requests
@@ -152,8 +138,6 @@ data = {
 response = requests.post(url, json=data, headers=headers)
 print(response.json())
 ```
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -188,8 +172,6 @@ public class NIPFundTransfer {
 }
 ```
 
-Copy
-
 ```
 const fetch = require('node-fetch');
 
@@ -220,8 +202,6 @@ fetch(url, {
 .then(data => console.log(data))
 .catch(error => console.error('Error:', error));
 ```
-
-Copy
 
 ```
 <?php
@@ -254,8 +234,6 @@ echo $response;
 ?>
 ```
 
-Copy
-
 ```
 using System;
 using System.Net.Http;
@@ -283,8 +261,6 @@ class Program
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
 
 ```
 {
