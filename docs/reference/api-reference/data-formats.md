@@ -15,8 +15,6 @@ Our API supports multiple data formats for both request payloads and response bo
 
 Example Request:
 
-Copy
-
 ```
 {
   "key1": "value1",
@@ -34,8 +32,6 @@ For certain endpoints, you may need to send data using the `application/x-www-fo
 
 Example Request:
 
-Copy
-
 ```
 httpCopy codePOST /endpoint
 Content-Type: application/x-www-form-urlencoded
@@ -52,8 +48,6 @@ key1=value1&key2=value2
 If your application requires file uploads, use the `multipart/form-data` format.
 
 Example Request:
-
-Copy
 
 ```
 httpCopy codePOST /upload
@@ -89,8 +83,6 @@ Query Parameters
 
 Example Request
 
-Copy
-
 ```
 GET /large-data-endpoint?page=2&per_page=20
 ```
@@ -100,8 +92,6 @@ GET /large-data-endpoint?page=2&per_page=20
 [](#example-response)
 
 Example Response
-
-Copy
 
 ```
 jsonCopy code{
