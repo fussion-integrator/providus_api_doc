@@ -5,9 +5,7 @@ Retrieve the profile of the logged-in merchant.
 *   **Endpoint**: `GET {{base-url}}/merchant/profile`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "Authorization": "Bearer {{vault:authorization-secret}}",
@@ -19,9 +17,7 @@ Retrieve the profile of the logged-in merchant.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -70,9 +66,7 @@ Retrieve the profile of the logged-in merchant.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
