@@ -31,8 +31,6 @@
 
 [](#tab-id-500-internal-server-error)
 
-Copy
-
 ```
 {
   "banks": [
@@ -51,8 +49,6 @@ Copy
 }
 ```
 
-Copy
-
 ```
 {
   "requestSuccessful": false,
@@ -61,8 +57,6 @@ Copy
 }
 ```
 
-Copy
-
 ```
 {
   "requestSuccessful": false,
@@ -70,8 +64,6 @@ Copy
   "responseCode": "03"
 }
 ```
-
-Copy
 
 ```
 {
@@ -113,15 +105,11 @@ C#
 
 [](#tab-c)
 
-Copy
-
 ```
 curl -X GET http://154.113.16.142:8882/postingrest/GetNIPBanks \
 -H "Accept: application/json" \
 -H "Content-Type: application/json"
 ```
-
-Copy
 
 ```
 import requests
@@ -131,8 +119,6 @@ headers = {"Accept": "application/json", "Content-Type": "application/json"}
 response = requests.get(url, headers=headers)
 print(response.json())
 ```
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -159,8 +145,6 @@ public class GetNIPBanks {
 }
 ```
 
-Copy
-
 ```
 const fetch = require('node-fetch');
 
@@ -179,8 +163,6 @@ fetch(url, {
 .catch(error => console.error('Error:', error));
 ```
 
-Copy
-
 ```
 <?php
 $url = "http://154.113.16.142:8882/postingrest/GetNIPBanks";
@@ -197,8 +179,6 @@ curl_close($ch);
 echo $response;
 ?>
 ```
-
-Copy
 
 ```
 using System;
@@ -221,8 +201,6 @@ class Program
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
 
 ```
 {
