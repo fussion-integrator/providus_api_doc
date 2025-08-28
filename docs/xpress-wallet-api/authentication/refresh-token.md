@@ -15,8 +15,6 @@ Refreshes authentication tokens for the user.
 
 **Example Request (Dart - http):**
 
-Copy
-
 ```
 var headers = {
   'X-Refresh-Token': 'Cx9AH9ubWqG3JyBz8DZr-E6aTa8GKruNerzJRCDUFbyjM6ef'
@@ -33,8 +31,6 @@ if (response.statusCode == 200) {
 ```
 
 **Response (200 OK):**
-
-Copy
 
 ```
 {
