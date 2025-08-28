@@ -1,29 +1,61 @@
 # Virtual Payment
 
-Accounts APIs provide interfaces to manage customer accounts. The interface provides the following methods:
-
 The Account API requires a token authentication.
 
-Request API Key
+[Request API Key](/quick-start)
 
-### NIP Account
+### 
+
+[](#nip-account)
+
+NIP Account
 
 Get the details of an NIP account.
 
-### NIP Bank
+[Get NIP Account](/payment/get-nip-account)
+
+* * *
+
+### 
+
+[](#nip-bank)
+
+NIP Bank
 
 Get list of NIP banks.
 
-### Providus Account
+[Get NIP Banks](/payment/get-nip-banks)
+
+* * *
+
+### 
+
+[](#providus-account)
+
+Providus Account
 
 Get a Providus bank user account.
 
-### Providus Account Statement
+* * *
+
+### 
+
+[](#providus-account-statement)
+
+Providus Account Statement
 
 Get statement of transactions on an account.
 
-### BVN Details
+* * *
+
+### 
+
+[](#bvn-details)
+
+BVN Details
 
 Get the details of an account by bvn.
+
+[PreviousPayment Inquiry](/provi-bill/payment-inquiry)[NextVerify Transaction](/virtual-payment/verify-transaction)
 
 Last updated 1 month ago
