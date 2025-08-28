@@ -46,8 +46,6 @@ The Third party generic api requires api key.
 
 Scripts
 
-Copy
-
 ```
 if (pm.response.code === 200 || pm.response.code === 201 || pm.response.code === 400 || pm.response.code === 403) {
 
@@ -74,8 +72,6 @@ Base URL
 
 All endpoints are relative to the base URL:
 
-Copy
-
 ```
 {{base-url}}
 ```
@@ -90,8 +86,6 @@ Most endpoints require authentication via `X-Access-Token` and `X-Refresh-Token`
 
 **Headers**:
 
-Copy
-
 ```
 {
   "X-Access-Token": "{{access-token}}",
@@ -100,8 +94,6 @@ Copy
 ```
 
 For endpoints requiring Bearer Token:
-
-Copy
 
 ```
 {
