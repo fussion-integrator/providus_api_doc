@@ -10,9 +10,7 @@ Retrieve customer details using their phone number.
         
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -23,9 +21,7 @@ Retrieve customer details using their phone number.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -40,9 +36,7 @@ Retrieve customer details using their phone number.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
