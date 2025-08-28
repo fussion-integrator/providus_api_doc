@@ -10,8 +10,6 @@ Resets the user password using a reset code.
 
 **Request Body:**
 
-Copy
-
 ```
 {
   "resetCode": "3122489",
@@ -20,8 +18,6 @@ Copy
 ```
 
 **Example Request (Dart - http):**
-
-Copy
 
 ```
 var headers = {};
@@ -37,8 +33,6 @@ if (response.statusCode == 200) {
 ```
 
 **Response (200 OK):**
-
-Copy
 
 ```
 {
