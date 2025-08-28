@@ -5,9 +5,7 @@ Configure card settings for a merchant.
 *   **Endpoint**: `PUT {{base-url}}/card/setup`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -16,9 +14,7 @@ Configure card settings for a merchant.
     ```
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     {
       "appId": "test",
@@ -33,9 +29,7 @@ Configure card settings for a merchant.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -45,9 +39,7 @@ Configure card settings for a merchant.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
