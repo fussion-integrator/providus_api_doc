@@ -32,8 +32,6 @@ Sample Url
 
 [](#tab-id-500-internal-server-error)
 
-Copy
-
 ```
 {
   "sessionId": "09FG240119090404935XTTGA9",
@@ -59,8 +57,6 @@ Copy
 }
 ```
 
-Copy
-
 ```
 {
   "requestSuccessful": false,
@@ -68,8 +64,6 @@ Copy
   "responseCode": "03"
 }
 ```
-
-Copy
 
 ```
 {
@@ -95,8 +89,6 @@ Copy
   "notification_acknowledgement": 0
 }
 ```
-
-Copy
 
 ```
 {
@@ -155,15 +147,11 @@ C#
 
 [](#tab-c)
 
-Copy
-
 ```
 curl -X GET "http://154.113.16.142:8088/appdevapi/api/PiPverifyTransaction_settlementid?settlement_id=210240119000176500002" \
 -H "Client-Id: dGVzdF9Qcm92aWR1cw==" \
 -H "X-Auth-Signature: BE09BEE831CF262226B426E39BD109f2AF84DC63076D4174FAC78A2261F9A3D6E59744983B8326B69CDF2963FE314DFC89635CFA37A40596508DD6EAAB09402C7"
 ```
-
-Copy
 
 ```
 import requests
@@ -181,8 +169,6 @@ headers = {
 response = requests.get(url, headers=headers)
 print(response.json())
 ```
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -219,8 +205,6 @@ public class VerifyTransactionSettlementId {
 }
 ```
 
-Copy
-
 ```
 const fetch = require('node-fetch');
 const crypto = require('crypto');
@@ -244,8 +228,6 @@ fetch(url, {
 .catch(error => console.error('Error:', error));
 ```
 
-Copy
-
 ```
 <?php
 $clientId = "dGVzdF9Qcm92aWR1cw==";
@@ -266,8 +248,6 @@ curl_close($ch);
 echo $response;
 ?>
 ```
-
-Copy
 
 ```
 using System;
@@ -302,8 +282,6 @@ class Program
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
 
 ```
 {
