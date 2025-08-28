@@ -5,9 +5,7 @@ Initiate a bank transfer from a merchant account.
 *   **Endpoint**: `POST {{base-url}}/transfer/bank`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "Authorization": "Bearer {{vault:authorization-secret}}",
@@ -17,9 +15,7 @@ Initiate a bank transfer from a merchant account.
     ```
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     {
       "amount": 220,
@@ -34,9 +30,7 @@ Initiate a bank transfer from a merchant account.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -58,9 +52,7 @@ Initiate a bank transfer from a merchant account.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
