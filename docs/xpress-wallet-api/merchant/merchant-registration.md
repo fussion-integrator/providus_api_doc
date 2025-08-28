@@ -5,9 +5,7 @@ Register a new merchant account.
 *   **Endpoint**: `POST {{base-url}}/merchant`
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     {
       "firstName": "Yemi",
@@ -25,9 +23,7 @@ Register a new merchant account.
 *   **Response**:
     
     *   **201 Created**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -38,9 +34,7 @@ Register a new merchant account.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var request = http.Request('POST', Uri.parse('{{base-url}}/merchant'));
     request.body = '''{
