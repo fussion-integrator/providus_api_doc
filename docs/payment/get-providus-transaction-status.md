@@ -42,15 +42,11 @@ Reference to the transaction
 
 ### Sample Implementation
 
-### Curl
-
 ```curl
 curl -X GET "https://api.providusbank.com/payment/status?transactionReference=prov9988zzjzj11"" \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json"
 ```
-
-### Python
 
 ```python
 import requests
@@ -65,8 +61,6 @@ response = requests.get(url, headers=headers)
 print(response.json())
 ```
 
-### Javascript
-
 ```javascript
 const response = await fetch('https://api.providusbank.com/payment/status?transactionReference=prov9988zzjzj11"', {
   method: 'GET',
@@ -79,8 +73,6 @@ const response = await fetch('https://api.providusbank.com/payment/status?transa
 const data = await response.json();
 console.log(data);
 ```
-
-### Nodejs
 
 ```nodejs
 const axios = require('axios');
@@ -98,8 +90,6 @@ axios(config)
   .then(response => console.log(response.data))
   .catch(error => console.error(error));
 ```
-
-### Php
 
 ```php
 <?php
@@ -120,8 +110,6 @@ $response = file_get_contents($url, false, $context);
 echo $response;
 ?>
 ```
-
-### Java
 
 ```java
 import java.net.http.*;
@@ -148,8 +136,6 @@ public class ApiClient {
 }
 ```
 
-### Csharp
-
 ```csharp
 using System;
 using System.Net.Http;
@@ -172,8 +158,6 @@ class Program
 }
 ```
 
-### Dart
-
 ```dart
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -195,8 +179,6 @@ Future<void> makeApiCall() async {
   }
 }
 ```
-
-### Go
 
 ```go
 package main
@@ -228,8 +210,6 @@ func main() {
     fmt.Println(string(body))
 }
 ```
-
-### Ruby
 
 ```ruby
 require 'net/http'
