@@ -5,9 +5,7 @@ Verify a merchant account using an activation code.
 *   **Endpoint**: `PUT {{base-url}}/merchant/verify`
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     {
       "activationCode": "9004546"
@@ -17,9 +15,7 @@ Verify a merchant account using an activation code.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -29,9 +25,7 @@ Verify a merchant account using an activation code.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var request = http.Request('PUT', Uri.parse('{{base-url}}/merchant/verify'));
     request.body = '''{
