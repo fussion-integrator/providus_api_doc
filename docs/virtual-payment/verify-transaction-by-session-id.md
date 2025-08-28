@@ -1,26 +1,56 @@
-1. Virtual Payment
-
 # Verify Transaction by Session Id
 
-This is an enpoint to verify transactions by passing the settlement id.
+* * *
 
-#### Test Base URL
+#### 
 
-https://api-staging.providusbank.com
+[](#test-base-url)
 
-#### Production Base URL
+Test Base URL
 
-https://api.providusbank.com
+[https://api-staging.providusbank.com](https://api-staging.providusbank.com
 
-#### HTTP Request
+)
+
+#### 
+
+[](#production-base-url)
+
+Production Base URL
+
+[https://api.providusbank.com](https://api.providusbank.com)
+
+#### 
+
+[](#http-request)
+
+HTTP Request
 
 GET /account/bvn
 
-## BVN Details.
+* * *
 
-`GET``https://api-staging.providusbank.com/v1/account/bvn`Get NIP Account.
+## 
 
-#### Request Body
+[](#bvn-details)
+
+BVN Details.
+
+`GET` `https://api-staging.providusbank.com/v1/account/bvn`
+
+Get NIP Account.
+
+#### 
+
+[](#request-body)
+
+Request Body
+
+Name
+
+Type
+
+Description
 
 Username
 
@@ -40,9 +70,59 @@ String
 
 bvn number of account owner
 
-### Sample Implementation
+200 BVN details successfully retrieved
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap whitespace-pre-wrap
+[](#tab-id-200-bvn-details-successfully-retrieved)
+
+401: Unauthorized Permission denied
+
+[](#tab-id-401-unauthorized-permission-denied)
+
+400: Bad Request The server cannot process the request due to a client error, such as malformed syntax or invalid parameters in the request.
+
+[](#tab-id-400-bad-request-the-server-cannot-process-the-request-due-to-a-client-error-such-as-malformed-syntax)
+
+500: Internal Server Error Server encountered an unexpected error
+
+[](#tab-id-500-internal-server-error-server-encountered-an-unexpected-error)
+
+Copy
+
+* * *
+
+### 
+
+[](#sample-implementation)
+
+Sample Implementation
+
+Curl
+
+[](#tab-curl)
+
+Python
+
+[](#tab-python)
+
+Java
+
+[](#tab-java)
+
+JavaScript
+
+[](#tab-javascript)
+
+PHP
+
+[](#tab-php)
+
+C#
+
+[](#tab-c)
+
+Copy
+
+```
 curl -x GET "https://api-demo.providusbank/account/NIP/banks"
   -H "Authorization: {{Authentication token}}"
   -H "Username: Username"
@@ -51,9 +131,9 @@ curl -x GET "https://api-demo.providusbank/account/NIP/banks"
 
 > The above command returns JSON structured like this:
 
-The above command returns JSON structured like this:
+Copy
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "banks":[
         {"bankCode":"000014","bankName":"ACCESS BANK"},
@@ -82,7 +162,9 @@ The above command returns JSON structured like this:
     "responseCode":"00"}
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 import requests
 from requests.structures import CaseInsensitiveDict
 
@@ -96,9 +178,9 @@ headers["Password"] = "Password"
 
 > The above command returns JSON structured like this:
 
-The above command returns JSON structured like this:
+Copy
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "banks":[
         {"bankCode":"000014","bankName":"ACCESS BANK"},
@@ -127,7 +209,9 @@ The above command returns JSON structured like this:
     "responseCode":"00"}
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 URL url = new URL("https://api-demo.providusbank/account/NIP/banks");
 HttpURLConnection http = (HttpURLConnection)url.openConnection();
 http.setRequestProperty("Authorization", "{{Authentication token}}");
@@ -140,9 +224,9 @@ http.disconnect();
 
 > The above command returns JSON structured like this:
 
-The above command returns JSON structured like this:
+Copy
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "banks":[
         {"bankCode":"000014","bankName":"ACCESS BANK"},
@@ -171,7 +255,9 @@ The above command returns JSON structured like this:
     "responseCode":"00"}
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 
@@ -189,9 +275,9 @@ xhr.send();
 
 > The above command returns JSON structured like this:
 
-The above command returns JSON structured like this:
+Copy
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "banks":[
         {"bankCode":"000014","bankName":"ACCESS BANK"},
@@ -220,7 +306,9 @@ The above command returns JSON structured like this:
     "responseCode":"00"}
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 <?php
 require_once 'HTTP/Request2.php';
 $request = new HTTP_Request2();
@@ -252,9 +340,9 @@ catch(HTTP_Request2_Exception $e) {
 
 > The above command returns JSON structured like this:
 
-The above command returns JSON structured like this:
+Copy
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "banks":[
         {"bankCode":"000014","bankName":"ACCESS BANK"},
@@ -283,7 +371,9 @@ The above command returns JSON structured like this:
     "responseCode":"00"}
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 var client = new RestClient("https://api-staging.providusbank.com/account/NIP/banks");
 client.Timeout = -1;
 var request = new RestRequest(Method.GET);
@@ -296,9 +386,9 @@ Console.WriteLine(response.Content);
 
 > The above command returns JSON structured like this:
 
-The above command returns JSON structured like this:
+Copy
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "banks":[
         {"bankCode":"000014","bankName":"ACCESS BANK"},
@@ -326,5 +416,7 @@ The above command returns JSON structured like this:
     "responseMessage":"SUCCESS",
     "responseCode":"00"}
 ```
+
+[PreviousVerify Transaction by Settlement Id](/virtual-payment/verify-transaction-by-settlement-id)[NextUpdate Account Name](/virtual-payment/update-account-name)
 
 Last updated 1 year ago
