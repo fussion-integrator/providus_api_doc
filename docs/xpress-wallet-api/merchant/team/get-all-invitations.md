@@ -12,9 +12,7 @@ Retrieve a paginated list of team invitations.
         
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -25,9 +23,7 @@ Retrieve a paginated list of team invitations.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -46,9 +42,7 @@ Retrieve a paginated list of team invitations.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
