@@ -1,17 +1,33 @@
 # Payment
 
-Payment APIs provide interfaces to create and manage financial Payments. The interface provides the following methods:
-
 The Account API requires a token authentication.
 
-Request API Key
+[Request API Key](/quick-start)
 
-#### NIP Transaction Status
+#### 
+
+[](#nip-transaction-status)
+
+NIP Transaction Status
 
 Get the status of an NIP transaction.
 
-#### Providus Transaction Status
+[Get NIP Account](/payment/get-nip-account)
+
+* * *
+
+#### 
+
+[](#providus-transaction-status)
+
+Providus Transaction Status
 
 Get list of NIP banks.
+
+[Get NIP Banks](/payment/get-nip-banks)
+
+* * *
+
+[PreviousGet Providus Account Statement](/account/get-providus-account-statement)[NextGet NIP Banks](/payment/get-nip-banks)
 
 Last updated 1 month ago
