@@ -5,9 +5,7 @@ Accept a team invitation.
 *   **Endpoint**: `POST {{base-url}}/team/invitations/accept`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -16,9 +14,7 @@ Accept a team invitation.
     ```
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     {
       "invitationCode": "dfnacefu;iavbklsfjakls;dfjncaksdjfakl;sdj",
@@ -34,9 +30,7 @@ Accept a team invitation.
     *   **200 OK**: (Successful acceptance)
         
     *   **400 Bad Request**:
-        
-        Copy
-        
+
         ```
         {
           "status": false,
@@ -46,9 +40,7 @@ Accept a team invitation.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
