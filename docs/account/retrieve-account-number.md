@@ -177,3 +177,58 @@ The above command returns JSON structured like this:
 ```
 
 Last updated 10 days ago
+
+## Sample Implementation
+
+```curl
+curl -X GET "/api/v1/account/number" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"
+```
+
+```python
+import requests
+
+url = "/api/v1/account/number"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+}
+
+response = requests.get(url, headers=headers)
+print(response.json())
+```
+
+```javascript
+const response = await fetch('/api/v1/account/number', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  }
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+```php
+<?php
+$url = "/api/v1/account/number";
+$headers = [
+    "Authorization: Bearer YOUR_API_KEY",
+    "Content-Type: application/json"
+];
+
+$context = stream_context_create([
+    'http' => [
+        'method' => 'GET',
+        'header' => implode("\r\n", $headers)
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
+echo $response;
+?>
+```
+
