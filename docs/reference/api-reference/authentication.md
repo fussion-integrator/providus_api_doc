@@ -16,8 +16,6 @@ To make authorized requests to our API, you need to include the appropriate auth
 
 Include your API key in the request headers using the following format:
 
-Copy
-
 ```
 Authorization: api-key YOUR_API_KEY
 ```
