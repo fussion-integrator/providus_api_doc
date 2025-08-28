@@ -5,9 +5,7 @@ Add funds to a customer's card.
 *   **Endpoint**: `POST {{base-url}}/card/fund`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -16,9 +14,7 @@ Add funds to a customer's card.
     ```
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     {
       "amount": 150,
@@ -29,9 +25,7 @@ Add funds to a customer's card.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -41,9 +35,7 @@ Add funds to a customer's card.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
