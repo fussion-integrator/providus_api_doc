@@ -5,9 +5,7 @@ Retrieve a list of all customer wallets.
 *   **Endpoint**: `GET {{base-url}}/wallet`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -18,9 +16,7 @@ Retrieve a list of all customer wallets.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
