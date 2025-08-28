@@ -5,9 +5,7 @@ Resend a verification code to a merchant's email.
 *   **Endpoint**: `POST {{base-url}}/merchant/verify/resend`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -16,9 +14,7 @@ Resend a verification code to a merchant's email.
     ```
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     {
       "email": "[email protected]"
@@ -28,9 +24,7 @@ Resend a verification code to a merchant's email.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -40,9 +34,7 @@ Resend a verification code to a merchant's email.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
