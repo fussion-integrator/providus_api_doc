@@ -84,10 +84,7 @@ Advanced Newman Usage
 1.  **Parallel Execution:**
     
     *   Execute multiple collections in parallel for faster testing.
-        
-    
-    Copy
-    
+
     ```
     newman run collection1.json -e env1.json & newman run collection2.json -e env2.json
     ```
