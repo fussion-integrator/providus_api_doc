@@ -22,14 +22,12 @@ POST http://154.113.16.142:8088/appdevapi/api/PiPCreateReservedAccountNumber
   "bvn": ""
 }
 
-
 ```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 {
   "requestSuccessful": false,
   "responseMessage": "Error Completing Operation",
   "responseCode": "11"
 }
-
 
 ```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 {
@@ -43,7 +41,6 @@ curl -X POST http://154.113.16.142:8088/appdevapi/api/PiPCreateReservedAccountNu
 -H "X-Auth-Signature: BE09BEE831CF262226B426E39BD109f2AF84DC63076D4174FAC78A2261F9A3D6E59744983B8326B69CDF2963FE314DFC89635CFA37A40596508DD6EAAB09402C7" \
 -H "Content-Type: application/json" \
 -d '{"account_name":"lemuel","bvn":""}'
-
 
 ```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 import java.net.HttpURLConnection;
@@ -95,7 +92,6 @@ inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-
     "responseCode":"00"
 }
 
-
 ```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 <?php
 $clientId = "dGVzdF9Qcm92aWR1cw==";
@@ -129,7 +125,6 @@ inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-
     "accountNumber":"3041004406",
     "responseCode":"00"
 }
-
 
 The above command returns JSON structured like this:
 
