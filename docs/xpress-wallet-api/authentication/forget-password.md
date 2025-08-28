@@ -10,8 +10,6 @@ Initiates a password reset by sending a reset code to the provided email.
 
 **Request Body:**
 
-Copy
-
 ```
 {
   "email": "[email protected]"
@@ -19,8 +17,6 @@ Copy
 ```
 
 **Example Request (Dart - http):**
-
-Copy
 
 ```
 var headers = {
@@ -38,8 +34,6 @@ if (response.statusCode == 200) {
 ```
 
 **Response (200 OK):**
-
-Copy
 
 ```
 {
