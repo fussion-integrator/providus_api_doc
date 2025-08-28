@@ -1,14 +1,16 @@
-1. Provi Bill
-
 # Payment
 
-**Endpoint**`POST /makepayment`Description: Initiates a payment for a specific bill.
+**Endpoint**: `POST /makepayment`
 
-**Description**Authentication: Basic Auth (Username, Password)
+**Description**: Initiates a payment for a specific bill.
 
-**Authentication**Request Body (JSON):
+**Authentication**: Basic Auth (Username, Password)
 
-**Request Body**```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+**Request Body** (JSON):
+
+Copy
+
+```
 {
     "inputs": [
         {
@@ -36,7 +38,43 @@
     "customerAccountNo": "1700415109",
     "channel_ref": "122433"
 }
-inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap whitespace-pre-wrap
+```
+
+* * *
+
+### 
+
+[](#sample-implementation)
+
+Sample Implementation
+
+Curl
+
+[](#tab-curl)
+
+Python
+
+[](#tab-python)
+
+Java
+
+[](#tab-java)
+
+JavaScript
+
+[](#tab-javascript)
+
+PHP
+
+[](#tab-php)
+
+C#
+
+[](#tab-c)
+
+Copy
+
+```
 curl --request POST \
   --url 'http://154.113.16.142:9999/provipay/webapi/makepayment' \
   --header 'Authorization: Basic <base64-encoded-username:password>' \
@@ -68,9 +106,41 @@ curl --request POST \
     "customerAccountNo": "1700415109",
     "channel_ref": "122433"
 }'
+```
 
+Copy
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
+import requests
+
+headers = {
+    'Authorization': 'Basic <base64-encoded-username:password>',
+    'Content-Type': 'application/json'
+}
+
+data = {
+    "inputs": [
+        {"value": "2", "key": "merchantFK"},
+        {"value": "1", "key": "accountType"},
+        {"value": "1234567", "key": "customerId"},
+        {"value": "dot", "key": "customerName"},
+        {"value": "100", "key": "amount"}
+    ],
+    "billId": "1099",
+    "customerAccountNo": "1700415109",
+    "channel_ref": "122433"
+}
+
+response = requests.post('http://154.113.16.142:9999/provipay/webapi/makepayment', headers=headers, json=data)
+if response.status_code == 200:
+    print(response.json())
+else:
+    print(response.reason)
+```
+
+Copy
+
+```
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.io.BufferedReader;
@@ -107,9 +177,45 @@ public class Main {
         }
     }
 }
+```
 
+Copy
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
+const headers = {
+    'Authorization': 'Basic <base64-encoded-username:password>',
+    'Content-Type': 'application/json'
+};
+
+fetch('http://154.113.16.142:9999/provipay/webapi/makepayment', {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify({
+        inputs: [
+            { value: "2", key: "merchantFK" },
+            { value: "1", key: "accountType" },
+            { value: "1234567", key: "customerId" },
+            { value: "dot", key: "customerName" },
+            { value: "100", key: "amount" }
+        ],
+        billId: "1099",
+        customerAccountNo: "1700415109",
+        channel_ref: "122433"
+    })
+})
+.then(response => {
+    if (response.ok) {
+        return response.json();
+    }
+    throw new Error(response.statusText);
+})
+.then(data => console.log(data))
+.catch(error => console.error(error));
+```
+
+Copy
+
+```
 <?php
 $ch = curl_init();
 
@@ -133,15 +239,53 @@ if ($httpCode == 200) {
 
 curl_close($ch);
 ?>
+```
 
+Copy
 
-Response:
+```
+using System;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 
-**Response**- 200 OK: Returns a JSON object with validation results.
+class Program
+{
+    static async Task Main(string[] args)
+    {
+        using (var client = new HttpClient())
+        {
+            client.DefaultRequestHeaders.Add("Authorization", "Basic <base64-encoded-username:password>");
 
-200 OK: Returns a JSON object with validation results.
+            var content = new StringContent(
+                "{\"inputs\": [{\"value\": \"2\", \"key\": \"merchantFK\"}, {\"value\": \"1\", \"key\": \"accountType\"}, {\"value\": \"1234567\", \"key\": \"customerId\"}, {\"value\": \"dot\", \"key\": \"customerName\"}, {\"value\": \"100\", \"key\": \"amount\"}], \"billId\": \"1099\", \"customerAccountNo\": \"1700415109\", \"channel_ref\": \"122433\"}",
+                Encoding.UTF8,
+                "application/json"
+            );
 
-**200 OK**```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+            var response = await client.PostAsync("http://154.113.16.142:9999/provipay/webapi/makepayment", content);
+            if (response.IsSuccessStatusCode)
+            {
+                var responseContent = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(responseContent);
+            }
+            else
+            {
+                Console.WriteLine(response.ReasonPhrase);
+            }
+        }
+    }
+}
+```
+
+**Response**:
+
+*   **200 OK**: Returns a JSON object with validation results.
+    
+
+Copy
+
+```
 {
     "data": "{\"units\":\"85.33\",\"unitsType\":\"kWh\",\"token\":\"95015032359018227792\"}",
     "message": "Request successful",
@@ -150,4 +294,6 @@ Response:
 }
 ```
 
-Last updated 8 days ago
+[PreviousValidate](/provi-bill/validate)[NextPayment Inquiry](/provi-bill/payment-inquiry)
+
+Last updated 24 days ago
