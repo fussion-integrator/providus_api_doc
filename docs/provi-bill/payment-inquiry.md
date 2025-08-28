@@ -1,26 +1,59 @@
-1. Provi Bill
-
 # Payment Inquiry
 
-**Endpoint**`GET /makepayment/enquiry?txn_ref={txn_ref}`Description: Retrieves the status of a payment using the transaction reference.
+**Endpoint**: `GET /makepayment/enquiry?txn_ref={txn_ref}`
 
-**Description**Authentication: Basic Auth (Username, Password)
+**Description**: Retrieves the status of a payment using the transaction reference.
 
-**Authentication**Query Parameters:
+**Authentication**: Basic Auth (Username, Password)
 
-**Query Parameters**- txn_ref (required): The transaction reference (e.g., 122433).
+**Query Parameters**:
 
-txn_ref (required): The transaction reference (e.g., 122433).
+*   txn\_ref (required): The transaction reference (e.g., 122433).
+    
 
-### Sample Implementation
+* * *
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap whitespace-pre-wrap
+### 
+
+[](#sample-implementation)
+
+Sample Implementation
+
+Curl
+
+[](#tab-curl)
+
+Python
+
+[](#tab-python)
+
+Java
+
+[](#tab-java)
+
+JavaScript
+
+[](#tab-javascript)
+
+PHP
+
+[](#tab-php)
+
+C#
+
+[](#tab-c)
+
+Copy
+
+```
 curl --request GET \
   --url 'http://154.113.16.142:9999/provipay/webapi/makepayment/enquiry?txn_ref=122433' \
   --header 'Authorization: Basic <base64-encoded-username:password>'
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 import requests
 
 headers = {
@@ -34,7 +67,9 @@ else:
     print(response.reason)
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.io.BufferedReader;
@@ -64,7 +99,9 @@ public class Main {
 }
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 const headers = {
     'Authorization': 'Basic <base64-encoded-username:password>'
 };
@@ -83,7 +120,9 @@ fetch('http://154.113.16.142:9999/provipay/webapi/makepayment/enquiry?txn_ref=12
 .catch(error => console.error(error));
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 <?php
 $ch = curl_init();
 
@@ -106,7 +145,9 @@ curl_close($ch);
 ?>
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -134,16 +175,19 @@ class Program
 }
 ```
 
-Response:
+**Response**:
 
-**Response**- 200 OK: Returns a JSON object with validation results.
+*   **200 OK**: Returns a JSON object with validation results.
+    
 
-200 OK: Returns a JSON object with validation results.
+Copy
 
-**200 OK**```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "status": "successful"
 }
 ```
 
-Last updated 8 days ago
+[PreviousPayment](/provi-bill/payment)[NextVirtual Payment](/virtual-payment)
+
+Last updated 24 days ago
