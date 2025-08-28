@@ -10,9 +10,7 @@ Update an existing role's name and permissions.
         
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -21,9 +19,7 @@ Update an existing role's name and permissions.
     ```
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     {
       "name": "Driver",
@@ -34,9 +30,7 @@ Update an existing role's name and permissions.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -51,9 +45,7 @@ Update an existing role's name and permissions.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
