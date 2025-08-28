@@ -5,9 +5,7 @@ Update the merchant's profile information.
 *   **Endpoint**: `PATCH {{base-url}}/merchant/profile`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "Authorization": "Bearer {{vault:authorization-secret}}",
@@ -17,9 +15,7 @@ Update the merchant's profile information.
     ```
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     {
       "canLogin": true,
@@ -32,9 +28,7 @@ Update the merchant's profile information.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -44,9 +38,7 @@ Update the merchant's profile information.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
