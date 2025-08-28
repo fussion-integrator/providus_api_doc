@@ -24,8 +24,6 @@
 
 Webhook Request (From DCS)
 
-Copy
-
 ```
 {
 "sessionId": "000004210301180534806663649508",
@@ -49,9 +47,6 @@ Copy
 **Webhook Responses**:
 
 *   **Success**:
-    
-
-Copy
 
 ```
 {
@@ -63,9 +58,6 @@ Copy
 ```
 
 *   **Duplicate**:
-    
-
-Copy
 
 ```
 {
@@ -77,9 +69,6 @@ Copy
 ```
 
 *   **Rejected**:
-    
-
-Copy
 
 ```
 {
@@ -91,9 +80,6 @@ Copy
 ```
 
 *   **System Failure**:
-    
-
-Copy
 
 ```
 {
@@ -136,8 +122,6 @@ C#
 
 [](#tab-c)
 
-Copy
-
 ```
 curl -X POST https://your-webhook-endpoint.com/webhook \
 -H "Client-Id: dGVzdF9Qcm92aWR1cw==" \
@@ -161,8 +145,6 @@ curl -X POST https://your-webhook-endpoint.com/webhook \
   "tranDateTime": "2021-03-01 18:06:20"
 }'
 ```
-
-Copy
 
 ```
 from flask import Flask, request, jsonify
@@ -223,8 +205,6 @@ def is_duplicate_settlement(settlement_id):
 if __name__ == '__main__':
     app.run(port=5000)
 ```
-
-Copy
 
 ```
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -309,8 +289,6 @@ public class WebhookController {
 }
 ```
 
-Copy
-
 ```
 const express = require('express');
 const crypto = require('crypto');
@@ -368,8 +346,6 @@ function isDuplicateSettlement(settlementId) {
 
 app.listen(5000, () => console.log('Webhook server running on port 5000'));
 ```
-
-Copy
 
 ```
 <?php
@@ -430,8 +406,6 @@ function isDuplicateSettlement($settlementId) {
 }
 ?>
 ```
-
-Copy
 
 ```
 using Microsoft.AspNetCore.Mvc;
@@ -522,8 +496,6 @@ namespace WebhookController
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
 
 ```
 {
