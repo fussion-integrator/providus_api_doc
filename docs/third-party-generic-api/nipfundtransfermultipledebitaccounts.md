@@ -17,8 +17,6 @@
 
 * * *
 
-Copy
-
 ```
 {
   "beneficiaryAccountName": "Nathan Agbara",
@@ -53,8 +51,6 @@ Response body (JSON)
 
 [](#tab-id-500-internal-server-error-server-encountered-an-unexpected-error)
 
-Copy
-
 ```
 {
   "transactionReference": "35326323fghn",
@@ -63,8 +59,6 @@ Copy
 }
 ```
 
-Copy
-
 ```
 {
   "responseMessage": "Account does not exist.",
@@ -72,16 +66,12 @@ Copy
 }
 ```
 
-Copy
-
 ```
 {
   "responseMessage": "Account does not exist.",
   "responseCode": "01"
 }
 ```
-
-Copy
 
 ```
 {
@@ -122,16 +112,12 @@ C#
 
 [](#tab-c)
 
-Copy
-
 ```
 curl -X POST http://154.113.16.142:8882/postingrest/NIPFundTransferMultipleDebitAccounts \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -d '{"beneficiaryAccountName":"Nathan Agbara","transactionAmount":"50","currencyCode":"NGN","narration":"Testing","debitAccount":"5900235871","sourceAccountName":"NATHAN AGBARA","beneficiaryAccountNumber":"0430294874","beneficiaryBank":"000013","transactionReference":"SDFGHJUKJ456UKJH34565","userName":"test","password":"test"}'
 ```
-
-Copy
 
 ```
 import requests
@@ -154,8 +140,6 @@ data = {
 response = requests.post(url, json=data, headers=headers)
 print(response.json())
 ```
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -190,8 +174,6 @@ public class NIPFundTransferMultipleDebitAccounts {
 }
 ```
 
-Copy
-
 ```
 const fetch = require('node-fetch');
 
@@ -223,8 +205,6 @@ fetch(url, {
 .then(data => console.log(data))
 .catch(error => console.error('Error:', error));
 ```
-
-Copy
 
 ```
 <?php
@@ -258,8 +238,6 @@ echo $response;
 ?>
 ```
 
-Copy
-
 ```
 using System;
 using System.Net.Http;
@@ -287,8 +265,6 @@ class Program
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
 
 ```
 {
