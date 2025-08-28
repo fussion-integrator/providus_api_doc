@@ -1,20 +1,21 @@
-1. Provi Bill
-
 # Validate
 
-**Endpoint**`POST /validate/{billId}/customer`Description: Validates customer details for a specific bill ID before making a payment.
+**Endpoint**: `POST /validate/{billId}/customer`
 
-**Description**Authentication: Basic Auth (Username, Password)
+**Description**: Validates customer details for a specific bill ID before making a payment.
 
-**Authentication**Path Parameters:
+**Authentication**: Basic Auth (Username, Password)
 
-**Path Parameters**- billId (required): The ID of the bill (e.g., 1099).
+**Path Parameters**:
 
-billId (required): The ID of the bill (e.g., 1099).
+*   billId (required): The ID of the bill (e.g., 1099).
+    
 
-Request Body (JSON):
+**Request Body** (JSON):
 
-**Request Body**```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 {
     "inputs": [
         {
@@ -44,9 +45,41 @@ Request Body (JSON):
 }
 ```
 
-### Sample Implementation
+* * *
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap whitespace-pre-wrap
+### 
+
+[](#sample-implementation)
+
+Sample Implementation
+
+Curl
+
+[](#tab-curl)
+
+Python
+
+[](#tab-python)
+
+Java
+
+[](#tab-java)
+
+JavaScript
+
+[](#tab-javascript)
+
+PHP
+
+[](#tab-php)
+
+C#
+
+[](#tab-c)
+
+Copy
+
+```
 curl --request POST \
   --url 'http://154.113.16.142:9999/provipay/webapi/validate/1099/customer' \
   --header 'Authorization: Basic <base64-encoded-username:password>' \
@@ -80,7 +113,9 @@ curl --request POST \
 }'
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 import requests
 
 headers = {
@@ -108,7 +143,9 @@ else:
     print(response.reason)
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.io.BufferedReader;
@@ -147,7 +184,9 @@ public class Main {
 }
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 const headers = {
     'Authorization': 'Basic <base64-encoded-username:password>',
     'Content-Type': 'application/json'
@@ -179,7 +218,9 @@ fetch('http://154.113.16.142:9999/provipay/webapi/validate/1099/customer', {
 .catch(error => console.error(error));
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 <?php
 $ch = curl_init();
 
@@ -205,7 +246,9 @@ curl_close($ch);
 ?>
 ```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 using System;
 using System.Net.Http;
 using System.Text;
@@ -240,13 +283,14 @@ class Program
 }
 ```
 
-Response:
+**Response**:
 
-**Response**- 200 OK: Returns a JSON object with validation results.
+*   **200 OK**: Returns a JSON object with validation results.
+    
 
-200 OK: Returns a JSON object with validation results.
+Copy
 
-**200 OK**```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```
 {
     "balance": "",
     "customer_name": "NP NGEMA",
@@ -255,4 +299,6 @@ Response:
 }
 ```
 
-Last updated 9 days ago
+[PreviousGet Field](/provi-bill/get-field)[NextPayment](/provi-bill/payment)
+
+Last updated 24 days ago
