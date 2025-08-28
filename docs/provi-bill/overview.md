@@ -12,8 +12,6 @@ Base URL
 
 All endpoints are relative to the base URL:
 
-Copy
-
 ```
 http://154.113.16.142:9999/provipay/webapi
 ```
@@ -28,15 +26,11 @@ All endpoints require **Basic Authentication** using a username and password.
 
 **Headers**:
 
-Copy
-
 ```
 Authorization: Basic <base64-encoded-username:password>
 ```
 
 To generate the Basic Auth header, encode the username:password string in Base64. For example, if the username is user and the password is pass, the header would be:
-
-Copy
 
 ```
 Authorization: Basic dXNlcjpwYXNz
