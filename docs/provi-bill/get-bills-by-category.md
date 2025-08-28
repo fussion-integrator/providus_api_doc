@@ -20,79 +20,210 @@ Response:
 
 **200 OK**### Sample Implementation
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap whitespace-pre-wrap
-curl --request GET \
-  --url 'http://154.113.16.142:9999/provipay/webapi/bill/assigned/byCategoryId/4' \
-  --header 'Authorization: Basic <base64-encoded-username:password>'
+### Curl
 
-
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
-public class Main {
-    public static void main(String[] args) throws Exception {
-        URL url = new URL("http://154.113.16.142:9999/provipay/webapi/bill/assigned/byCategoryId/4");
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestMethod("GET");
-        conn.setRequestProperty("Authorization", "Basic <base64-encoded-username:password>");
-
-        int responseCode = conn.getResponseCode();
-        if (responseCode == 200) {
-            BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            String inputLine;
-            StringBuilder response = new StringBuilder();
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
-            }
-            in.close();
-            System.out.println(response.toString());
-        } else {
-            System.out.println(conn.getResponseMessage());
-        }
-    }
-}
-
-
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-<?php
-$ch = curl_init();
-
-curl_setopt($ch, CURLOPT_URL, "http://154.113.16.142:9999/provipay/webapi/bill/assigned/byCategoryId/4");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    'Authorization: Basic <base64-encoded-username:password>'
-]);
-
-$response = curl_exec($ch);
-$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
-if ($httpCode == 200) {
-    echo $response;
-} else {
-    echo curl_error($ch);
-}
-
-curl_close($ch);
-?>
-
-
-Example Response:
-
-**Example Response**```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-[
-    {
-        "bill_id": 7,
-        "category_id": "4",
-        "description": "Ikeja Electric - DML bill",
-        "list_order": "1",
-        "name": "Ikeja Electric - IKEDC",
-        "source_id": ""
-    },
-    ...
-]
+```curl
+curl -X GET "https://api.providusbank.com/api/endpoint" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"
 ```
 
-Last updated 9 days ago
+### Python
+
+```python
+import requests
+
+url = "https://api.providusbank.com/api/endpoint"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+}
+
+response = requests.get(url, headers=headers)
+print(response.json())
+```
+
+### Javascript
+
+```javascript
+const response = await fetch('https://api.providusbank.com/api/endpoint', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  }
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+### Nodejs
+
+```nodejs
+const axios = require('axios');
+
+const config = {
+  method: 'get',
+  url: 'https://api.providusbank.com/api/endpoint',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  }
+};
+
+axios(config)
+  .then(response => console.log(response.data))
+  .catch(error => console.error(error));
+```
+
+### Php
+
+```php
+<?php
+$url = "https://api.providusbank.com/api/endpoint";
+$headers = [
+    "Authorization: Bearer YOUR_API_KEY",
+    "Content-Type: application/json"
+];
+
+$context = stream_context_create([
+    'http' => [
+        'method' => 'GET',
+        'header' => implode("\r\n", $headers)
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
+echo $response;
+?>
+```
+
+### Java
+
+```java
+import java.net.http.*;
+import java.net.URI;
+import java.time.Duration;
+
+public class ApiClient {
+    public static void main(String[] args) throws Exception {
+        HttpClient client = HttpClient.newBuilder()
+            .connectTimeout(Duration.ofSeconds(10))
+            .build();
+            
+        HttpRequest request = HttpRequest.newBuilder()
+            .uri(URI.create("https://api.providusbank.com/api/endpoint"))
+            .header("Authorization", "Bearer YOUR_API_KEY")
+            .header("Content-Type", "application/json")
+            .GET(HttpRequest.BodyPublishers.noBody())
+            .build();
+
+        HttpResponse<String> response = client.send(request, 
+            HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.body());
+    }
+}
+```
+
+### Csharp
+
+```csharp
+using System;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+
+class Program
+{
+    private static readonly HttpClient client = new HttpClient();
+    
+    static async Task Main()
+    {
+        client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
+        
+        var response = await client.GetAsync("https://api.providusbank.com/api/endpoint");
+        
+        var responseContent = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(responseContent);
+    }
+}
+```
+
+### Dart
+
+```dart
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+Future<void> makeApiCall() async {
+  final url = Uri.parse('https://api.providusbank.com/api/endpoint');
+  final headers = {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json',
+  };
+  
+  final response = await http.get(url, headers: headers);
+  
+  if (response.statusCode == 200) {
+    final data = jsonDecode(response.body);
+    print(data);
+  } else {
+    print('Error: ${response.statusCode}');
+  }
+}
+```
+
+### Go
+
+```go
+package main
+
+import (
+    "bytes"
+    "encoding/json"
+    "fmt"
+    "io"
+    "net/http"
+)
+
+func main() {
+    url := "https://api.providusbank.com/api/endpoint"
+    
+    req, _ := http.NewRequest("GET", url, nil)
+    
+    req.Header.Set("Authorization", "Bearer YOUR_API_KEY")
+    req.Header.Set("Content-Type", "application/json")
+    
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    if err != nil {
+        panic(err)
+    }
+    defer resp.Body.Close()
+    
+    body, _ := io.ReadAll(resp.Body)
+    fmt.Println(string(body))
+}
+```
+
+### Ruby
+
+```ruby
+require 'net/http'
+require 'json'
+
+uri = URI('https://api.providusbank.com/api/endpoint')
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+
+request = Net::HTTP::Get.new(uri)
+request['Authorization'] = 'Bearer YOUR_API_KEY'
+request['Content-Type'] = 'application/json'
+
+
+
+response = http.request(request)
+puts JSON.parse(response.body)
+```
+
