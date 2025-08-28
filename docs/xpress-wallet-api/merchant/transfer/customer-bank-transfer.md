@@ -5,9 +5,7 @@ Initiate a bank transfer from a customer account.
 *   **Endpoint**: `POST {{base-url}}/transfer/bank/customer`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "Authorization": "Bearer {{vault:authorization-secret}}",
@@ -17,9 +15,7 @@ Initiate a bank transfer from a customer account.
     ```
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     {
       "amount": 150,
@@ -35,9 +31,7 @@ Initiate a bank transfer from a customer account.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -59,9 +53,7 @@ Initiate a bank transfer from a customer account.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
