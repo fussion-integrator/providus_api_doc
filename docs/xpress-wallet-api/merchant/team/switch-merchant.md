@@ -5,9 +5,7 @@ Switch the active merchant account.
 *   **Endpoint**: `POST {{base-url}}/team/merchants/switch`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -16,9 +14,7 @@ Switch the active merchant account.
     ```
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     {
       "merchantId": "0cee2057-645e-48aa-b2f7-712e07cd0232"
@@ -28,9 +24,7 @@ Switch the active merchant account.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -40,9 +34,7 @@ Switch the active merchant account.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
