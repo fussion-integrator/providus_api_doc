@@ -23,7 +23,6 @@ Request (Auto-gen Reference)
   "account_name": "lemuel"
 }
 
-
 ```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 {
   "account_number": "9978012701",
@@ -34,7 +33,6 @@ Request (Auto-gen Reference)
   "initiationTranRef": "Prov2312"
 }
 
-
 ```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
 {
 "requestSuccessful": false,
@@ -43,8 +41,6 @@ Request (Auto-gen Reference)
 "initiationTranRef": ""
 }
 
-
 ### Sample Implementation
 
 Coming soon...
-
