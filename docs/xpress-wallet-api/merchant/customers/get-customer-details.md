@@ -10,9 +10,7 @@ Retrieve details of a specific customer by their ID.
         
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -23,9 +21,7 @@ Retrieve details of a specific customer by their ID.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -49,9 +45,7 @@ Retrieve details of a specific customer by their ID.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
