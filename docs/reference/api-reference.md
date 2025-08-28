@@ -1,59 +1,89 @@
-1. Reference
-
 # API Reference
 
 Dive into the specifics of each API endpoint by checking out our complete documentation.
 
-## API Reference
+## 
 
-### Introduction
+[](#api-reference)
 
-Welcome to the API Reference for [Your API Name]. This page provides detailed information about the available endpoints, request methods, parameters, and response formats for integrating with our APIs.
+API Reference
 
-### Authentication
+### 
+
+[](#introduction)
+
+Introduction
+
+Welcome to the API Reference for \[Your API Name\]. This page provides detailed information about the available endpoints, request methods, parameters, and response formats for integrating with our APIs.
+
+### 
+
+[](#authentication)
+
+Authentication
 
 Before making requests to our API, ensure proper authentication. Refer to the Authentication section for details on how to include authentication credentials in your requests.
 
-### Base URL
+### 
 
-`https://api.example.com/v1`### Available Endpoints
+[](#base-url)
 
-Endpoint
+Base URL
 
-**Endpoint**- Path: /endpoint/path
-- HTTP Method: GET (or other applicable methods)
+The base URL for all API endpoints is: `https://api.example.com/v1`
 
-**Path:**`/endpoint/path`**HTTP Method:**`GET`Request Parameters
+### 
 
-**Request Parameters**List and describe the parameters required for this endpoint:
+[](#available-endpoints)
 
-- parameter1: Description of the parameter.
-- parameter2: Description of the parameter.
+Available Endpoints
 
-`parameter1``parameter2`Example Request
+**Endpoint**
 
-**Example Request**Provide an example of how to structure the API request:
+*   **Path:** `/endpoint/path`
+    
+*   **HTTP Method:** `GET` (or other applicable methods)
+    
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+**Request Parameters**
+
+List and describe the parameters required for this endpoint:
+
+*   `parameter1`: Description of the parameter.
+    
+*   `parameter2`: Description of the parameter.
+    
+
+**Example Request**
+
+Provide an example of how to structure the API request:
+
+Copy
+
+```
 GET https://api.example.com/v1/endpoint/path?parameter1=value1&parameter2=value2
 ```
 
-Response
+**Response**
 
-**Response**Describe the structure of the response, including possible status codes and response body:
+Describe the structure of the response, including possible status codes and response body:
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 jsonCopy code{
   "key1": "value1",
   "key2": "value2"
 }
 ```
 
-Example Response
+**Example Response**
 
-**Example Response**Provide an example of a typical API response:
+Provide an example of a typical API response:
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+Copy
+
+```
 jsonCopy code{
   "status": "success",
   "data": {
@@ -63,27 +93,45 @@ jsonCopy code{
 }
 ```
 
-### Authentication
+### 
+
+[](#authentication-1)
+
+Authentication
 
 To authenticate your requests, include the following headers in your API calls:
 
-- Authorization: Bearer [Your Access Token]
-- Other authentication headers if applicable
+*   `Authorization`: Bearer \[Your Access Token\]
+    
+*   Other authentication headers if applicable
+    
 
-`Authorization`Other authentication headers if applicable
+### 
 
-### Rate Limiting
+[](#rate-limiting)
 
-Our API has rate limits to ensure fair usage. Refer to the Rate Limiting section for details on the allowed number of requests.
+Rate Limiting
 
-### Error Handling
+Our API has rate limits to ensure fair usage. Refer to the [Rate Limiting](https://chat.openai.com/#rate-limiting) section for details on the allowed number of requests.
 
-Review the Error Handling section for information on how errors are communicated and how to troubleshoot common issues.
+### 
 
-### Conclusion
+[](#error-handling)
 
-Thank you for exploring our API Reference. If you have any questions or need assistance, please contact our support team at [[email protected]].
+Error Handling
+
+Review the [Error Handling](https://chat.openai.com/#error-handling) section for information on how errors are communicated and how to troubleshoot common issues.
+
+### 
+
+[](#conclusion)
+
+Conclusion
+
+Thank you for exploring our API Reference. If you have any questions or need assistance, please contact our support team at \[[\[email protected\]](/cdn-cgi/l/email-protection)\].
 
 Happy coding!
+
+[PreviousCode Samples](/xpress-wallet-api/code-samples)[NextAuthentication](/reference/api-reference/authentication)
 
 Last updated 1 year ago
