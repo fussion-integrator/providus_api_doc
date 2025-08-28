@@ -48,15 +48,11 @@ C#
 
 [](#tab-c)
 
-Copy
-
 ```
 curl --request GET \
   --url 'http://154.113.16.142:9999/provipay/webapi/bill/assigned/byCategoryId/4' \
   --header 'Authorization: Basic <base64-encoded-username:password>'
 ```
-
-Copy
 
 ```
 import requests
@@ -71,8 +67,6 @@ if response.status_code == 200:
 else:
     print(response.reason)
 ```
-
-Copy
 
 ```
 import java.net.HttpURLConnection;
@@ -104,8 +98,6 @@ public class Main {
 }
 ```
 
-Copy
-
 ```
 const headers = {
     'Authorization': 'Basic <base64-encoded-username:password>'
@@ -124,8 +116,6 @@ fetch('http://154.113.16.142:9999/provipay/webapi/bill/assigned/byCategoryId/4',
 .then(data => console.log(data))
 .catch(error => console.error(error));
 ```
-
-Copy
 
 ```
 <?php
@@ -149,8 +139,6 @@ if ($httpCode == 200) {
 curl_close($ch);
 ?>
 ```
-
-Copy
 
 ```
 using System;
@@ -181,8 +169,6 @@ class Program
 ```
 
 **Example Response**:
-
-Copy
 
 ```
 [
