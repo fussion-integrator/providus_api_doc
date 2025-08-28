@@ -5,9 +5,7 @@ Send an invitation to a new team member.
 *   **Endpoint**: `POST {{base-url}}/team/invitations`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -16,9 +14,7 @@ Send an invitation to a new team member.
     ```
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     {
       "roleId": "1e9f0636-1e3c-409a-a8bd-3b037410530f",
@@ -30,9 +26,7 @@ Send an invitation to a new team member.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -42,9 +36,7 @@ Send an invitation to a new team member.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
