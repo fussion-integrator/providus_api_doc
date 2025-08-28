@@ -5,9 +5,7 @@ Create a new card for a customer.
 *   **Endpoint**: `POST {{base-url}}/card`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -16,9 +14,7 @@ Create a new card for a customer.
     ```
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     {
       "address1": "10 Sonola Street, Osogbo",
@@ -30,9 +26,7 @@ Create a new card for a customer.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -42,9 +36,7 @@ Create a new card for a customer.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
