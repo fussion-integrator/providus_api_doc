@@ -5,9 +5,7 @@ Create a wallet for a customer.
 *   **Endpoint**: `POST {{base-url}}/wallet`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -16,9 +14,7 @@ Create a wallet for a customer.
     ```
     
 *   **Body**:
-    
-    Copy
-    
+
     ```
     {
       "bvn": "22181029322",
@@ -38,9 +34,7 @@ Create a wallet for a customer.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -91,9 +85,7 @@ Create a wallet for a customer.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
