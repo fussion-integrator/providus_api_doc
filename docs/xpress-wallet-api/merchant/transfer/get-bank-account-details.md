@@ -12,9 +12,7 @@ Verify bank account details using sort code and account number.
         
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -25,9 +23,7 @@ Verify bank account details using sort code and account number.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -41,9 +37,7 @@ Verify bank account details using sort code and account number.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
