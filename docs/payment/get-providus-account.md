@@ -86,8 +86,6 @@ account number for the account
 
 [](#tab-id-500-internal-server-error-server-encountered-an-unexpected-error)
 
-Copy
-
 ```
 {
     "accountStatus":"ACTIVE",
@@ -135,8 +133,6 @@ C#
 
 [](#tab-c)
 
-Copy
-
 ```
 curl --location 'https://api-staging.providusbank.com/GetProvidusAccount' \
 --header 'Accept: application/json' \
@@ -149,8 +145,6 @@ curl --location 'https://api-staging.providusbank.com/GetProvidusAccount' \
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
 
 ```
 {
@@ -166,8 +160,6 @@ Copy
     "responseCode":"00"
 }
 ```
-
-Copy
 
 ```
 import requests
@@ -192,8 +184,6 @@ print(response.text)
 
 > The above command returns JSON structured like this:
 
-Copy
-
 ```
 {
     "accountStatus":"ACTIVE",
@@ -208,8 +198,6 @@ Copy
     "responseCode":"00"
 }
 ```
-
-Copy
 
 ```
 OkHttpClient client = new OkHttpClient().newBuilder()
@@ -227,8 +215,6 @@ Response response = client.newCall(request).execute();
 
 > The above command returns JSON structured like this:
 
-Copy
-
 ```
 {
     "accountStatus":"ACTIVE",
@@ -243,8 +229,6 @@ Copy
     "responseCode":"00"
 }
 ```
-
-Copy
 
 ```
 var data = JSON.stringify({
@@ -271,8 +255,6 @@ xhr.send(data);
 
 > The above command returns JSON structured like this:
 
-Copy
-
 ```
 {
     "accountStatus":"ACTIVE",
@@ -287,8 +269,6 @@ Copy
     "responseCode":"00"
 }
 ```
-
-Copy
 
 ```
 <?php
@@ -321,8 +301,6 @@ catch(HTTP_Request2_Exception $e) {
 
 > The above command returns JSON structured like this:
 
-Copy
-
 ```
 {
     "accountStatus":"ACTIVE",
@@ -337,8 +315,6 @@ Copy
     "responseCode":"00"
 }
 ```
-
-Copy
 
 ```
 var options = new RestClientOptions("https://api-staging.providusbank.com")
@@ -360,8 +336,6 @@ Console.WriteLine(response.Content);
 ```
 
 > The above command returns JSON structured like this:
-
-Copy
 
 ```
 {
