@@ -5,9 +5,7 @@ Retrieve a list of merchants associated with the team.
 *   **Endpoint**: `GET {{base-url}}/team/merchants`
     
 *   **Headers**:
-    
-    Copy
-    
+
     ```
     {
       "X-Access-Token": "{{access-token}}",
@@ -18,9 +16,7 @@ Retrieve a list of merchants associated with the team.
 *   **Response**:
     
     *   **200 OK**:
-        
-        Copy
-        
+
         ```
         {
           "status": true,
@@ -36,9 +32,7 @@ Retrieve a list of merchants associated with the team.
         
     
 *   **Sample Code (Dart)**:
-    
-    Copy
-    
+
     ```
     var headers = {
       'X-Access-Token': '{{access-token}}',
