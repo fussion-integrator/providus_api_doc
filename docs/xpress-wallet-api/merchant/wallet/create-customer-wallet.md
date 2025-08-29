@@ -115,5 +115,3 @@ Create a wallet for a customer.
     
 
 [PreviousWallet](/xpress-wallet-api/merchant/wallet)[NextGet All Wallets](/xpress-wallet-api/merchant/wallet/get-all-wallets)
-
-Last updated 26 days ago
