@@ -64,5 +64,3 @@ Retrieve the balance and limits of a customer's card.
     
 
 [PreviousActivate Card](/xpress-wallet-api/merchant/card/activate-card)[NextFund Card](/xpress-wallet-api/merchant/card/fund-card)
-
-Last updated 26 days ago
