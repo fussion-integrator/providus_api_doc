@@ -1,71 +1,140 @@
 # Refresh Token
 
-#### 
-
 [](#post-auth-refresh-token)
 
-POST /auth/refresh/token
-
-Refreshes authentication tokens for the user.
-
-**Request Headers:**
-
-*   X-Refresh-Token: Refresh token (e.g., Cx9AH9ubWqG3JyBz8DZr-E6aTa8GKruNerzJRCDUFbyjM6ef)
-    
-
-**Example Request (Dart - http):**
+## Base URL
 
 ```
-var headers = {
-  'X-Refresh-Token': 'Cx9AH9ubWqG3JyBz8DZr-E6aTa8GKruNerzJRCDUFbyjM6ef'
-};
-var request = http.Request('POST', Uri.parse('{{base-url}}/auth/refresh/token'));
-request.body = '''''';
-request.headers.addAll(headers);
-http.StreamedResponse response = await request.send();
-if (response.statusCode == 200) {
-  print(await response.stream.bytesToString());
-} else {
-  print(response.reasonPhrase);
+https://api.providusbank.com
+```
+
+## Endpoint
+
+<div class="method post">POST</div> `/api/v1/wallet/auth`
+
+
+
+## Request Body
+
+```json
+{
+  "reference": "REF123456789"
 }
 ```
 
-**Response (200 OK):**
 
-```
+## Response Body
+
+### Success Response (200 OK)
+
+```json
 {
-  "status": true,
+  "status": "success",
+  "message": "Operation completed successfully",
   "data": {
-    "id": "425bc461-9b6c-4036-b47a-9d96e4f21eba",
-    "role": "USER",
-    "email": "[email protected]",
-    "lastName": "Obagunwa",
-    "firstName": "Samson",
-    "createdAt": "2021-08-16T22:59:27.026Z",
-    "updatedAt": "2021-08-16T22:59:27.026Z"
-  },
-  "merchant": {
-    "role": "USER",
-    "email": "[email protected]",
-    "id": "fb2b0eb6-edc8-48f8-bc38-5c000e52a57e",
-    "lastName": "Obagunwa",
-    "mode": "SANDBOX",
-    "firstName": "Samson",
-    "review": "ENABLED",
-    "callbackURL": "https://webhook.site/7e4f1819-7780-416d-8596-3dece233d785",
-    "businessName": "Neyosoft",
-    "businessType": "Electrical Electronics",
-    "parentMerchant": "0cee2057-645e-48aa-b2f7-712e07cd0232",
-    "canDebitCustomer": true,
-    "sandboxCallbackURL": "http://localhost:50004/webhook/wallet",
-    "createdAt": "2021-08-16T22:59:26.765Z",
-    "updatedAt": "2022-01-31T17:39:36.193Z"
+    "result": "success"
   }
 }
 ```
 
-### 
+## Sample Implementation
 
-[](#undefined)
+```curl
+curl -X POST "https://api.providusbank.com/api/v1/wallet/auth" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "reference": "REF123456789"
+}'
+```
 
-[PreviousReset password](/xpress-wallet-api/authentication/reset-password)[NextUser](/xpress-wallet-api/user)
+```python
+import requests
+
+url = "https://api.providusbank.com/api/v1/wallet/auth"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+}
+
+data = {
+  "reference": "REF123456789"
+}
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+```
+
+```javascript
+const response = await fetch('https://api.providusbank.com/api/v1/wallet/auth', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+  "reference": "REF123456789"
+})
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+```php
+<?php
+$url = "https://api.providusbank.com/api/v1/wallet/auth";
+$headers = [
+    "Authorization: Bearer YOUR_API_KEY",
+    "Content-Type: application/json"
+];
+
+$data = json_encode({
+  \"reference\": \"REF123456789\"
+});
+$context = stream_context_create([
+    'http' => [
+        'method' => 'POST',
+        'header' => implode("\r\n", $headers),
+        'content' => $data
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
+echo $response;
+?>
+```
+
+```java
+import java.net.http.*;
+import java.net.URI;
+
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.providusbank.com/api/v1/wallet/auth"))
+    .header("Authorization", "Bearer YOUR_API_KEY")
+    .header("Content-Type", "application/json")
+    .POST(HttpRequest.BodyPublishers.ofString("{\"reference\":\"REF123456789\"}"))
+    .build();
+
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+System.out.println(response.body());
+```
+
+```csharp
+using System;
+using System.Net.Http;
+using System.Text;
+
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
+
+var json = @"{
+  "reference": "REF123456789"
+}";
+var content = new StringContent(json, Encoding.UTF8, "application/json");
+var response = await client.PostAsync("https://api.providusbank.com/api/v1/wallet/auth", content);
+
+var responseContent = await response.Content.ReadAsStringAsync();
+Console.WriteLine(responseContent);
+```
+
