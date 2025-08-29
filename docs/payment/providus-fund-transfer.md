@@ -10,14 +10,16 @@ https://api.providusbank.com
 
 ## Endpoint
 
-<div class="method post">POST</div> `/api/v1/payment/providus/transfer`
+<div class="method post">POST</div> `/api/v1/payment/transfer`
+
+
 
 ## Request Body
 
 ```json
 {
   "amount": 1000,
-  "destinationAccount": "9876543210",
+  "destinationAccount": "1234567890",
   "narration": "Transfer"
 }
 ```
@@ -30,23 +32,23 @@ https://api.providusbank.com
 ```json
 {
   "status": "success",
+  "message": "Operation completed successfully",
   "data": {
-    "transactionId": "TXN987654321",
+    "transactionId": "TXN123456789",
     "status": "successful"
   }
 }
 ```
 
-
 ## Sample Implementation
 
 ```curl
-curl -X POST "https://api.providusbank.com/api/v1/payment/providus/transfer" \
+curl -X POST "https://api.providusbank.com/api/v1/payment/transfer" \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
   "amount": 1000,
-  "destinationAccount": "9876543210",
+  "destinationAccount": "1234567890",
   "narration": "Transfer"
 }'
 ```
@@ -54,7 +56,7 @@ curl -X POST "https://api.providusbank.com/api/v1/payment/providus/transfer" \
 ```python
 import requests
 
-url = "https://api.providusbank.com/api/v1/payment/providus/transfer"
+url = "https://api.providusbank.com/api/v1/payment/transfer"
 headers = {
     "Authorization": "Bearer YOUR_API_KEY",
     "Content-Type": "application/json"
@@ -62,7 +64,7 @@ headers = {
 
 data = {
   "amount": 1000,
-  "destinationAccount": "9876543210",
+  "destinationAccount": "1234567890",
   "narration": "Transfer"
 }
 response = requests.post(url, headers=headers, json=data)
@@ -70,7 +72,7 @@ print(response.json())
 ```
 
 ```javascript
-const response = await fetch('https://api.providusbank.com/api/v1/payment/providus/transfer', {
+const response = await fetch('https://api.providusbank.com/api/v1/payment/transfer', {
   method: 'POST',
   headers: {
     'Authorization': 'Bearer YOUR_API_KEY',
@@ -78,7 +80,7 @@ const response = await fetch('https://api.providusbank.com/api/v1/payment/provid
   },
   body: JSON.stringify({
   "amount": 1000,
-  "destinationAccount": "9876543210",
+  "destinationAccount": "1234567890",
   "narration": "Transfer"
 })
 });
@@ -89,7 +91,7 @@ console.log(data);
 
 ```php
 <?php
-$url = "https://api.providusbank.com/api/v1/payment/providus/transfer";
+$url = "https://api.providusbank.com/api/v1/payment/transfer";
 $headers = [
     "Authorization: Bearer YOUR_API_KEY",
     "Content-Type: application/json"
@@ -97,7 +99,7 @@ $headers = [
 
 $data = json_encode({
   \"amount\": 1000,
-  \"destinationAccount\": \"9876543210\",
+  \"destinationAccount\": \"1234567890\",
   \"narration\": \"Transfer\"
 });
 $context = stream_context_create([
@@ -119,10 +121,10 @@ import java.net.URI;
 
 HttpClient client = HttpClient.newHttpClient();
 HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create("https://api.providusbank.com/api/v1/payment/providus/transfer"))
+    .uri(URI.create("https://api.providusbank.com/api/v1/payment/transfer"))
     .header("Authorization", "Bearer YOUR_API_KEY")
     .header("Content-Type", "application/json")
-    .POST(HttpRequest.BodyPublishers.ofString("{\"amount\":1000,\"destinationAccount\":\"9876543210\",\"narration\":\"Transfer\"}"))
+    .POST(HttpRequest.BodyPublishers.ofString("{\"amount\":1000,\"destinationAccount\":\"1234567890\",\"narration\":\"Transfer\"}"))
     .build();
 
 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -139,11 +141,11 @@ client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
 
 var json = @"{
   "amount": 1000,
-  "destinationAccount": "9876543210",
+  "destinationAccount": "1234567890",
   "narration": "Transfer"
 }";
 var content = new StringContent(json, Encoding.UTF8, "application/json");
-var response = await client.PostAsync("https://api.providusbank.com/api/v1/payment/providus/transfer", content);
+var response = await client.PostAsync("https://api.providusbank.com/api/v1/payment/transfer", content);
 
 var responseContent = await response.Content.ReadAsStringAsync();
 Console.WriteLine(responseContent);
