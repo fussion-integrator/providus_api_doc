@@ -97,5 +97,3 @@ Start Exploring!
 Begin your API exploration journey using Postman, Newman, Swagger, Pact, and other tools in our API Playground. If you have any questions or need assistance, feel free to reach out to our support team.
 
 [PreviousData Formats](/reference/api-reference/data-formats)[NextAdvanced Setup of Postman for API Sandbox](/reference/sandbox/advanced-setup-of-postman-for-api-sandbox)
-
-Last updated 5 months ago
