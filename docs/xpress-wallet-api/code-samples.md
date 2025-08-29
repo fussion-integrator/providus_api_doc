@@ -2383,5 +2383,3 @@ public class Main {
 ```
 
 [PreviousGet Merchant Wallet](/xpress-wallet-api/merchant/get-merchant-wallet)[NextAPI Reference](/reference/api-reference)
-
-Last updated 26 days ago
