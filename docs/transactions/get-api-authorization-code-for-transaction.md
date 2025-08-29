@@ -237,5 +237,3 @@ Console.WriteLine(response.Content);
 > The above command returns JSON structured like this:
 
 [PreviousTransactions](/transactions)[NextExchange authorization code for access token](/transactions/exchange-authorization-code-for-access-token)
-
-Last updated 1 year ago
