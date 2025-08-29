@@ -416,5 +416,3 @@ Console.WriteLine(response.Content);
 ```
 
 [PreviousGet API authorization code for transaction](/transactions/get-api-authorization-code-for-transaction)[NextGet Transaction Status](/transactions/get-transaction-status)
-
-Last updated 1 year ago
