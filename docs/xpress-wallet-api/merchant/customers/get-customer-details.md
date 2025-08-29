@@ -63,5 +63,3 @@ Retrieve details of a specific customer by their ID.
     
 
 [PreviousGet All Customers](/xpress-wallet-api/merchant/customers/get-all-customers)[NextFind Customer by Phone Number](/xpress-wallet-api/merchant/customers/find-customer-by-phone-number)
-
-Last updated 26 days ago
