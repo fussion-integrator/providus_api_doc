@@ -369,5 +369,3 @@ Console.WriteLine(response.Content);
 ```
 
 [PreviousNIP Fund Transfer Multiple Debit Accounts](/payment/nip-fund-transfer-multiple-debit-accounts)[NextProvidus Fund Transfer](/payment/providus-fund-transfer)
-
-Last updated 1 year ago
