@@ -49,5 +49,3 @@ Retrieve a list of all available permissions.
     
 
 [PreviousRoles & Permission](/xpress-wallet-api/merchant/roles-and-permission)[NextGet All Roles](/xpress-wallet-api/merchant/roles-and-permission/get-all-roles)
-
-Last updated 26 days ago
