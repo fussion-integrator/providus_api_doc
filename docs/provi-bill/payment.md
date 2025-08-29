@@ -278,5 +278,3 @@ class Program
 ```
 
 [PreviousValidate](/provi-bill/validate)[NextPayment Inquiry](/provi-bill/payment-inquiry)
-
-Last updated 24 days ago
