@@ -55,5 +55,3 @@ Switch the active merchant account.
     
 
 [PreviousGet Merchant List](/xpress-wallet-api/merchant/team/get-merchant-list)[NextUpdate Member Information](/xpress-wallet-api/merchant/team/update-member-information)
-
-Last updated 26 days ago
