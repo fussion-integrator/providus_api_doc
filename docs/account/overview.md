@@ -63,5 +63,3 @@ Get statement of transactions on an account.
 [Get Providus Account Statement](/account/get-providus-account-statement)
 
 [PreviousQuick Start](/quick-start)[NextRetrieve Account Number](/account/retrieve-account-number)
-
-Last updated 26 days ago
