@@ -306,5 +306,3 @@ Console.WriteLine(response.Content);
 ```
 
 [PreviousGet NIP Banks](/payment/get-nip-banks)[NextGet BVN Details](/payment/get-bvn-details)
-
-Last updated 1 month ago
