@@ -1,382 +1,117 @@
 # Get NIP Banks
 
-* * *
+Retrieve list of banks available for NIP transfers.
 
-#### 
-
-[](#test-base-url)
-
-Test Base URL
-
-[https://api-staging.providusbank.com](https://api-staging.providusbank.com
-
-)
-
-#### 
-
-[](#production-base-url)
-
-Production Base URL
-
-[https://api.providusbank.com](https://api.providusbank.com)
-
-#### 
-
-[](#http-request)
-
-HTTP Request
-
-GET /account/NIP/banks
-
-* * *
-
-## 
-
-[](#nip-bank)
-
-NIP Bank.
-
-`GET` `https://api-staging.providusbank.com/v1/account/NIP/banks`
-
-Get NIP Banks.
-
-200 Account successfully retrieved
-
-[](#tab-id-200-account-successfully-retrieved)
-
-401: Unauthorized Permission denied
-
-[](#tab-id-401-unauthorized-permission-denied)
-
-400: Bad Request The server cannot process the request due to a client error, such as malformed syntax or invalid parameters in the request.
-
-[](#tab-id-400-bad-request-the-server-cannot-process-the-request-due-to-a-client-error-such-as-malformed-syntax)
-
-500: Internal Server Error Server encountered an unexpected error
-
-[](#tab-id-500-internal-server-error-server-encountered-an-unexpected-error)
+## Base URL
 
 ```
+https://api.providusbank.com
+```
+
+## Endpoint
+
+<div class="method get">GET</div> `/api/v1/payment/nip/banks`
+
+
+
+## Response Body
+
+### Success Response (200 OK)
+
+```json
 {
-    "banks":[
-        {"bankCode":"000014","bankName":"ACCESS BANK"},
-        {"bankCode":"100013","bankName":"ACCESS MOBILE"},
-        {"bankCode":"090133","bankName":"AL-BARAKAH MICROFINANCE BANK"},
-        {"bankCode":"090116","bankName":"AMML MICROFINANCE BANK"},
-        {"bankCode":"090001","bankName":"ASO SAVINGS"},
-        {"bankCode":"090127","bankName":"BC KASH MICROFINANCE BANK"},
-        {"bankCode":"090117","bankName":"BOCTRUST MICROFINANCE BANK LIMITED"},
-        {"bankCode":"100005","bankName":"CELLULANT"},
-        {"bankCode":"100015","bankName":"CHAMS MOBILE"},
-        {"bankCode":"000009","bankName":"CITI BANK"},
-        {"bankCode":"060001","bankName":"CORONATION BANK"},
-        {"bankCode":"070006","bankName":"COVENANT MFB"},
-        {"bankCode":"000005","bankName":"DIAMOND BANK"},
-        {"bankCode":"100021","bankName":"EARTHOLEUM"},
-        {"bankCode":"000010","bankName":"ECOBANK"},
-        {"bankCode":"100008","bankName":"ECOBANK XPRESS ACCOUNT"},
-        {"bankCode":"090114","bankName":"EMPIRE TRUST MICROFINANCE BANK"},
-        {"bankCode":"000019","bankName":"ENTERPRISE BANK"},
-        {"bankCode":"100006","bankName":"eTRANZACT"},
-        {"bankCode":"060002","bankName":"FBN MERCHANT BANK"},
-        {"bankCode":"100014","bankName":"FBN MOBILE"}
-    ],
-    "responseMessage":"SUCCESS",
-    "responseCode":"00"
+  "status": "success",
+  "data": [
+    {
+      "bankCode": "044",
+      "bankName": "Access Bank"
+    }
+  ]
 }
 ```
 
-* * *
 
-### 
+## Sample Implementation
 
-[](#sample-implementation)
-
-Sample Implementation
-
-Curl
-
-[](#tab-curl)
-
-Python
-
-[](#tab-python)
-
-Java
-
-[](#tab-java)
-
-JavaScript
-
-[](#tab-javascript)
-
-PHP
-
-[](#tab-php)
-
-C#
-
-[](#tab-c)
-
-```
-curl -x GET "https://api-demo.providusbank/account/NIP/banks"
-  -H "Authorization: {{Authentication token}}"
+```curl
+curl -X GET "https://api.providusbank.com/api/v1/payment/nip/banks" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"
 ```
 
-> The above command returns JSON structured like this:
-
-```
-{
-    "banks":[
-        {"bankCode":"000014","bankName":"ACCESS BANK"},
-        {"bankCode":"100013","bankName":"ACCESS MOBILE"},
-        {"bankCode":"090133","bankName":"AL-BARAKAH MICROFINANCE BANK"},
-        {"bankCode":"090116","bankName":"AMML MICROFINANCE BANK"},
-        {"bankCode":"090001","bankName":"ASO SAVINGS"},
-        {"bankCode":"090127","bankName":"BC KASH MICROFINANCE BANK"},
-        {"bankCode":"090117","bankName":"BOCTRUST MICROFINANCE BANK LIMITED"},
-        {"bankCode":"100005","bankName":"CELLULANT"},
-        {"bankCode":"100015","bankName":"CHAMS MOBILE"},
-        {"bankCode":"000009","bankName":"CITI BANK"},
-        {"bankCode":"060001","bankName":"CORONATION BANK"},
-        {"bankCode":"070006","bankName":"COVENANT MFB"},
-        {"bankCode":"000005","bankName":"DIAMOND BANK"},
-        {"bankCode":"100021","bankName":"EARTHOLEUM"},
-        {"bankCode":"000010","bankName":"ECOBANK"},
-        {"bankCode":"100008","bankName":"ECOBANK XPRESS ACCOUNT"},
-        {"bankCode":"090114","bankName":"EMPIRE TRUST MICROFINANCE BANK"},
-        {"bankCode":"000019","bankName":"ENTERPRISE BANK"},
-        {"bankCode":"100006","bankName":"eTRANZACT"},
-        {"bankCode":"060002","bankName":"FBN MERCHANT BANK"},
-        {"bankCode":"100014","bankName":"FBN MOBILE"}
-    ],
-    "responseMessage":"SUCCESS",
-    "responseCode":"00"}
-```
-
-```
+```python
 import requests
-from requests.structures import CaseInsensitiveDict
 
-url = "https://api-demo.providusbank/account/NIP/banks"
+url = "https://api.providusbank.com/api/v1/payment/nip/banks"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+}
 
-headers = CaseInsensitiveDict()
-headers["Authorization"] = "{{Authentication token}}"
+response = requests.get(url, headers=headers)
+print(response.json())
 ```
 
-> The above command returns JSON structured like this:
-
-```
-{
-    "banks":[
-        {"bankCode":"000014","bankName":"ACCESS BANK"},
-        {"bankCode":"100013","bankName":"ACCESS MOBILE"},
-        {"bankCode":"090133","bankName":"AL-BARAKAH MICROFINANCE BANK"},
-        {"bankCode":"090116","bankName":"AMML MICROFINANCE BANK"},
-        {"bankCode":"090001","bankName":"ASO SAVINGS"},
-        {"bankCode":"090127","bankName":"BC KASH MICROFINANCE BANK"},
-        {"bankCode":"090117","bankName":"BOCTRUST MICROFINANCE BANK LIMITED"},
-        {"bankCode":"100005","bankName":"CELLULANT"},
-        {"bankCode":"100015","bankName":"CHAMS MOBILE"},
-        {"bankCode":"000009","bankName":"CITI BANK"},
-        {"bankCode":"060001","bankName":"CORONATION BANK"},
-        {"bankCode":"070006","bankName":"COVENANT MFB"},
-        {"bankCode":"000005","bankName":"DIAMOND BANK"},
-        {"bankCode":"100021","bankName":"EARTHOLEUM"},
-        {"bankCode":"000010","bankName":"ECOBANK"},
-        {"bankCode":"100008","bankName":"ECOBANK XPRESS ACCOUNT"},
-        {"bankCode":"090114","bankName":"EMPIRE TRUST MICROFINANCE BANK"},
-        {"bankCode":"000019","bankName":"ENTERPRISE BANK"},
-        {"bankCode":"100006","bankName":"eTRANZACT"},
-        {"bankCode":"060002","bankName":"FBN MERCHANT BANK"},
-        {"bankCode":"100014","bankName":"FBN MOBILE"}
-    ],
-    "responseMessage":"SUCCESS",
-    "responseCode":"00"}
-```
-
-```
-URL url = new URL("https://api-demo.providusbank/account/NIP/banks");
-HttpURLConnection http = (HttpURLConnection)url.openConnection();
-http.setRequestProperty("Authorization", "{{Authentication token}}");
-
-System.out.println(http.getResponseCode() + " " + http.getResponseMessage());
-http.disconnect();
-```
-
-> The above command returns JSON structured like this:
-
-```
-{
-    "banks":[
-        {"bankCode":"000014","bankName":"ACCESS BANK"},
-        {"bankCode":"100013","bankName":"ACCESS MOBILE"},
-        {"bankCode":"090133","bankName":"AL-BARAKAH MICROFINANCE BANK"},
-        {"bankCode":"090116","bankName":"AMML MICROFINANCE BANK"},
-        {"bankCode":"090001","bankName":"ASO SAVINGS"},
-        {"bankCode":"090127","bankName":"BC KASH MICROFINANCE BANK"},
-        {"bankCode":"090117","bankName":"BOCTRUST MICROFINANCE BANK LIMITED"},
-        {"bankCode":"100005","bankName":"CELLULANT"},
-        {"bankCode":"100015","bankName":"CHAMS MOBILE"},
-        {"bankCode":"000009","bankName":"CITI BANK"},
-        {"bankCode":"060001","bankName":"CORONATION BANK"},
-        {"bankCode":"070006","bankName":"COVENANT MFB"},
-        {"bankCode":"000005","bankName":"DIAMOND BANK"},
-        {"bankCode":"100021","bankName":"EARTHOLEUM"},
-        {"bankCode":"000010","bankName":"ECOBANK"},
-        {"bankCode":"100008","bankName":"ECOBANK XPRESS ACCOUNT"},
-        {"bankCode":"090114","bankName":"EMPIRE TRUST MICROFINANCE BANK"},
-        {"bankCode":"000019","bankName":"ENTERPRISE BANK"},
-        {"bankCode":"100006","bankName":"eTRANZACT"},
-        {"bankCode":"060002","bankName":"FBN MERCHANT BANK"},
-        {"bankCode":"100014","bankName":"FBN MOBILE"}
-    ],
-    "responseMessage":"SUCCESS",
-    "responseCode":"00"}
-```
-
-```
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-
-xhr.addEventListener("readystatechange", function() {
-  if(this.readyState === 4) {
-    console.log(this.responseText);
+```javascript
+const response = await fetch('https://api.providusbank.com/api/v1/payment/nip/banks', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
   }
 });
-xhr.open("GET", "https://api-staging.providusbank.com/account/NIP/banks");
-xhr.setRequestHeader("Authorization", "{{Authentication token}}");
-xhr.send();
+
+const data = await response.json();
+console.log(data);
 ```
 
-> The above command returns JSON structured like this:
-
-```
-{
-    "banks":[
-        {"bankCode":"000014","bankName":"ACCESS BANK"},
-        {"bankCode":"100013","bankName":"ACCESS MOBILE"},
-        {"bankCode":"090133","bankName":"AL-BARAKAH MICROFINANCE BANK"},
-        {"bankCode":"090116","bankName":"AMML MICROFINANCE BANK"},
-        {"bankCode":"090001","bankName":"ASO SAVINGS"},
-        {"bankCode":"090127","bankName":"BC KASH MICROFINANCE BANK"},
-        {"bankCode":"090117","bankName":"BOCTRUST MICROFINANCE BANK LIMITED"},
-        {"bankCode":"100005","bankName":"CELLULANT"},
-        {"bankCode":"100015","bankName":"CHAMS MOBILE"},
-        {"bankCode":"000009","bankName":"CITI BANK"},
-        {"bankCode":"060001","bankName":"CORONATION BANK"},
-        {"bankCode":"070006","bankName":"COVENANT MFB"},
-        {"bankCode":"000005","bankName":"DIAMOND BANK"},
-        {"bankCode":"100021","bankName":"EARTHOLEUM"},
-        {"bankCode":"000010","bankName":"ECOBANK"},
-        {"bankCode":"100008","bankName":"ECOBANK XPRESS ACCOUNT"},
-        {"bankCode":"090114","bankName":"EMPIRE TRUST MICROFINANCE BANK"},
-        {"bankCode":"000019","bankName":"ENTERPRISE BANK"},
-        {"bankCode":"100006","bankName":"eTRANZACT"},
-        {"bankCode":"060002","bankName":"FBN MERCHANT BANK"},
-        {"bankCode":"100014","bankName":"FBN MOBILE"}
-    ],
-    "responseMessage":"SUCCESS",
-    "responseCode":"00"}
-```
-
-```
+```php
 <?php
-require_once 'HTTP/Request2.php';
-$request = new HTTP_Request2();
-$request->setUrl('https://api-staging.providusbank.com/account/NIP/banks');
-$request->setMethod(HTTP_Request2::METHOD_GET);
-$request->setConfig(array(
-  'follow_redirects' => TRUE
-));
-$request->setHeader(array(
-  'Authorization' => '{{Authentication token}}',
-));
-try {
-  $response = $request->send();
-  if ($response->getStatus() == 200) {
-    echo $response->getBody();
-  }
-  else {
-    echo 'Unexpected HTTP status: ' . $response->getStatus() . ' ' .
-    $response->getReasonPhrase();
-  }
-}
-catch(HTTP_Request2_Exception $e) {
-  echo 'Error: ' . $e->getMessage();
-}
+$url = "https://api.providusbank.com/api/v1/payment/nip/banks";
+$headers = [
+    "Authorization: Bearer YOUR_API_KEY",
+    "Content-Type: application/json"
+];
+
+$context = stream_context_create([
+    'http' => [
+        'method' => 'GET',
+        'header' => implode("\r\n", $headers)
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
+echo $response;
 ?>
 ```
 
-> The above command returns JSON structured like this:
+```java
+import java.net.http.*;
+import java.net.URI;
 
-```
-{
-    "banks":[
-        {"bankCode":"000014","bankName":"ACCESS BANK"},
-        {"bankCode":"100013","bankName":"ACCESS MOBILE"},
-        {"bankCode":"090133","bankName":"AL-BARAKAH MICROFINANCE BANK"},
-        {"bankCode":"090116","bankName":"AMML MICROFINANCE BANK"},
-        {"bankCode":"090001","bankName":"ASO SAVINGS"},
-        {"bankCode":"090127","bankName":"BC KASH MICROFINANCE BANK"},
-        {"bankCode":"090117","bankName":"BOCTRUST MICROFINANCE BANK LIMITED"},
-        {"bankCode":"100005","bankName":"CELLULANT"},
-        {"bankCode":"100015","bankName":"CHAMS MOBILE"},
-        {"bankCode":"000009","bankName":"CITI BANK"},
-        {"bankCode":"060001","bankName":"CORONATION BANK"},
-        {"bankCode":"070006","bankName":"COVENANT MFB"},
-        {"bankCode":"000005","bankName":"DIAMOND BANK"},
-        {"bankCode":"100021","bankName":"EARTHOLEUM"},
-        {"bankCode":"000010","bankName":"ECOBANK"},
-        {"bankCode":"100008","bankName":"ECOBANK XPRESS ACCOUNT"},
-        {"bankCode":"090114","bankName":"EMPIRE TRUST MICROFINANCE BANK"},
-        {"bankCode":"000019","bankName":"ENTERPRISE BANK"},
-        {"bankCode":"100006","bankName":"eTRANZACT"},
-        {"bankCode":"060002","bankName":"FBN MERCHANT BANK"},
-        {"bankCode":"100014","bankName":"FBN MOBILE"}
-    ],
-    "responseMessage":"SUCCESS",
-    "responseCode":"00"}
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.providusbank.com/api/v1/payment/nip/banks"))
+    .header("Authorization", "Bearer YOUR_API_KEY")
+    .header("Content-Type", "application/json")
+    .GET(HttpRequest.BodyPublishers.noBody())
+    .build();
+
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+System.out.println(response.body());
 ```
 
-```
-var client = new RestClient("https://api-staging.providusbank.com/account/NIP/banks");
-client.Timeout = -1;
-var request = new RestRequest(Method.GET);
-request.AddHeader("Authorization", "{{Authentication token}}");
-IRestResponse response = client.Execute(request);
-Console.WriteLine(response.Content);
+```csharp
+using System;
+using System.Net.Http;
+using System.Text;
+
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
+
+var response = await client.GetAsync("https://api.providusbank.com/api/v1/payment/nip/banks");
+
+var responseContent = await response.Content.ReadAsStringAsync();
+Console.WriteLine(responseContent);
 ```
 
-> The above command returns JSON structured like this:
-
-```
-{
-    "banks":[
-        {"bankCode":"000014","bankName":"ACCESS BANK"},
-        {"bankCode":"100013","bankName":"ACCESS MOBILE"},
-        {"bankCode":"090133","bankName":"AL-BARAKAH MICROFINANCE BANK"},
-        {"bankCode":"090116","bankName":"AMML MICROFINANCE BANK"},
-        {"bankCode":"090001","bankName":"ASO SAVINGS"},
-        {"bankCode":"090127","bankName":"BC KASH MICROFINANCE BANK"},
-        {"bankCode":"090117","bankName":"BOCTRUST MICROFINANCE BANK LIMITED"},
-        {"bankCode":"100005","bankName":"CELLULANT"},
-        {"bankCode":"100015","bankName":"CHAMS MOBILE"},
-        {"bankCode":"000009","bankName":"CITI BANK"},
-        {"bankCode":"060001","bankName":"CORONATION BANK"},
-        {"bankCode":"070006","bankName":"COVENANT MFB"},
-        {"bankCode":"000005","bankName":"DIAMOND BANK"},
-        {"bankCode":"100021","bankName":"EARTHOLEUM"},
-        {"bankCode":"000010","bankName":"ECOBANK"},
-        {"bankCode":"100008","bankName":"ECOBANK XPRESS ACCOUNT"},
-        {"bankCode":"090114","bankName":"EMPIRE TRUST MICROFINANCE BANK"},
-        {"bankCode":"000019","bankName":"ENTERPRISE BANK"},
-        {"bankCode":"100006","bankName":"eTRANZACT"},
-        {"bankCode":"060002","bankName":"FBN MERCHANT BANK"},
-        {"bankCode":"100014","bankName":"FBN MOBILE"}
-    ],
-    "responseMessage":"SUCCESS",
-    "responseCode":"00"}
-```
-
-[PreviousPayment](/payment)[NextGet NIP Account](/payment/get-nip-account)
