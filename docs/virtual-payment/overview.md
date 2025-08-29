@@ -57,5 +57,3 @@ BVN Details
 Get the details of an account by bvn.
 
 [PreviousPayment Inquiry](/provi-bill/payment-inquiry)[NextVerify Transaction](/virtual-payment/verify-transaction)
-
-Last updated 1 month ago
