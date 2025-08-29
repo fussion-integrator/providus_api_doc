@@ -493,5 +493,3 @@ The above command returns JSON structured like this:
 }
 
 ```
-
-Last updated 23 days ago
