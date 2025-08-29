@@ -58,5 +58,3 @@ Send an invitation to a new team member.
     
 
 [PreviousTeam](/xpress-wallet-api/merchant/team)[NextGet Team Members](/xpress-wallet-api/merchant/team/get-team-members)
-
-Last updated 26 days ago
