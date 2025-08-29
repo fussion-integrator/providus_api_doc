@@ -2,222 +2,139 @@
 
 * * *
 
-**URI**: /GetNIPBanks
-
-**HTTP Method**: GET
-
-**Headers**:
-
-*   Accept: application/json
-    
-*   Content-Type: application/json
-    
-
-**Response:**
-
-200 Successful
-
-[](#tab-id-200-successful)
-
-401: Unauthorized
-
-[](#tab-id-401-unauthorized)
-
-400: Bad Request
-
-[](#tab-id-400-bad-request)
-
-500: Internal Server Error
-
-[](#tab-id-500-internal-server-error)
+## Base URL
 
 ```
+https://api.providusbank.com
+```
+
+## Endpoint
+
+<div class="method post">POST</div> `/api/v1/third-party/nip`
+
+
+
+## Request Body
+
+```json
 {
-  "banks": [
-    {"bankCode": "090270", "bankName": "AB MICROFINANCE BANK"},
-    {"bankCode": "070010", "bankName": "ABBEY MORTGAGE BANK"},
-    {"bankCode": "090260", "bankName": "ABOVE ONLY MICROFINANCE BANK"},
-    {"bankCode": "090197", "bankName": "ABU MICROFINANCE BANK"},
-    {"bankCode": "000014", "bankName": "ACCESS BANK"},
-    {"bankCode": "100013", "bankName": "ACCESS MOBILE"},
-    {"bankCode": "000005", "bankName": "ACCESS(DIAMOND) BANK"},
-    {"bankCode": "090134", "bankName": "ACCION MICROFINANCE BANK"},
-    ...
-  ],
-  "responseMessage": "SUCCESS",
-  "responseCode": "00"
+  "reference": "REF123456789"
 }
 ```
 
-```
+
+## Response Body
+
+### Success Response (200 OK)
+
+```json
 {
-  "requestSuccessful": false,
-  "responseMessage": "Exception; Failed",
-  "responseCode": "03"
+  "status": "success",
+  "message": "Operation completed successfully",
+  "data": {
+    "result": "success"
+  }
 }
 ```
 
-```
-{
-  "requestSuccessful": false,
-  "responseMessage": "Exception; Failed",
-  "responseCode": "03"
-}
-```
+## Sample Implementation
 
-```
-{
-  "requestSuccessful": false,
-  "responseMessage": "Exception; Failed",
-  "responseCode": "03"
-}
+```curl
+curl -X POST "https://api.providusbank.com/api/v1/third-party/nip" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "reference": "REF123456789"
+}'
 ```
 
-* * *
-
-### 
-
-[](#sample-implementation)
-
-Sample Implementation
-
-Curl
-
-[](#tab-curl)
-
-Python
-
-[](#tab-python)
-
-Java
-
-[](#tab-java)
-
-JavaScript
-
-[](#tab-javascript)
-
-PHP
-
-[](#tab-php)
-
-C#
-
-[](#tab-c)
-
-```
-curl -X GET http://154.113.16.142:8882/postingrest/GetNIPBanks \
--H "Accept: application/json" \
--H "Content-Type: application/json"
-```
-
-```
+```python
 import requests
 
-url = "http://154.113.16.142:8882/postingrest/GetNIPBanks"
-headers = {"Accept": "application/json", "Content-Type": "application/json"}
-response = requests.get(url, headers=headers)
+url = "https://api.providusbank.com/api/v1/third-party/nip"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+}
+
+data = {
+  "reference": "REF123456789"
+}
+response = requests.post(url, headers=headers, json=data)
 print(response.json())
 ```
 
-```
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
-public class GetNIPBanks {
-    public static void main(String[] args) throws Exception {
-        URL url = new URL("http://154.113.16.142:8882/postingrest/GetNIPBanks");
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestMethod("GET");
-        conn.setRequestProperty("Accept", "application/json");
-        conn.setRequestProperty("Content-Type", "application/json");
-
-        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"));
-        StringBuilder response = new StringBuilder();
-        String responseLine;
-        while ((responseLine = br.readLine()) != null) {
-            response.append(responseLine.trim());
-        }
-        System.out.println(response.toString());
-    }
-}
-```
-
-```
-const fetch = require('node-fetch');
-
-const url = 'http://154.113.16.142:8882/postingrest/GetNIPBanks';
-const headers = {
-    'Accept': 'application/json',
+```javascript
+const response = await fetch('https://api.providusbank.com/api/v1/third-party/nip', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
     'Content-Type': 'application/json'
-};
-
-fetch(url, {
-    method: 'GET',
-    headers: headers
+  },
+  body: JSON.stringify({
+  "reference": "REF123456789"
 })
-.then(response => response.json())
-.then(data => console.log(data))
-.catch(error => console.error('Error:', error));
+});
+
+const data = await response.json();
+console.log(data);
 ```
 
-```
+```php
 <?php
-$url = "http://154.113.16.142:8882/postingrest/GetNIPBanks";
+$url = "https://api.providusbank.com/api/v1/third-party/nip";
 $headers = [
-    "Accept: application/json",
+    "Authorization: Bearer YOUR_API_KEY",
     "Content-Type: application/json"
 ];
 
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$response = curl_exec($ch);
-curl_close($ch);
+$data = json_encode({
+  \"reference\": \"REF123456789\"
+});
+$context = stream_context_create([
+    'http' => [
+        'method' => 'POST',
+        'header' => implode("\r\n", $headers),
+        'content' => $data
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
 echo $response;
 ?>
 ```
 
+```java
+import java.net.http.*;
+import java.net.URI;
+
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.providusbank.com/api/v1/third-party/nip"))
+    .header("Authorization", "Bearer YOUR_API_KEY")
+    .header("Content-Type", "application/json")
+    .POST(HttpRequest.BodyPublishers.ofString("{\"reference\":\"REF123456789\"}"))
+    .build();
+
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+System.out.println(response.body());
 ```
+
+```csharp
 using System;
 using System.Net.Http;
-using System.Threading.Tasks;
+using System.Text;
 
-class Program
-{
-    static async Task Main()
-    {
-        using (var client = new HttpClient())
-        {
-            client.DefaultRequestHeaders.Add("Accept", "application/json");
-            var response = await client.GetAsync("http://154.113.16.142:8882/postingrest/GetNIPBanks");
-            var responseString = await response.Content.ReadAsStringAsync();
-            Console.WriteLine(responseString);
-        }
-    }
-}
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
+
+var json = @"{
+  "reference": "REF123456789"
+}";
+var content = new StringContent(json, Encoding.UTF8, "application/json");
+var response = await client.PostAsync("https://api.providusbank.com/api/v1/third-party/nip", content);
+
+var responseContent = await response.Content.ReadAsStringAsync();
+Console.WriteLine(responseContent);
 ```
 
-> The above command returns JSON structured like this:
-
-```
-{
-  "banks": [
-    {"bankCode": "090270", "bankName": "AB MICROFINANCE BANK"},
-    {"bankCode": "070010", "bankName": "ABBEY MORTGAGE BANK"},
-    {"bankCode": "090260", "bankName": "ABOVE ONLY MICROFINANCE BANK"},
-    {"bankCode": "090197", "bankName": "ABU MICROFINANCE BANK"},
-    {"bankCode": "000014", "bankName": "ACCESS BANK"},
-    {"bankCode": "100013", "bankName": "ACCESS MOBILE"},
-    {"bankCode": "000005", "bankName": "ACCESS(DIAMOND) BANK"},
-    {"bankCode": "090134", "bankName": "ACCION MICROFINANCE BANK"},
-    ...
-  ],
-  "responseMessage": "SUCCESS",
-  "responseCode": "00"
-}
-```
-
-[PreviousGetNIPTransactionStatus](/third-party-generic-api/getniptransactionstatus)[NextProvidusFundTransfer](/third-party-generic-api/providusfundtransfer)
