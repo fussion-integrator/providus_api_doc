@@ -306,5 +306,3 @@ Console.WriteLine(response.Content);
 ```
 
 [PreviousGet Transaction Status](/transactions/get-transaction-status)[NextProvi Bill](/provi-bill)
-
-Last updated 1 year ago
