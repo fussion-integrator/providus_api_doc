@@ -2,48 +2,114 @@
 
 Retrieve the merchant's access keys.
 
-*   **Endpoint**: `GET {{base-url}}/merchant/my-access-keys`
-    
-*   **Headers**:
+## Base URL
 
-    ```
-    {
-      "X-Access-Token": "{{access-token}}",
-      "X-Refresh-Token": "{{refresh-token}}"
-    }
-    ```
-    
-*   **Response**:
-    
-    *   **200 OK**:
+```
+https://api.providusbank.com
+```
 
-        ```
-        {
-          "status": true,
-          "data": {
-            "privateKey": "sk_sandbox_A7piqhVbmy5dzuvUQRWDIWAscnG9ZhtkmU90LdhbtR1vvi1W",
-            "publicKey": "pk_sandbox_OsCl755PRpMq0tc1YxGuesXTgVBzprF2mAB8vXUuozuxyldi"
-          }
-        }
-        ```
-        
-    
-*   **Sample Code (Dart)**:
+## Endpoint
 
-    ```
-    var headers = {
-      'X-Access-Token': '{{access-token}}',
-      'X-Refresh-Token': '{{refresh-token}}'
-    };
-    var request = http.Request('GET', Uri.parse('{{base-url}}/merchant/my-access-keys'));
-    request.headers.addAll(headers);
-    http.StreamedResponse response = await request.send();
-    if (response.statusCode == 200) {
-      print(await response.stream.bytesToString());
-    } else {
-      print(response.reasonPhrase);
-    }
-    ```
-    
+<div class="method get">GET</div> `/api/v1/wallet/merchant`
 
-[PreviousUpdate Merchant Profile](/xpress-wallet-api/merchant/update-merchant-profile)[NextGenerate Access Keys](/xpress-wallet-api/merchant/generate-access-keys)
+
+
+## Response Body
+
+### Success Response (200 OK)
+
+```json
+{
+  "status": "success",
+  "message": "Operation completed successfully",
+  "data": {
+    "items": [],
+    "total": 0
+  }
+}
+```
+
+## Sample Implementation
+
+```curl
+curl -X GET "https://api.providusbank.com/api/v1/wallet/merchant" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"
+```
+
+```python
+import requests
+
+url = "https://api.providusbank.com/api/v1/wallet/merchant"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+}
+
+response = requests.get(url, headers=headers)
+print(response.json())
+```
+
+```javascript
+const response = await fetch('https://api.providusbank.com/api/v1/wallet/merchant', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  }
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+```php
+<?php
+$url = "https://api.providusbank.com/api/v1/wallet/merchant";
+$headers = [
+    "Authorization: Bearer YOUR_API_KEY",
+    "Content-Type: application/json"
+];
+
+$context = stream_context_create([
+    'http' => [
+        'method' => 'GET',
+        'header' => implode("\r\n", $headers)
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
+echo $response;
+?>
+```
+
+```java
+import java.net.http.*;
+import java.net.URI;
+
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.providusbank.com/api/v1/wallet/merchant"))
+    .header("Authorization", "Bearer YOUR_API_KEY")
+    .header("Content-Type", "application/json")
+    .GET(HttpRequest.BodyPublishers.noBody())
+    .build();
+
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+System.out.println(response.body());
+```
+
+```csharp
+using System;
+using System.Net.Http;
+using System.Text;
+
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
+
+var response = await client.GetAsync("https://api.providusbank.com/api/v1/wallet/merchant");
+
+var responseContent = await response.Content.ReadAsStringAsync();
+Console.WriteLine(responseContent);
+```
+
