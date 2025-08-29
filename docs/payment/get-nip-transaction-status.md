@@ -12,11 +12,15 @@ https://api.providusbank.com
 
 <div class="method post">POST</div> `/api/v1/payment/nip/status`
 
+
+
 ## Request Body
 
 ```json
 {
-  "transactionId": "TXN123456789"
+  "billerId": "101",
+  "amount": 5000,
+  "customerReference": "12345"
 }
 ```
 
@@ -28,13 +32,13 @@ https://api.providusbank.com
 ```json
 {
   "status": "success",
+  "message": "Operation completed successfully",
   "data": {
-    "transactionStatus": "successful",
-    "amount": 1000
+    "transactionId": "BILL123456",
+    "status": "successful"
   }
 }
 ```
-
 
 ## Sample Implementation
 
@@ -43,7 +47,9 @@ curl -X POST "https://api.providusbank.com/api/v1/payment/nip/status" \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-  "transactionId": "TXN123456789"
+  "billerId": "101",
+  "amount": 5000,
+  "customerReference": "12345"
 }'
 ```
 
@@ -57,7 +63,9 @@ headers = {
 }
 
 data = {
-  "transactionId": "TXN123456789"
+  "billerId": "101",
+  "amount": 5000,
+  "customerReference": "12345"
 }
 response = requests.post(url, headers=headers, json=data)
 print(response.json())
@@ -71,7 +79,9 @@ const response = await fetch('https://api.providusbank.com/api/v1/payment/nip/st
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
-  "transactionId": "TXN123456789"
+  "billerId": "101",
+  "amount": 5000,
+  "customerReference": "12345"
 })
 });
 
@@ -88,7 +98,9 @@ $headers = [
 ];
 
 $data = json_encode({
-  \"transactionId\": \"TXN123456789\"
+  \"billerId\": \"101\",
+  \"amount\": 5000,
+  \"customerReference\": \"12345\"
 });
 $context = stream_context_create([
     'http' => [
@@ -112,7 +124,7 @@ HttpRequest request = HttpRequest.newBuilder()
     .uri(URI.create("https://api.providusbank.com/api/v1/payment/nip/status"))
     .header("Authorization", "Bearer YOUR_API_KEY")
     .header("Content-Type", "application/json")
-    .POST(HttpRequest.BodyPublishers.ofString("{\"transactionId\":\"TXN123456789\"}"))
+    .POST(HttpRequest.BodyPublishers.ofString("{\"billerId\":\"101\",\"amount\":5000,\"customerReference\":\"12345\"}"))
     .build();
 
 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -128,7 +140,9 @@ var client = new HttpClient();
 client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
 
 var json = @"{
-  "transactionId": "TXN123456789"
+  "billerId": "101",
+  "amount": 5000,
+  "customerReference": "12345"
 }";
 var content = new StringContent(json, Encoding.UTF8, "application/json");
 var response = await client.PostAsync("https://api.providusbank.com/api/v1/payment/nip/status", content);
