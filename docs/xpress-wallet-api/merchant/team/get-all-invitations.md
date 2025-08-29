@@ -60,5 +60,3 @@ Retrieve a paginated list of team invitations.
     
 
 [PreviousGet Team Members](/xpress-wallet-api/merchant/team/get-team-members)[NextResend Invitation](/xpress-wallet-api/merchant/team/resend-invitation)
-
-Last updated 26 days ago
