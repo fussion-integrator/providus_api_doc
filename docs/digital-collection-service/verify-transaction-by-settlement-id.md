@@ -257,5 +257,3 @@ The above command returns JSON structured like this:
   "notification_acknowledgement": 1
 }
 ```
-
-Last updated 23 days ago
