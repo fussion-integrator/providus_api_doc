@@ -185,5 +185,3 @@ class Program
 ```
 
 [PreviousGet Categories](/provi-bill/get-categories)[NextGet Field](/provi-bill/get-field)
-
-Last updated 24 days ago
