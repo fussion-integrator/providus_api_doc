@@ -272,5 +272,3 @@ class Program
 ```
 
 [PreviousRefresh Token](/xpress-wallet-api/authentication/refresh-token)[NextGet user profile](/xpress-wallet-api/user/get-user-profile)
-
-Last updated 1 month ago
