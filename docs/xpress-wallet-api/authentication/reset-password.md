@@ -42,5 +42,3 @@ if (response.statusCode == 200) {
 ```
 
 [PreviousForget Password](/xpress-wallet-api/authentication/forget-password)[NextRefresh Token](/xpress-wallet-api/authentication/refresh-token)
-
-Last updated 1 month ago
