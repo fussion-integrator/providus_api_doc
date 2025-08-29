@@ -249,5 +249,3 @@ class Program
 ```
 
 [PreviousNIPFundTransfer](/third-party-generic-api/nipfundtransfer)[NextGetNIPBanks](/third-party-generic-api/getnipbanks)
-
-Last updated 1 month ago
