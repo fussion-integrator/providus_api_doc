@@ -21,15 +21,13 @@ https://api.providusbank.com
 ```json
 {
   "status": "success",
-  "data": [
-    {
-      "categoryId": "1",
-      "categoryName": "Electricity"
-    }
-  ]
+  "message": "Operation completed successfully",
+  "data": {
+    "items": [],
+    "total": 0
+  }
 }
 ```
-
 
 ## Sample Implementation
 
