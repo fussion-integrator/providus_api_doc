@@ -199,5 +199,3 @@ class Program
 ```
 
 [PreviousGet Bills by Category](/provi-bill/get-bills-by-category)[NextValidate](/provi-bill/validate)
-
-Last updated 24 days ago
