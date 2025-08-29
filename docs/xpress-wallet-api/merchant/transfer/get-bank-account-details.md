@@ -55,5 +55,3 @@ Verify bank account details using sort code and account number.
     
 
 [PreviousGet bank list](/xpress-wallet-api/merchant/transfer/get-bank-list)[NextMerchant bank transfer](/xpress-wallet-api/merchant/transfer/merchant-bank-transfer)
-
-Last updated 26 days ago
