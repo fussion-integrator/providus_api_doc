@@ -266,5 +266,3 @@ class Program
 ```
 
 [PreviousGetNIPBanks](/third-party-generic-api/getnipbanks)[NextGetProvidusTransactionStatus](/third-party-generic-api/getprovidustransactionstatus)
-
-Last updated 1 month ago
