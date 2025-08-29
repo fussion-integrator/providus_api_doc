@@ -76,5 +76,3 @@ jsonCopy code{
   }
 }
 ```
-
-Last updated 1 year ago
