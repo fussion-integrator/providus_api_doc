@@ -306,5 +306,3 @@ Console.WriteLine(response.Content);
 ```
 
 [PreviousUpdate Account Name](/virtual-payment/update-account-name)[NextCreate Reserved Account Number](/virtual-payment/create-reserved-account-number)
-
-Last updated 1 year ago
