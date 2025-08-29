@@ -62,5 +62,3 @@ Create a new role with specified permissions.
     
 
 [PreviousGet All Roles](/xpress-wallet-api/merchant/roles-and-permission/get-all-roles)[NextUpdate Role](/xpress-wallet-api/merchant/roles-and-permission/update-role)
-
-Last updated 26 days ago
