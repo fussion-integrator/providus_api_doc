@@ -174,5 +174,3 @@ class Program
 ```
 
 [PreviousPayment](/provi-bill/payment)[NextVirtual Payment](/virtual-payment)
-
-Last updated 24 days ago
