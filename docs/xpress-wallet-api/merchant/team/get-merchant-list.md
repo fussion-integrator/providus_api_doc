@@ -50,5 +50,3 @@ Retrieve a list of merchants associated with the team.
     
 
 [PreviousAccept Invitation](/xpress-wallet-api/merchant/team/accept-invitation)[NextSwitch Merchant](/xpress-wallet-api/merchant/team/switch-merchant)
-
-Last updated 26 days ago
