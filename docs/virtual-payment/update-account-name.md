@@ -326,5 +326,3 @@ Console.WriteLine(response.Content);
 ```
 
 [PreviousVerify Transaction by Session Id](/virtual-payment/verify-transaction-by-session-id)[NextCreate Dynamic Account Number](/virtual-payment/create-dynamic-account-number)
-
-Last updated 1 year ago
