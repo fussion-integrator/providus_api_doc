@@ -55,5 +55,3 @@ if (response.statusCode == 200) {
 [](#undefined)
 
 [PreviousGet user profile](/xpress-wallet-api/user/get-user-profile)[NextMerchant](/xpress-wallet-api/merchant)
-
-Last updated 1 month ago
