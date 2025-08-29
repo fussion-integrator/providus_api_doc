@@ -1,46 +1,147 @@
-1. Digital Collection Service (DCS)
-
 # Create Dynamic Account
 
 Dynamic accounts are for one-time payments and can be reassigned. They expire 10 minutes after creation by default (extendable up to 48 hours).
 
-Dynamic accounts are designed for one-time payments and can be assigned to different users. By default, they expire 10 minutes after creation (this can be extended up to a maximum of 48 hours) before being reassigned to another user. They must be used for a single payment before expiration.
+## Base URL
 
-*Dynamic accounts are designed for one-time payments and can be assigned to different users. By default, they expire 10 minutes after creation (this can be extended up to a maximum of 48 hours) before being reassigned to another user. They must be used for a single payment before expiration.*#### Production Base URL
+```
+https://api.providusbank.com
+```
 
-http://154.113.16.142:8088/appdevapi/api/
+## Endpoint
 
-#### HTTP Request
+<div class="method post">POST</div> `/api/v1/dcs/dynamic`
 
-POST /PiPCreateDynamicAccountNumber
 
-Post http://154.113.16.142:8088/appdevapi/api/PiPCreateDnamicAccountNumber
 
-Request (Auto-gen Reference)
+## Request Body
 
-**Request (Auto-gen Reference)**```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
+```json
 {
-  "account_name": "lemuel"
+  "customerName": "John Doe",
+  "customerEmail": "john@example.com"
+}
+```
+
+
+## Response Body
+
+### Success Response (200 OK)
+
+```json
+{
+  "status": "success",
+  "message": "Operation completed successfully",
+  "data": {
+    "accountNumber": "9876543210",
+    "accountName": "John Doe"
+  }
+}
+```
+
+## Sample Implementation
+
+```curl
+curl -X POST "https://api.providusbank.com/api/v1/dcs/dynamic" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "customerName": "John Doe",
+  "customerEmail": "john@example.com"
+}'
+```
+
+```python
+import requests
+
+url = "https://api.providusbank.com/api/v1/dcs/dynamic"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
 }
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-{
-  "account_number": "9978012701",
-  "account_name": "lemuel",
-  "requestSuccessful": true,
-  "responseMessage": "OPERATION SUCCESSFUL",
-  "responseCode": "00",
-  "initiationTranRef": "Prov2312"
+data = {
+  "customerName": "John Doe",
+  "customerEmail": "john@example.com"
 }
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
+```
 
-```inline-grid min-w-full grid-cols-[auto_1fr] [count-reset:line] print:whitespace-pre-wrap
-{
-"requestSuccessful": false,
-"responseMessage": "Error Completing Operation",
-"responseCode": "03",
-"initiationTranRef": ""
-}
+```javascript
+const response = await fetch('https://api.providusbank.com/api/v1/dcs/dynamic', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+  "customerName": "John Doe",
+  "customerEmail": "john@example.com"
+})
+});
 
-### Sample Implementation
+const data = await response.json();
+console.log(data);
+```
 
-Coming soon...
+```php
+<?php
+$url = "https://api.providusbank.com/api/v1/dcs/dynamic";
+$headers = [
+    "Authorization: Bearer YOUR_API_KEY",
+    "Content-Type: application/json"
+];
+
+$data = json_encode({
+  \"customerName\": \"John Doe\",
+  \"customerEmail\": \"john@example.com\"
+});
+$context = stream_context_create([
+    'http' => [
+        'method' => 'POST',
+        'header' => implode("\r\n", $headers),
+        'content' => $data
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
+echo $response;
+?>
+```
+
+```java
+import java.net.http.*;
+import java.net.URI;
+
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.providusbank.com/api/v1/dcs/dynamic"))
+    .header("Authorization", "Bearer YOUR_API_KEY")
+    .header("Content-Type", "application/json")
+    .POST(HttpRequest.BodyPublishers.ofString("{\"customerName\":\"John Doe\",\"customerEmail\":\"john@example.com\"}"))
+    .build();
+
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+System.out.println(response.body());
+```
+
+```csharp
+using System;
+using System.Net.Http;
+using System.Text;
+
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
+
+var json = @"{
+  "customerName": "John Doe",
+  "customerEmail": "john@example.com"
+}";
+var content = new StringContent(json, Encoding.UTF8, "application/json");
+var response = await client.PostAsync("https://api.providusbank.com/api/v1/dcs/dynamic", content);
+
+var responseContent = await response.Content.ReadAsStringAsync();
+Console.WriteLine(responseContent);
+```
+
