@@ -416,5 +416,3 @@ Console.WriteLine(response.Content);
 ```
 
 [PreviousVerify Transaction](/virtual-payment/verify-transaction)[NextVerify Transaction by Session Id](/virtual-payment/verify-transaction-by-session-id)
-
-Last updated 1 year ago
