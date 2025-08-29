@@ -309,5 +309,3 @@ class Program
 ```
 
 [PreviousVerify Transaction by Session ID](/digital-collection-service-dcs/verify-transaction-by-session-id)[NextWebhook Specification](/digital-collection-service-dcs/webhook-specification)
-
-Last updated 1 month ago
