@@ -353,5 +353,3 @@ Console.WriteLine(response.Content);
 ```
 
 [PreviousGet BVN Details](/payment/get-bvn-details)[NextGet NIP Transaction Status](/payment/get-nip-transaction-status)
-
-Last updated 1 year ago
