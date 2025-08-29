@@ -19,12 +19,10 @@ https://api.providusbank.com
 ```json
 {
   "amount": 1000,
-  "destinationAccountNumber": "1234567890",
-  "destinationBankCode": "044"
+  "destinationAccount": "1234567890",
+  "narration": "Transfer"
 }
 ```
-
-
 
 
 ## Response Body
@@ -34,13 +32,13 @@ https://api.providusbank.com
 ```json
 {
   "status": "success",
+  "message": "Operation completed successfully",
   "data": {
     "transactionId": "TXN123456789",
     "status": "successful"
   }
 }
 ```
-
 
 ## Sample Implementation
 
@@ -50,8 +48,8 @@ curl -X POST "https://api.providusbank.com/api/v1/payment/nip/transfer" \
   -H "Content-Type: application/json" \
   -d '{
   "amount": 1000,
-  "destinationAccountNumber": "1234567890",
-  "destinationBankCode": "044"
+  "destinationAccount": "1234567890",
+  "narration": "Transfer"
 }'
 ```
 
@@ -66,8 +64,8 @@ headers = {
 
 data = {
   "amount": 1000,
-  "destinationAccountNumber": "1234567890",
-  "destinationBankCode": "044"
+  "destinationAccount": "1234567890",
+  "narration": "Transfer"
 }
 response = requests.post(url, headers=headers, json=data)
 print(response.json())
@@ -82,8 +80,8 @@ const response = await fetch('https://api.providusbank.com/api/v1/payment/nip/tr
   },
   body: JSON.stringify({
   "amount": 1000,
-  "destinationAccountNumber": "1234567890",
-  "destinationBankCode": "044"
+  "destinationAccount": "1234567890",
+  "narration": "Transfer"
 })
 });
 
@@ -101,8 +99,8 @@ $headers = [
 
 $data = json_encode({
   \"amount\": 1000,
-  \"destinationAccountNumber\": \"1234567890\",
-  \"destinationBankCode\": \"044\"
+  \"destinationAccount\": \"1234567890\",
+  \"narration\": \"Transfer\"
 });
 $context = stream_context_create([
     'http' => [
@@ -126,7 +124,7 @@ HttpRequest request = HttpRequest.newBuilder()
     .uri(URI.create("https://api.providusbank.com/api/v1/payment/nip/transfer"))
     .header("Authorization", "Bearer YOUR_API_KEY")
     .header("Content-Type", "application/json")
-    .POST(HttpRequest.BodyPublishers.ofString("{\"amount\":1000,\"destinationAccountNumber\":\"1234567890\",\"destinationBankCode\":\"044\"}"))
+    .POST(HttpRequest.BodyPublishers.ofString("{\"amount\":1000,\"destinationAccount\":\"1234567890\",\"narration\":\"Transfer\"}"))
     .build();
 
 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -143,8 +141,8 @@ client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
 
 var json = @"{
   "amount": 1000,
-  "destinationAccountNumber": "1234567890",
-  "destinationBankCode": "044"
+  "destinationAccount": "1234567890",
+  "narration": "Transfer"
 }";
 var content = new StringContent(json, Encoding.UTF8, "application/json");
 var response = await client.PostAsync("https://api.providusbank.com/api/v1/payment/nip/transfer", content);
