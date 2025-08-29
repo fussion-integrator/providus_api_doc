@@ -56,5 +56,3 @@ Register a new merchant account.
     
 
 [PreviousSwitch Account Mode](/xpress-wallet-api/merchant/switch-account-mode)[NextGet Merchant Wallet](/xpress-wallet-api/merchant/get-merchant-wallet)
-
-Last updated 26 days ago
