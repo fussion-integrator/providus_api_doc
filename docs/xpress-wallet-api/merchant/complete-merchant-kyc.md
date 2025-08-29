@@ -2,45 +2,114 @@
 
 Submit KYC documents for merchant registration.
 
-*   **Endpoint**: `PUT {{base-url}}/merchant/complete-merchant-registration`
-    
-*   **Body** (form-data):
-    
-    *   `cac_pack`: File (e.g., `/C:/herlabytes/Medilog/src/assets/images/avatar.png`)
-        
-    *   `directorsBVN`: BVN number (e.g., `22192640723`)
-        
-    *   `merchantId`: Merchant ID (e.g., `2c5356fc-1127-4e67-a001-2ae170731bee`)
-        
-    
-*   **Response**:
-    
-    *   **200 OK**:
+## Base URL
 
-        ```
-        {
-          "status": true,
-          "message": "Your Documents have been uploaded and Pending Review"
-        }
-        ```
-        
-    
-*   **Sample Code (Dart)**:
+```
+https://api.providusbank.com
+```
 
-    ```
-    var request = http.MultipartRequest('PUT', Uri.parse('{{base-url}}/merchant/complete-merchant-registration'));
-    request.fields.addAll({
-      'directorsBVN': '22222222226',
-      'merchantId': '46791573-12d5-4f65-9868-f09a6a18aa74'
-    });
-    request.files.add(await http.MultipartFile.fromPath('cac_pack', '/Users/Herlarbs/Downloads/Bleyt Glide Development Scope.pdf'));
-    http.StreamedResponse response = await request.send();
-    if (response.statusCode == 200) {
-      print(await response.stream.bytesToString());
-    } else {
-      print(response.reasonPhrase);
-    }
-    ```
-    
+## Endpoint
 
-[PreviousResend Verification Code](/xpress-wallet-api/merchant/resend-verification-code)[NextGet Merchant Profile](/xpress-wallet-api/merchant/get-merchant-profile)
+<div class="method get">GET</div> `/api/v1/wallet/merchant`
+
+
+
+## Response Body
+
+### Success Response (200 OK)
+
+```json
+{
+  "status": "success",
+  "message": "Operation completed successfully",
+  "data": {
+    "items": [],
+    "total": 0
+  }
+}
+```
+
+## Sample Implementation
+
+```curl
+curl -X GET "https://api.providusbank.com/api/v1/wallet/merchant" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"
+```
+
+```python
+import requests
+
+url = "https://api.providusbank.com/api/v1/wallet/merchant"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+}
+
+response = requests.get(url, headers=headers)
+print(response.json())
+```
+
+```javascript
+const response = await fetch('https://api.providusbank.com/api/v1/wallet/merchant', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  }
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+```php
+<?php
+$url = "https://api.providusbank.com/api/v1/wallet/merchant";
+$headers = [
+    "Authorization: Bearer YOUR_API_KEY",
+    "Content-Type: application/json"
+];
+
+$context = stream_context_create([
+    'http' => [
+        'method' => 'GET',
+        'header' => implode("\r\n", $headers)
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
+echo $response;
+?>
+```
+
+```java
+import java.net.http.*;
+import java.net.URI;
+
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.providusbank.com/api/v1/wallet/merchant"))
+    .header("Authorization", "Bearer YOUR_API_KEY")
+    .header("Content-Type", "application/json")
+    .GET(HttpRequest.BodyPublishers.noBody())
+    .build();
+
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+System.out.println(response.body());
+```
+
+```csharp
+using System;
+using System.Net.Http;
+using System.Text;
+
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
+
+var response = await client.GetAsync("https://api.providusbank.com/api/v1/wallet/merchant");
+
+var responseContent = await response.Content.ReadAsStringAsync();
+Console.WriteLine(responseContent);
+```
+
