@@ -392,5 +392,3 @@ Console.WriteLine(response.Content);
 ```
 
 [PreviousVerify Transaction by Settlement Id](/virtual-payment/verify-transaction-by-settlement-id)[NextUpdate Account Name](/virtual-payment/update-account-name)
-
-Last updated 1 year ago
