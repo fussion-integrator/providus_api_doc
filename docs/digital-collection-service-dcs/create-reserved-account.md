@@ -316,5 +316,3 @@ The above command returns JSON structured like this:
 ```
 
 [PreviousDigital Collection Service (DCS)](/digital-collection-service-dcs)[NextCreate Dynamic Account](/digital-collection-service-dcs/create-dynamic-account)
-
-Last updated 1 month ago
