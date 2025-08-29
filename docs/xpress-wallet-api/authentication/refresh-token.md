@@ -69,5 +69,3 @@ if (response.statusCode == 200) {
 [](#undefined)
 
 [PreviousReset password](/xpress-wallet-api/authentication/reset-password)[NextUser](/xpress-wallet-api/user)
-
-Last updated 1 month ago
