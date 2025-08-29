@@ -392,5 +392,3 @@ Console.WriteLine(response.Content);
 ```
 
 [PreviousGet NIP Account](/payment/get-nip-account)[NextGet Providus Account](/payment/get-providus-account)
-
-Last updated 1 year ago
