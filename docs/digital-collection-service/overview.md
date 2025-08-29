@@ -152,5 +152,3 @@ Notes
 ·      Duplicate settlement IDs must not be reprocessed.
 
 ·      Blacklisted accounts can still receive funds, but no notifications will be sent until whitelisted.
-
-Last updated 23 days ago
