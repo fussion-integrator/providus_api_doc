@@ -65,5 +65,3 @@ Retrieve a list of team members.
 [](#undefined)
 
 [PreviousInvite Team Member](/xpress-wallet-api/merchant/team/invite-team-member)[NextGet All Invitations](/xpress-wallet-api/merchant/team/get-all-invitations)
-
-Last updated 26 days ago
