@@ -2,65 +2,114 @@
 
 Retrieve the balance and limits of a customer's card.
 
-*   **Endpoint**: `GET {{base-url}}/card/balance?customerId={customerId}`
-    
-*   **Query Parameters**:
-    
-    *   `customerId`: The customer's unique ID (e.g., `aa4e9eea-d7a5-4ac2-a211-dc6d59b0c050`).
-        
-    
-*   **Headers**:
+## Base URL
 
-    ```
-    {
-      "X-Access-Token": "{{access-token}}",
-      "X-Refresh-Token": "{{refresh-token}}"
-    }
-    ```
-    
-*   **Response**:
-    
-    *   **200 OK**:
+```
+https://api.providusbank.com
+```
 
-        ```
-        {
-          "status": true,
-          "data": {
-            "id": "b2c1552e-f8e0-4e58-8a1a-d62ddde08133",
-            "ledgerBalance": "120000",
-            "availableBalance": "6723",
-            "goodsLimit": "1400000",
-            "goodsNrTransLimit": "5",
-            "cashLimit": "0",
-            "cashNrTransLimit": "0",
-            "paymentLimit": "1400000",
-            "paymentNrTransLimit": "5",
-            "cardNotPresentLimit": "1400000",
-            "depositCreditLimit": "1000000",
-            "updatedAt": "2020-10-19T15:25:13.501Z",
-            "createdAt": "2020-10-19T15:25:13.501Z",
-            "deletedAt": null
-          }
-        }
-        ```
-        
-    
-*   **Sample Code (Dart)**:
+## Endpoint
 
-    ```
-    var headers = {
-      'X-Access-Token': '{{access-token}}',
-      'X-Refresh-Token': '{{refresh-token}}'
-    };
-    var request = http.Request('GET', Uri.parse('{{base-url}}/card/balance?last6=000352'));
-    request.headers.addAll(headers);
-    http.StreamedResponse response = await request.send();
-    if (response.statusCode == 200) {
-      print(await response.stream.bytesToString());
-    } else {
-      print(response.reasonPhrase);
-    }
-    ```
-    
+<div class="method get">GET</div> `/api/v1/wallet/merchant`
 
-[PreviousActivate Card](/xpress-wallet-api/merchant/card/activate-card)[NextFund Card](/xpress-wallet-api/merchant/card/fund-card)
+
+
+## Response Body
+
+### Success Response (200 OK)
+
+```json
+{
+  "status": "success",
+  "message": "Operation completed successfully",
+  "data": {
+    "items": [],
+    "total": 0
+  }
+}
+```
+
+## Sample Implementation
+
+```curl
+curl -X GET "https://api.providusbank.com/api/v1/wallet/merchant" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"
+```
+
+```python
+import requests
+
+url = "https://api.providusbank.com/api/v1/wallet/merchant"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+}
+
+response = requests.get(url, headers=headers)
+print(response.json())
+```
+
+```javascript
+const response = await fetch('https://api.providusbank.com/api/v1/wallet/merchant', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  }
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+```php
+<?php
+$url = "https://api.providusbank.com/api/v1/wallet/merchant";
+$headers = [
+    "Authorization: Bearer YOUR_API_KEY",
+    "Content-Type: application/json"
+];
+
+$context = stream_context_create([
+    'http' => [
+        'method' => 'GET',
+        'header' => implode("\r\n", $headers)
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
+echo $response;
+?>
+```
+
+```java
+import java.net.http.*;
+import java.net.URI;
+
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.providusbank.com/api/v1/wallet/merchant"))
+    .header("Authorization", "Bearer YOUR_API_KEY")
+    .header("Content-Type", "application/json")
+    .GET(HttpRequest.BodyPublishers.noBody())
+    .build();
+
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+System.out.println(response.body());
+```
+
+```csharp
+using System;
+using System.Net.Http;
+using System.Text;
+
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
+
+var response = await client.GetAsync("https://api.providusbank.com/api/v1/wallet/merchant");
+
+var responseContent = await response.Content.ReadAsStringAsync();
+Console.WriteLine(responseContent);
+```
+
