@@ -55,5 +55,3 @@ Resend an invitation to a team member.
     
 
 [PreviousGet All Invitations](/xpress-wallet-api/merchant/team/get-all-invitations)[NextAccept Invitation](/xpress-wallet-api/merchant/team/accept-invitation)
-
-Last updated 26 days ago
