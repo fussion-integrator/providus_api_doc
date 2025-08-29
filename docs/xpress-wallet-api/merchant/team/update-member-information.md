@@ -61,5 +61,3 @@ Update a team member's information.
     
 
 [PreviousSwitch Merchant](/xpress-wallet-api/merchant/team/switch-merchant)[NextRoles & Permission](/xpress-wallet-api/merchant/roles-and-permission)
-
-Last updated 26 days ago
