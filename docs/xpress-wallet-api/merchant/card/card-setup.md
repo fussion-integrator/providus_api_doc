@@ -65,5 +65,3 @@ Configure card settings for a merchant.
     
 
 [PreviousCard](/xpress-wallet-api/merchant/card)[NextCreate Card](/xpress-wallet-api/merchant/card/create-card)
-
-Last updated 26 days ago
