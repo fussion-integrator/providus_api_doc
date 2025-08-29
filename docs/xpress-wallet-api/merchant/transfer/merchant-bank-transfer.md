@@ -2,79 +2,114 @@
 
 Initiate a bank transfer from a merchant account.
 
-*   **Endpoint**: `POST {{base-url}}/transfer/bank`
-    
-*   **Headers**:
+## Base URL
 
-    ```
-    {
-      "Authorization": "Bearer {{vault:authorization-secret}}",
-      "X-Access-Token": "{{access-token}}",
-      "X-Refresh-Token": "{{refresh-token}}"
-    }
-    ```
-    
-*   **Body**:
+```
+https://api.providusbank.com
+```
 
-    ```
-    {
-      "amount": 220,
-      "sortCode": "000023",
-      "narration": "Just kidding",
-      "accountNumber": "1700263070",
-      "accountName": "Obagunwa Emmanuel",
-      "metadata": {"customer-data": "some customer details"}
-    }
-    ```
-    
-*   **Response**:
-    
-    *   **200 OK**:
+## Endpoint
 
-        ```
-        {
-          "status": true,
-          "message": "Transaction successfully completed.",
-          "transfer": {
-            "amount": 100,
-            "charges": 10.5,
-            "vat": 0.7875,
-            "reference": "Lf9PAUXREbIyUM2tKU1nGJP2W3vxpLV5s18R",
-            "total": 111.2875,
-            "metadata": {"customer-data": "some customer details"},
-            "sessionId": "965755343713226737061061390325",
-            "destination": "0167421242/000013",
-            "transactionReference": "0496626196169490",
-            "description": "Transfer of NGN 100 to Obagunwa Emmanuel (0167421242/GTBANK PLC)"
-          }
-        }
-        ```
-        
-    
-*   **Sample Code (Dart)**:
+<div class="method get">GET</div> `/api/v1/wallet/merchant`
 
-    ```
-    var headers = {
-      'X-Access-Token': '{{access-token}}',
-      'X-Refresh-Token': '{{refresh-token}}'
-    };
-    var request = http.Request('POST', Uri.parse('{{base-url}}/transfer/bank'));
-    request.body = '''{
-      "amount": 100,
-      "sortCode": "000013",
-      "narration": "Just kidding",
-      "accountNumber": "0167421242",
-      "accountName": "Obagunwa Emmanuel",
-      "metadata": {"customer-data": "some customer details"}
-    }''';
-    request.headers.addAll(headers);
-    http.StreamedResponse response = await request.send();
-    if (response.statusCode == 200) {
-      print(await response.stream.bytesToString());
-    } else {
-      print(response.reasonPhrase);
-    }
-    ```
-    
 
-[PreviousGet bank account details](/xpress-wallet-api/merchant/transfer/get-bank-account-details)[NextCustomer Bank Transfer](/xpress-wallet-api/merchant/transfer/customer-bank-transfer)
+
+## Response Body
+
+### Success Response (200 OK)
+
+```json
+{
+  "status": "success",
+  "message": "Operation completed successfully",
+  "data": {
+    "items": [],
+    "total": 0
+  }
+}
+```
+
+## Sample Implementation
+
+```curl
+curl -X GET "https://api.providusbank.com/api/v1/wallet/merchant" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"
+```
+
+```python
+import requests
+
+url = "https://api.providusbank.com/api/v1/wallet/merchant"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+}
+
+response = requests.get(url, headers=headers)
+print(response.json())
+```
+
+```javascript
+const response = await fetch('https://api.providusbank.com/api/v1/wallet/merchant', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  }
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+```php
+<?php
+$url = "https://api.providusbank.com/api/v1/wallet/merchant";
+$headers = [
+    "Authorization: Bearer YOUR_API_KEY",
+    "Content-Type: application/json"
+];
+
+$context = stream_context_create([
+    'http' => [
+        'method' => 'GET',
+        'header' => implode("\r\n", $headers)
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
+echo $response;
+?>
+```
+
+```java
+import java.net.http.*;
+import java.net.URI;
+
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.providusbank.com/api/v1/wallet/merchant"))
+    .header("Authorization", "Bearer YOUR_API_KEY")
+    .header("Content-Type", "application/json")
+    .GET(HttpRequest.BodyPublishers.noBody())
+    .build();
+
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+System.out.println(response.body());
+```
+
+```csharp
+using System;
+using System.Net.Http;
+using System.Text;
+
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
+
+var response = await client.GetAsync("https://api.providusbank.com/api/v1/wallet/merchant");
+
+var responseContent = await response.Content.ReadAsStringAsync();
+Console.WriteLine(responseContent);
+```
+
