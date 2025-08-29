@@ -34,5 +34,3 @@ Retrieve a list of all customer wallets.
     
 
 [PreviousCreate Customer Wallet](/xpress-wallet-api/merchant/wallet/create-customer-wallet)[NextTransactions](/xpress-wallet-api/merchant/transactions)
-
-Last updated 26 days ago
