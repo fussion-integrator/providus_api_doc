@@ -43,5 +43,3 @@ if (response.statusCode == 200) {
 ```
 
 [PreviousLogout](/xpress-wallet-api/authentication/logout)[NextReset password](/xpress-wallet-api/authentication/reset-password)
-
-Last updated 1 month ago
