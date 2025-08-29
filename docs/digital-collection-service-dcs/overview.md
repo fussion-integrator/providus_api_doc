@@ -202,5 +202,3 @@ Notes
 · Blacklisted accounts can still receive funds, but no notifications will be sent until whitelisted.
 
 [PreviousBlacklist Account](/virtual-payment/blacklist-account)[NextCreate Reserved Account](/digital-collection-service-dcs/create-reserved-account)
-
-Last updated 1 month ago
