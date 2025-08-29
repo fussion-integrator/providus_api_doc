@@ -51,5 +51,3 @@ Retrieve a list of all roles.
     
 
 [PreviousGet All Permissions](/xpress-wallet-api/merchant/roles-and-permission/get-all-permissions)[NextCreate Role](/xpress-wallet-api/merchant/roles-and-permission/create-role)
-
-Last updated 26 days ago
