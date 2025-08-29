@@ -392,5 +392,3 @@ Console.WriteLine(response.Content);
 ```
 
 [PreviousExchange authorization code for access token](/transactions/exchange-authorization-code-for-access-token)[NextInitiate a Transaction Request](/transactions/initiate-a-transaction-request)
-
-Last updated 1 year ago
