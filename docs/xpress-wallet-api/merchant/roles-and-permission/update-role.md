@@ -67,5 +67,3 @@ Update an existing role's name and permissions.
     
 
 [PreviousCreate Role](/xpress-wallet-api/merchant/roles-and-permission/create-role)[NextAccount verification](/xpress-wallet-api/merchant/account-verification)
-
-Last updated 26 days ago
