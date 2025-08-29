@@ -211,5 +211,3 @@ You've now set up Postman with advanced features for interacting with your API S
 Happy testing!
 
 [PreviousSandbox](/reference/sandbox)[NextAdvanced Setup for API Development and Testing](/reference/sandbox/advanced-setup-for-api-development-and-testing)
-
-Last updated 1 year ago
