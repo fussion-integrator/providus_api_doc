@@ -84,5 +84,3 @@ Retrieve the profile of the logged-in merchant.
     
 
 [PreviousComplete Merchant KYC](/xpress-wallet-api/merchant/complete-merchant-kyc)[NextUpdate Merchant Profile](/xpress-wallet-api/merchant/update-merchant-profile)
-
-Last updated 26 days ago
