@@ -71,5 +71,3 @@ if (response.statusCode == 200) {
 [](#undefined)
 
 [PreviousAuthentication](/xpress-wallet-api/authentication)[NextLogout](/xpress-wallet-api/authentication/logout)
-
-Last updated 1 month ago
