@@ -2,267 +2,152 @@
 
 * * *
 
-**URI**: /ProvidusFundTransfer
-
-**HTTP Method**: POST
-
-**Headers**:
-
-*   Accept: application/json
-    
-*   Content-Type: application/json
-    
-
-**Request** (JSON):
+## Base URL
 
 ```
+https://api.providusbank.com
+```
+
+## Endpoint
+
+<div class="method post">POST</div> `/api/v1/third-party/providus`
+
+
+
+## Request Body
+
+```json
 {
-  "creditAccount": "5900174721",
-  "debitAccount": "1700313889",
-  "transactionAmount": "2000.45",
-  "currencyCode": "NGN",
-  "narration": "Testing",
-  "transactionReference": "20191119143501",
-  "userName": "test",
-  "password": "test"
+  "amount": 1000,
+  "destinationAccount": "1234567890",
+  "narration": "Transfer"
 }
 ```
 
-200 Successful
 
-[](#tab-id-200-successful)
+## Response Body
 
-401: Unauthorized
+### Success Response (200 OK)
 
-[](#tab-id-401-unauthorized)
-
-400: Bad Request
-
-[](#tab-id-400-bad-request)
-
-500: Internal Server Error
-
-[](#tab-id-500-internal-server-error)
-
-```
+```json
 {
-  "amount": "100.0",
-  "transactionReference": "2345677777",
-  "currency": "NGN",
-  "responseMessage": "OPERATION SUCCESSFUL",
-  "responseCode": "00"
+  "status": "success",
+  "message": "Operation completed successfully",
+  "data": {
+    "transactionId": "TXN123456789",
+    "status": "successful"
+  }
 }
 ```
 
-```
-{
-  "transactionReference": "20191119143501",
-  "responseMessage": "TRANSACTION REFERENCE EXISTS",
-  "responseCode": "7709"
-}
-```
+## Sample Implementation
 
-```
-{
-  "transactionReference": "20191119143501",
-  "responseMessage": "TRANSACTION REFERENCE EXISTS",
-  "responseCode": "7709"
-}
+```curl
+curl -X POST "https://api.providusbank.com/api/v1/third-party/providus" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "amount": 1000,
+  "destinationAccount": "1234567890",
+  "narration": "Transfer"
+}'
 ```
 
-```
-{
-  "requestSuccessful": false,
-  "responseMessage": "Exception; Failed",
-  "responseCode": "03"
-}
-```
-
-* * *
-
-### 
-
-[](#sample-implementation)
-
-Sample Implementation
-
-Curl
-
-[](#tab-curl)
-
-Python
-
-[](#tab-python)
-
-Java
-
-[](#tab-java)
-
-JavaScript
-
-[](#tab-javascript)
-
-PHP
-
-[](#tab-php)
-
-C#
-
-[](#tab-c)
-
-```
-curl -X POST http://154.113.16.142:8882/postingrest/ProvidusFundTransfer \
--H "Accept: application/json" \
--H "Content-Type: application/json" \
--d '{"creditAccount":"5900174721","debitAccount":"1700313889","transactionAmount":"2000.45","currencyCode":"NGN","narration":"Testing","transactionReference":"20191119143501","userName":"test","password":"test"}'
-```
-
-```
+```python
 import requests
 
-url = "http://154.113.16.142:8882/postingrest/ProvidusFundTransfer"
-headers = {"Accept": "application/json", "Content-Type": "application/json"}
-data = {
-    "creditAccount": "5900174721",
-    "debitAccount": "1700313889",
-    "transactionAmount": "2000.45",
-    "currencyCode": "NGN",
-    "narration": "Testing",
-    "transactionReference": "20191119143501",
-    "userName": "test",
-    "password": "test"
+url = "https://api.providusbank.com/api/v1/third-party/providus"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
 }
-response = requests.post(url, json=data, headers=headers)
+
+data = {
+  "amount": 1000,
+  "destinationAccount": "1234567890",
+  "narration": "Transfer"
+}
+response = requests.post(url, headers=headers, json=data)
 print(response.json())
 ```
 
-```
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.io.OutputStream;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
-public class ProvidusFundTransfer {
-    public static void main(String[] args) throws Exception {
-        URL url = new URL("http://154.113.16.142:8882/postingrest/ProvidusFundTransfer");
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestMethod("POST");
-        conn.setRequestProperty("Accept", "application/json");
-        conn.setRequestProperty("Content-Type", "application/json");
-        conn.setDoOutput(true);
-
-        String jsonInput = "{\"creditAccount\":\"5900174721\",\"debitAccount\":\"1700313889\",\"transactionAmount\":\"2000.45\",\"currencyCode\":\"NGN\",\"narration\":\"Testing\",\"transactionReference\":\"20191119143501\",\"userName\":\"test\",\"password\":\"test\"}";
-        try (OutputStream os = conn.getOutputStream()) {
-            byte[] input = jsonInput.getBytes("utf-8");
-            os.write(input, 0, input.length);
-        }
-
-        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"));
-        StringBuilder response = new StringBuilder();
-        String responseLine;
-        while ((responseLine = br.readLine()) != null) {
-            response.append(responseLine.trim());
-        }
-        System.out.println(response.toString());
-    }
-}
-```
-
-```
-const fetch = require('node-fetch');
-
-const url = 'http://154.113.16.142:8882/postingrest/ProvidusFundTransfer';
-const headers = {
-    'Accept': 'application/json',
+```javascript
+const response = await fetch('https://api.providusbank.com/api/v1/third-party/providus', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
     'Content-Type': 'application/json'
-};
-const data = {
-    creditAccount: '5900174721',
-    debitAccount: '1700313889',
-    transactionAmount: '2000.45',
-    currencyCode: 'NGN',
-    narration: 'Testing',
-    transactionReference: '20191119143501',
-    userName: 'test',
-    password: 'test'
-};
-
-fetch(url, {
-    method: 'POST',
-    headers: headers,
-    body: JSON.stringify(data)
+  },
+  body: JSON.stringify({
+  "amount": 1000,
+  "destinationAccount": "1234567890",
+  "narration": "Transfer"
 })
-.then(response => response.json())
-.then(data => console.log(data))
-.catch(error => console.error('Error:', error));
+});
+
+const data = await response.json();
+console.log(data);
 ```
 
-```
+```php
 <?php
-$url = "http://154.113.16.142:8882/postingrest/ProvidusFundTransfer";
+$url = "https://api.providusbank.com/api/v1/third-party/providus";
 $headers = [
-    "Accept: application/json",
+    "Authorization: Bearer YOUR_API_KEY",
     "Content-Type: application/json"
 ];
-$data = [
-    "creditAccount" => "5900174721",
-    "debitAccount" => "1700313889",
-    "transactionAmount" => "2000.45",
-    "currencyCode" => "NGN",
-    "narration" => "Testing",
-    "transactionReference" => "20191119143501",
-    "userName" => "test",
-    "password" => "test"
-];
 
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$response = curl_exec($ch);
-curl_close($ch);
+$data = json_encode({
+  \"amount\": 1000,
+  \"destinationAccount\": \"1234567890\",
+  \"narration\": \"Transfer\"
+});
+$context = stream_context_create([
+    'http' => [
+        'method' => 'POST',
+        'header' => implode("\r\n", $headers),
+        'content' => $data
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
 echo $response;
 ?>
 ```
 
+```java
+import java.net.http.*;
+import java.net.URI;
+
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.providusbank.com/api/v1/third-party/providus"))
+    .header("Authorization", "Bearer YOUR_API_KEY")
+    .header("Content-Type", "application/json")
+    .POST(HttpRequest.BodyPublishers.ofString("{\"amount\":1000,\"destinationAccount\":\"1234567890\",\"narration\":\"Transfer\"}"))
+    .build();
+
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+System.out.println(response.body());
 ```
+
+```csharp
 using System;
 using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 
-class Program
-{
-    static async Task Main()
-    {
-        using (var client = new HttpClient())
-        {
-            client.DefaultRequestHeaders.Add("Accept", "application/json");
-            var content = new StringContent(
-                "{\"creditAccount\":\"5900174721\",\"debitAccount\":\"1700313889\",\"transactionAmount\":\"2000.45\",\"currencyCode\":\"NGN\",\"narration\":\"Testing\",\"transactionReference\":\"20191119143501\",\"userName\":\"test\",\"password\":\"test\"}",
-                Encoding.UTF8,
-                "application/json"
-            );
-            var response = await client.PostAsync("http://154.113.16.142:8882/postingrest/ProvidusFundTransfer", content);
-            var responseString = await response.Content.ReadAsStringAsync();
-            Console.WriteLine(responseString);
-        }
-    }
-}
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
+
+var json = @"{
+  "amount": 1000,
+  "destinationAccount": "1234567890",
+  "narration": "Transfer"
+}";
+var content = new StringContent(json, Encoding.UTF8, "application/json");
+var response = await client.PostAsync("https://api.providusbank.com/api/v1/third-party/providus", content);
+
+var responseContent = await response.Content.ReadAsStringAsync();
+Console.WriteLine(responseContent);
 ```
 
-> The above command returns JSON structured like this:
-
-```
-{
-  "amount": "100.0",
-  "transactionReference": "2345677777",
-  "currency": "NGN",
-  "responseMessage": "OPERATION SUCCESSFUL",
-  "responseCode": "00"
-}
-```
-
-[PreviousGetNIPBanks](/third-party-generic-api/getnipbanks)[NextGetProvidusTransactionStatus](/third-party-generic-api/getprovidustransactionstatus)
