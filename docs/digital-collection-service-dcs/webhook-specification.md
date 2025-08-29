@@ -507,5 +507,3 @@ namespace WebhookController
 ```
 
 [PreviousVerify Transaction by Settlement ID](/digital-collection-service-dcs/verify-transaction-by-settlement-id)[NextTHIRD PARTY GENERIC API](/third-party-generic-api)
-
-Last updated 1 month ago
