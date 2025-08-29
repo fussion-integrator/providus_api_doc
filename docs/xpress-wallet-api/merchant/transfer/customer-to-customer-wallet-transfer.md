@@ -71,5 +71,3 @@ Transfer funds between customer wallets.
     
 
 [PreviousMerchant Batch Bank Transfer](/xpress-wallet-api/merchant/transfer/merchant-batch-bank-transfer)[NextCard](/xpress-wallet-api/merchant/card)
-
-Last updated 26 days ago
