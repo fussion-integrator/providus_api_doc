@@ -12,16 +12,18 @@ https://api.providusbank.com
 
 <div class="method post">POST</div> `/api/v1/virtual/dynamic`
 
+
+
 ## Request Body
 
 ```json
 {
   "customerName": "John Doe",
-  "customerEmail": "john.doe@example.com",
-  "amount": 5000,
-  "reference": "REF123456789"
+  "customerEmail": "john@example.com"
 }
 ```
+
+
 
 
 ## Response Body
@@ -33,10 +35,7 @@ https://api.providusbank.com
   "status": "success",
   "data": {
     "accountNumber": "9876543210",
-    "accountName": "John Doe",
-    "bankName": "Providus Bank",
-    "reference": "REF123456789",
-    "expiryDate": "2024-12-31T23:59:59Z"
+    "accountName": "John Doe"
   }
 }
 ```
@@ -50,9 +49,7 @@ curl -X POST "https://api.providusbank.com/api/v1/virtual/dynamic" \
   -H "Content-Type: application/json" \
   -d '{
   "customerName": "John Doe",
-  "customerEmail": "john.doe@example.com",
-  "amount": 5000,
-  "reference": "REF123456789"
+  "customerEmail": "john@example.com"
 }'
 ```
 
@@ -67,9 +64,7 @@ headers = {
 
 data = {
   "customerName": "John Doe",
-  "customerEmail": "john.doe@example.com",
-  "amount": 5000,
-  "reference": "REF123456789"
+  "customerEmail": "john@example.com"
 }
 response = requests.post(url, headers=headers, json=data)
 print(response.json())
@@ -84,9 +79,7 @@ const response = await fetch('https://api.providusbank.com/api/v1/virtual/dynami
   },
   body: JSON.stringify({
   "customerName": "John Doe",
-  "customerEmail": "john.doe@example.com",
-  "amount": 5000,
-  "reference": "REF123456789"
+  "customerEmail": "john@example.com"
 })
 });
 
@@ -104,9 +97,7 @@ $headers = [
 
 $data = json_encode({
   \"customerName\": \"John Doe\",
-  \"customerEmail\": \"john.doe@example.com\",
-  \"amount\": 5000,
-  \"reference\": \"REF123456789\"
+  \"customerEmail\": \"john@example.com\"
 });
 $context = stream_context_create([
     'http' => [
@@ -130,7 +121,7 @@ HttpRequest request = HttpRequest.newBuilder()
     .uri(URI.create("https://api.providusbank.com/api/v1/virtual/dynamic"))
     .header("Authorization", "Bearer YOUR_API_KEY")
     .header("Content-Type", "application/json")
-    .POST(HttpRequest.BodyPublishers.ofString("{\"customerName\":\"John Doe\",\"customerEmail\":\"john.doe@example.com\",\"amount\":5000,\"reference\":\"REF123456789\"}"))
+    .POST(HttpRequest.BodyPublishers.ofString("{\"customerName\":\"John Doe\",\"customerEmail\":\"john@example.com\"}"))
     .build();
 
 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -147,9 +138,7 @@ client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
 
 var json = @"{
   "customerName": "John Doe",
-  "customerEmail": "john.doe@example.com",
-  "amount": 5000,
-  "reference": "REF123456789"
+  "customerEmail": "john@example.com"
 }";
 var content = new StringContent(json, Encoding.UTF8, "application/json");
 var response = await client.PostAsync("https://api.providusbank.com/api/v1/virtual/dynamic", content);
