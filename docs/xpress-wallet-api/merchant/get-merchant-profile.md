@@ -2,85 +2,114 @@
 
 Retrieve the profile of the logged-in merchant.
 
-*   **Endpoint**: `GET {{base-url}}/merchant/profile`
-    
-*   **Headers**:
+## Base URL
 
-    ```
-    {
-      "Authorization": "Bearer {{vault:authorization-secret}}",
-      "X-Access-Token": "{{access-token}}",
-      "X-Refresh-Token": "{{refresh-token}}"
-    }
-    ```
-    
-*   **Response**:
-    
-    *   **200 OK**:
+```
+https://api.providusbank.com
+```
 
-        ```
-        {
-          "status": true,
-          "data": {
-            "id": "c56d9ba0-588b-43ef-9ba5-9e70e2187180",
-            "bvn": null,
-            "slug": "IDS",
-            "email": "[email protected]",
-            "phoneNumber": "2347065948710",
-            "callbackURL": "https://656c12875b57.ngrok.io/v1/webhook/test",
-            "businessName": "Herlabytes",
-            "businessType": "FINANCIAL-SERVICES",
-            "merchantType": "PLATINUM",
-            "review": "PENDING",
-            "walletReservationCharge": 20,
-            "bvnChargeV1": 0,
-            "bvnVerificationCharge": 40,
-            "walletToWalletTransfer": 20,
-            "airtimeCharge": 10,
-            "transferCharges": {
-              "max5000": 20,
-              "max50000": 35,
-              "min50000": 52
-            },
-            "contractCode": null,
-            "apiKey": null,
-            "mode": "SANDBOX",
-            "fundingRate": 0.85,
-            "fundingRateMax": 200,
-            "sandboxCallbackURL": "https://656c12875b57.ngrok.io/v1/webhook/test",
-            "tier_1_daily_limit": 10000,
-            "tier_2_daily_limit": 200000,
-            "tier_3_daily_limit": 1000000000,
-            "tier_1_min_balance": 0,
-            "tier_2_min_balance": 0,
-            "tier_3_min_balance": 0,
-            "baseCustomerWalletCredit": 1200,
-            "canLogin": true,
-            "sendEmail": true,
-            "autoCardFunding": false,
-            "createdAt": "2021-01-27T12:25:16.761Z",
-            "updatedAt": "2021-03-03T00:11:15.548Z"
-          }
-        }
-        ```
-        
-    
-*   **Sample Code (Dart)**:
+## Endpoint
 
-    ```
-    var headers = {
-      'X-Access-Token': '{{access-token}}',
-      'X-Refresh-Token': '{{refresh-token}}'
-    };
-    var request = http.Request('GET', Uri.parse('{{base-url}}/merchant/profile'));
-    request.headers.addAll(headers);
-    http.StreamedResponse response = await request.send();
-    if (response.statusCode == 200) {
-      print(await response.stream.bytesToString());
-    } else {
-      print(response.reasonPhrase);
-    }
-    ```
-    
+<div class="method get">GET</div> `/api/v1/wallet/merchant`
 
-[PreviousComplete Merchant KYC](/xpress-wallet-api/merchant/complete-merchant-kyc)[NextUpdate Merchant Profile](/xpress-wallet-api/merchant/update-merchant-profile)
+
+
+## Response Body
+
+### Success Response (200 OK)
+
+```json
+{
+  "status": "success",
+  "message": "Operation completed successfully",
+  "data": {
+    "items": [],
+    "total": 0
+  }
+}
+```
+
+## Sample Implementation
+
+```curl
+curl -X GET "https://api.providusbank.com/api/v1/wallet/merchant" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"
+```
+
+```python
+import requests
+
+url = "https://api.providusbank.com/api/v1/wallet/merchant"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+}
+
+response = requests.get(url, headers=headers)
+print(response.json())
+```
+
+```javascript
+const response = await fetch('https://api.providusbank.com/api/v1/wallet/merchant', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  }
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+```php
+<?php
+$url = "https://api.providusbank.com/api/v1/wallet/merchant";
+$headers = [
+    "Authorization: Bearer YOUR_API_KEY",
+    "Content-Type: application/json"
+];
+
+$context = stream_context_create([
+    'http' => [
+        'method' => 'GET',
+        'header' => implode("\r\n", $headers)
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
+echo $response;
+?>
+```
+
+```java
+import java.net.http.*;
+import java.net.URI;
+
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.providusbank.com/api/v1/wallet/merchant"))
+    .header("Authorization", "Bearer YOUR_API_KEY")
+    .header("Content-Type", "application/json")
+    .GET(HttpRequest.BodyPublishers.noBody())
+    .build();
+
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+System.out.println(response.body());
+```
+
+```csharp
+using System;
+using System.Net.Http;
+using System.Text;
+
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
+
+var response = await client.GetAsync("https://api.providusbank.com/api/v1/wallet/merchant");
+
+var responseContent = await response.Content.ReadAsStringAsync();
+Console.WriteLine(responseContent);
+```
+
