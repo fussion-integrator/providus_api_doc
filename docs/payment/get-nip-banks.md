@@ -380,5 +380,3 @@ Console.WriteLine(response.Content);
 ```
 
 [PreviousPayment](/payment)[NextGet NIP Account](/payment/get-nip-account)
-
-Last updated 25 days ago
