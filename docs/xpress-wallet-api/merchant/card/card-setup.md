@@ -112,4 +112,3 @@ var response = await client.GetAsync("https://api.providusbank.com/api/v1/wallet
 var responseContent = await response.Content.ReadAsStringAsync();
 Console.WriteLine(responseContent);
 ```
-
