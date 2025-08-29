@@ -47,5 +47,3 @@ Generate new access keys for the merchant.
     
 
 [PreviousGet Merchant Access Keys](/xpress-wallet-api/merchant/get-merchant-access-keys)[NextSwitch Account Mode](/xpress-wallet-api/merchant/switch-account-mode)
-
-Last updated 26 days ago
