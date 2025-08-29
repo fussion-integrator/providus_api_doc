@@ -326,5 +326,3 @@ Console.WriteLine(response.Content);
 ```
 
 [PreviousAccount](/account)[NextGet Providus Account Statement](/account/get-providus-account-statement)
-
-Last updated 26 days ago
