@@ -12,11 +12,13 @@ https://api.providusbank.com
 
 <div class="method post">POST</div> `/api/v1/bills/category`
 
+
+
 ## Request Body
 
 ```json
 {
-  "categoryId": "1"
+  "reference": "REF123456789"
 }
 ```
 
@@ -28,15 +30,12 @@ https://api.providusbank.com
 ```json
 {
   "status": "success",
-  "data": [
-    {
-      "billerId": "101",
-      "billerName": "EKEDC"
-    }
-  ]
+  "message": "Operation completed successfully",
+  "data": {
+    "result": "success"
+  }
 }
 ```
-
 
 ## Sample Implementation
 
@@ -45,7 +44,7 @@ curl -X POST "https://api.providusbank.com/api/v1/bills/category" \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-  "categoryId": "1"
+  "reference": "REF123456789"
 }'
 ```
 
@@ -59,7 +58,7 @@ headers = {
 }
 
 data = {
-  "categoryId": "1"
+  "reference": "REF123456789"
 }
 response = requests.post(url, headers=headers, json=data)
 print(response.json())
@@ -73,7 +72,7 @@ const response = await fetch('https://api.providusbank.com/api/v1/bills/category
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
-  "categoryId": "1"
+  "reference": "REF123456789"
 })
 });
 
@@ -90,7 +89,7 @@ $headers = [
 ];
 
 $data = json_encode({
-  \"categoryId\": \"1\"
+  \"reference\": \"REF123456789\"
 });
 $context = stream_context_create([
     'http' => [
@@ -114,7 +113,7 @@ HttpRequest request = HttpRequest.newBuilder()
     .uri(URI.create("https://api.providusbank.com/api/v1/bills/category"))
     .header("Authorization", "Bearer YOUR_API_KEY")
     .header("Content-Type", "application/json")
-    .POST(HttpRequest.BodyPublishers.ofString("{\"categoryId\":\"1\"}"))
+    .POST(HttpRequest.BodyPublishers.ofString("{\"reference\":\"REF123456789\"}"))
     .build();
 
 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -130,7 +129,7 @@ var client = new HttpClient();
 client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
 
 var json = @"{
-  "categoryId": "1"
+  "reference": "REF123456789"
 }";
 var content = new StringContent(json, Encoding.UTF8, "application/json");
 var response = await client.PostAsync("https://api.providusbank.com/api/v1/bills/category", content);
