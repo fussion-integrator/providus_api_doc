@@ -59,5 +59,3 @@ Create a new card for a customer.
     
 
 [PreviousCard Setup](/xpress-wallet-api/merchant/card/card-setup)[NextActivate Card](/xpress-wallet-api/merchant/card/activate-card)
-
-Last updated 26 days ago
