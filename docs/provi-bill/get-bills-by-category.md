@@ -1,187 +1,141 @@
 # Get Bills by Category
 
-**Endpoint**: `GET /bill/assigned/byCategoryId/{categoryId}`
+Retrieve bills available in a specific category.
 
-**Description**: Retrieves a list of bills associated with a specific category ID.
-
-**Authentication**: Basic Auth (Username, Password)
-
-**Path Parameters**:
-
-*   categoryId (required): The ID of the category (e.g., 4 for Electricity - Prepaid).
-    
-
-**Response**:
-
-*   **200 OK**: Returns a JSON array of bill objects.
-    
-
-* * *
-
-### 
-
-[](#sample-implementation)
-
-Sample Implementation
-
-Curl
-
-[](#tab-curl)
-
-Python
-
-[](#tab-python)
-
-Java
-
-[](#tab-java)
-
-JavaScript
-
-[](#tab-javascript)
-
-PHP
-
-[](#tab-php)
-
-C#
-
-[](#tab-c)
+## Base URL
 
 ```
-curl --request GET \
-  --url 'http://154.113.16.142:9999/provipay/webapi/bill/assigned/byCategoryId/4' \
-  --header 'Authorization: Basic <base64-encoded-username:password>'
+https://api.providusbank.com
 ```
 
+## Endpoint
+
+<div class="method post">POST</div> `/api/v1/bills/category`
+
+## Request Body
+
+```json
+{
+  "categoryId": "1"
+}
 ```
+
+
+## Response Body
+
+### Success Response (200 OK)
+
+```json
+{
+  "status": "success",
+  "data": [
+    {
+      "billerId": "101",
+      "billerName": "EKEDC"
+    }
+  ]
+}
+```
+
+
+## Sample Implementation
+
+```curl
+curl -X POST "https://api.providusbank.com/api/v1/bills/category" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "categoryId": "1"
+}'
+```
+
+```python
 import requests
 
+url = "https://api.providusbank.com/api/v1/bills/category"
 headers = {
-    'Authorization': 'Basic <base64-encoded-username:password>'
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
 }
 
-response = requests.get('http://154.113.16.142:9999/provipay/webapi/bill/assigned/byCategoryId/4', headers=headers)
-if response.status_code == 200:
-    print(response.json())
-else:
-    print(response.reason)
-```
-
-```
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
-public class Main {
-    public static void main(String[] args) throws Exception {
-        URL url = new URL("http://154.113.16.142:9999/provipay/webapi/bill/assigned/byCategoryId/4");
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestMethod("GET");
-        conn.setRequestProperty("Authorization", "Basic <base64-encoded-username:password>");
-
-        int responseCode = conn.getResponseCode();
-        if (responseCode == 200) {
-            BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            String inputLine;
-            StringBuilder response = new StringBuilder();
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
-            }
-            in.close();
-            System.out.println(response.toString());
-        } else {
-            System.out.println(conn.getResponseMessage());
-        }
-    }
+data = {
+  "categoryId": "1"
 }
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
 ```
 
-```
-const headers = {
-    'Authorization': 'Basic <base64-encoded-username:password>'
-};
-
-fetch('http://154.113.16.142:9999/provipay/webapi/bill/assigned/byCategoryId/4', {
-    method: 'GET',
-    headers: headers
+```javascript
+const response = await fetch('https://api.providusbank.com/api/v1/bills/category', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+  "categoryId": "1"
 })
-.then(response => {
-    if (response.ok) {
-        return response.json();
-    }
-    throw new Error(response.statusText);
-})
-.then(data => console.log(data))
-.catch(error => console.error(error));
+});
+
+const data = await response.json();
+console.log(data);
 ```
 
-```
+```php
 <?php
-$ch = curl_init();
+$url = "https://api.providusbank.com/api/v1/bills/category";
+$headers = [
+    "Authorization: Bearer YOUR_API_KEY",
+    "Content-Type: application/json"
+];
 
-curl_setopt($ch, CURLOPT_URL, "http://154.113.16.142:9999/provipay/webapi/bill/assigned/byCategoryId/4");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    'Authorization: Basic <base64-encoded-username:password>'
+$data = json_encode({
+  \"categoryId\": \"1\"
+});
+$context = stream_context_create([
+    'http' => [
+        'method' => 'POST',
+        'header' => implode("\r\n", $headers),
+        'content' => $data
+    ]
 ]);
 
-$response = curl_exec($ch);
-$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
-if ($httpCode == 200) {
-    echo $response;
-} else {
-    echo curl_error($ch);
-}
-
-curl_close($ch);
+$response = file_get_contents($url, false, $context);
+echo $response;
 ?>
 ```
 
+```java
+import java.net.http.*;
+import java.net.URI;
+
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.providusbank.com/api/v1/bills/category"))
+    .header("Authorization", "Bearer YOUR_API_KEY")
+    .header("Content-Type", "application/json")
+    .POST(HttpRequest.BodyPublishers.ofString("{\"categoryId\":\"1\"}"))
+    .build();
+
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+System.out.println(response.body());
 ```
+
+```csharp
 using System;
 using System.Net.Http;
-using System.Threading.Tasks;
+using System.Text;
 
-class Program
-{
-    static async Task Main(string[] args)
-    {
-        using (var client = new HttpClient())
-        {
-            client.DefaultRequestHeaders.Add("Authorization", "Basic <base64-encoded-username:password>");
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
 
-            var response = await client.GetAsync("http://154.113.16.142:9999/provipay/webapi/bill/assigned/byCategoryId/4");
-            if (response.IsSuccessStatusCode)
-            {
-                var content = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(content);
-            }
-            else
-            {
-                Console.WriteLine(response.ReasonPhrase);
-            }
-        }
-    }
-}
+var json = @"{
+  "categoryId": "1"
+}";
+var content = new StringContent(json, Encoding.UTF8, "application/json");
+var response = await client.PostAsync("https://api.providusbank.com/api/v1/bills/category", content);
+
+var responseContent = await response.Content.ReadAsStringAsync();
+Console.WriteLine(responseContent);
 ```
 
-**Example Response**:
-
-```
-[
-    {
-        "bill_id": 7,
-        "category_id": "4",
-        "description": "Ikeja Electric - DML bill",
-        "list_order": "1",
-        "name": "Ikeja Electric - IKEDC",
-        "source_id": ""
-    },
-    ...
-]
-```
-
-[PreviousGet Categories](/provi-bill/get-categories)[NextGet Field](/provi-bill/get-field)
