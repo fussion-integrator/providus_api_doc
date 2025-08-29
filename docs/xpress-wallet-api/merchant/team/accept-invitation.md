@@ -65,5 +65,3 @@ Accept a team invitation.
     
 
 [PreviousResend Invitation](/xpress-wallet-api/merchant/team/resend-invitation)[NextGet Merchant List](/xpress-wallet-api/merchant/team/get-merchant-list)
-
-Last updated 26 days ago
