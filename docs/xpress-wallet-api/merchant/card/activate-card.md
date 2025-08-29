@@ -58,5 +58,3 @@ Activate a card for a customer.
     
 
 [PreviousCreate Card](/xpress-wallet-api/merchant/card/create-card)[NextGet Card Balance](/xpress-wallet-api/merchant/card/get-card-balance)
-
-Last updated 26 days ago
