@@ -2,175 +2,114 @@
 
 **Endpoint**: `GET /makepayment/enquiry?txn_ref={txn_ref}`
 
-**Description**: Retrieves the status of a payment using the transaction reference.
-
-**Authentication**: Basic Auth (Username, Password)
-
-**Query Parameters**:
-
-*   txn\_ref (required): The transaction reference (e.g., 122433).
-    
-
-* * *
-
-### 
-
-[](#sample-implementation)
-
-Sample Implementation
-
-Curl
-
-[](#tab-curl)
-
-Python
-
-[](#tab-python)
-
-Java
-
-[](#tab-java)
-
-JavaScript
-
-[](#tab-javascript)
-
-PHP
-
-[](#tab-php)
-
-C#
-
-[](#tab-c)
+## Base URL
 
 ```
-curl --request GET \
-  --url 'http://154.113.16.142:9999/provipay/webapi/makepayment/enquiry?txn_ref=122433' \
-  --header 'Authorization: Basic <base64-encoded-username:password>'
+https://api.providusbank.com
 ```
 
+## Endpoint
+
+<div class="method get">GET</div> `/api/v1/payment`
+
+
+
+## Response Body
+
+### Success Response (200 OK)
+
+```json
+{
+  "status": "success",
+  "message": "Operation completed successfully",
+  "data": {
+    "items": [],
+    "total": 0
+  }
+}
 ```
+
+## Sample Implementation
+
+```curl
+curl -X GET "https://api.providusbank.com/api/v1/payment" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"
+```
+
+```python
 import requests
 
+url = "https://api.providusbank.com/api/v1/payment"
 headers = {
-    'Authorization': 'Basic <base64-encoded-username:password>'
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
 }
 
-response = requests.get('http://154.113.16.142:9999/provipay/webapi/makepayment/enquiry?txn_ref=122433', headers=headers)
-if response.status_code == 200:
-    print(response.json())
-else:
-    print(response.reason)
+response = requests.get(url, headers=headers)
+print(response.json())
 ```
 
-```
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+```javascript
+const response = await fetch('https://api.providusbank.com/api/v1/payment', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  }
+});
 
-public class Main {
-    public static void main(String[] args) throws Exception {
-        URL url = new URL("http://154.113.16.142:9999/provipay/webapi/makepayment/enquiry?txn_ref=122433");
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestMethod("GET");
-        conn.setRequestProperty("Authorization", "Basic <base64-encoded-username:password>");
-
-        int responseCode = conn.getResponseCode();
-        if (responseCode == 200) {
-            BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            String inputLine;
-            StringBuilder response = new StringBuilder();
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
-            }
-            in.close();
-            System.out.println(response.toString());
-        } else {
-            System.out.println(conn.getResponseMessage());
-        }
-    }
-}
+const data = await response.json();
+console.log(data);
 ```
 
-```
-const headers = {
-    'Authorization': 'Basic <base64-encoded-username:password>'
-};
-
-fetch('http://154.113.16.142:9999/provipay/webapi/makepayment/enquiry?txn_ref=122433', {
-    method: 'GET',
-    headers: headers
-})
-.then(response => {
-    if (response.ok) {
-        return response.json();
-    }
-    throw new Error(response.statusText);
-})
-.then(data => console.log(data))
-.catch(error => console.error(error));
-```
-
-```
+```php
 <?php
-$ch = curl_init();
+$url = "https://api.providusbank.com/api/v1/payment";
+$headers = [
+    "Authorization: Bearer YOUR_API_KEY",
+    "Content-Type: application/json"
+];
 
-curl_setopt($ch, CURLOPT_URL, "http://154.113.16.142:9999/provipay/webapi/makepayment/enquiry?txn_ref=122433");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    'Authorization: Basic <base64-encoded-username:password>'
+$context = stream_context_create([
+    'http' => [
+        'method' => 'GET',
+        'header' => implode("\r\n", $headers)
+    ]
 ]);
 
-$response = curl_exec($ch);
-$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
-if ($httpCode == 200) {
-    echo $response;
-} else {
-    echo curl_error($ch);
-}
-
-curl_close($ch);
+$response = file_get_contents($url, false, $context);
+echo $response;
 ?>
 ```
 
+```java
+import java.net.http.*;
+import java.net.URI;
+
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.providusbank.com/api/v1/payment"))
+    .header("Authorization", "Bearer YOUR_API_KEY")
+    .header("Content-Type", "application/json")
+    .GET(HttpRequest.BodyPublishers.noBody())
+    .build();
+
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+System.out.println(response.body());
 ```
+
+```csharp
 using System;
 using System.Net.Http;
-using System.Threading.Tasks;
+using System.Text;
 
-class Program
-{
-    static async Task Main(string[] args)
-    {
-        using (var client = new HttpClient())
-        {
-            client.DefaultRequestHeaders.Add("Authorization", "Basic <base64-encoded-username:password>");
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
 
-            var response = await client.GetAsync("http://154.113.16.142:9999/provipay/webapi/makepayment/enquiry?txn_ref=122433");
-            if (response.IsSuccessStatusCode)
-            {
-                var content = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(content);
-            }
-            else
-            {
-                Console.WriteLine(response.ReasonPhrase);
-            }
-        }
-    }
-}
+var response = await client.GetAsync("https://api.providusbank.com/api/v1/payment");
+
+var responseContent = await response.Content.ReadAsStringAsync();
+Console.WriteLine(responseContent);
 ```
 
-**Response**:
-
-*   **200 OK**: Returns a JSON object with validation results.
-
-```
-{
-    "status": "successful"
-}
-```
-
-[PreviousPayment](/provi-bill/payment)[NextVirtual Payment](/virtual-payment)
