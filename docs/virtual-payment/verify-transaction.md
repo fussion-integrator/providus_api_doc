@@ -306,5 +306,3 @@ Console.WriteLine(response.Content);
 ```
 
 [PreviousVirtual Payment](/virtual-payment)[NextVerify Transaction by Settlement Id](/virtual-payment/verify-transaction-by-settlement-id)
-
-Last updated 1 year ago
