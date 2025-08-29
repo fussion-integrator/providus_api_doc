@@ -340,5 +340,3 @@ Console.WriteLine(response.Content);
 ```
 
 [PreviousGet Providus Transaction Status](/payment/get-providus-transaction-status)[NextNIP Fund Transfer](/payment/nip-fund-transfer)
-
-Last updated 1 year ago
