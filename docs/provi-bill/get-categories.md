@@ -212,5 +212,3 @@ class Program
 ```
 
 [PreviousProvi Bill](/provi-bill)[NextGet Bills by Category](/provi-bill/get-bills-by-category)
-
-Last updated 24 days ago
