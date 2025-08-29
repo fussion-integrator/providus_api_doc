@@ -1,93 +1,115 @@
 # Advanced Setup for API Development and Testing
 
-## 
-
 [](#introduction)
 
-Introduction
+## Base URL
 
-This guide explores advanced setup practices for comprehensive API development and testing using a variety of tools and environments.
+```
+https://api.providusbank.com
+```
 
-## 
+## Endpoint
 
-[](#id-1.-postman-environment-setup)
+<div class="method get">GET</div> `/api/v1`
 
-1\. Postman Environment Setup
 
-### 
 
-[](#create-dynamic-environments)
+## Response Body
 
-Create Dynamic Environments
+### Success Response (200 OK)
 
-1.  **Dynamic Variables:**
-    
-    *   Utilize Postman's scripting capabilities to dynamically generate variables based on responses or pre-request scripts.
-        
-    
-2.  **Global Variables:**
-    
-    *   Leverage global variables for cross-collection data sharing.
-        
-    
-3.  **Data-Driven Testing:**
-    
-    *   Implement data-driven testing using data files or external APIs.
-        
-    
+```json
+{
+  "status": "success",
+  "message": "Operation completed successfully",
+  "data": {
+    "items": [],
+    "total": 0
+  }
+}
+```
 
-## 
+## Sample Implementation
 
-[](#id-2.-api-documentation-with-swagger-openapi)
+```curl
+curl -X GET "https://api.providusbank.com/api/v1" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"
+```
 
-2\. API Documentation with Swagger/OpenAPI
+```python
+import requests
 
-### 
+url = "https://api.providusbank.com/api/v1"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+}
 
-[](#advanced-swagger-integration)
+response = requests.get(url, headers=headers)
+print(response.json())
+```
 
-Advanced Swagger Integration
+```javascript
+const response = await fetch('https://api.providusbank.com/api/v1', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  }
+});
 
-1.  **OpenAPI 3.0 Support:**
-    
-    *   Upgrade to OpenAPI 3.0 for enhanced API documentation.
-        
-    
-2.  **Annotations:**
-    
-    *   Use Swagger annotations in your code for precise documentation control.
-        
-    
-3.  **Interactive Documentation:**
-    
-    *   Embed interactive examples in Swagger to allow users to execute API requests directly.
-        
-    
-4.  **Security Definitions:**
-    
-    *   Define and document security schemes, including OAuth flows.
-        
-    
+const data = await response.json();
+console.log(data);
+```
 
-## 
+```php
+<?php
+$url = "https://api.providusbank.com/api/v1";
+$headers = [
+    "Authorization: Bearer YOUR_API_KEY",
+    "Content-Type: application/json"
+];
 
-[](#id-3.-command-line-automation-with-newman)
+$context = stream_context_create([
+    'http' => [
+        'method' => 'GET',
+        'header' => implode("\r\n", $headers)
+    ]
+]);
 
-3\. Command-Line Automation with Newman
+$response = file_get_contents($url, false, $context);
+echo $response;
+?>
+```
 
-### 
+```java
+import java.net.http.*;
+import java.net.URI;
 
-[](#advanced-newman-usage)
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.providusbank.com/api/v1"))
+    .header("Authorization", "Bearer YOUR_API_KEY")
+    .header("Content-Type", "application/json")
+    .GET(HttpRequest.BodyPublishers.noBody())
+    .build();
 
-Advanced Newman Usage
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+System.out.println(response.body());
+```
 
-1.  **Parallel Execution:**
-    
-    *   Execute multiple collections in parallel for faster testing.
+```csharp
+using System;
+using System.Net.Http;
+using System.Text;
 
-    ```
-    newman run collection1.json -e env1.json & newman run collection2.json -e env2.json
-    ```
-    
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
 
-[PreviousAdvanced Setup of Postman for API Sandbox](/reference/sandbox/advanced-setup-of-postman-for-api-sandbox)
+var response = await client.GetAsync("https://api.providusbank.com/api/v1");
+
+var responseContent = await response.Content.ReadAsStringAsync();
+Console.WriteLine(responseContent);
+```
+
