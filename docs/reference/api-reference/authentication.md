@@ -21,5 +21,3 @@ Authorization: api-key YOUR_API_KEY
 ```
 
 [PreviousAPI Reference](/reference/api-reference)[NextOAuth 2.0 Authentication](/reference/api-reference/oauth-2.0-authentication)
-
-Last updated 1 year ago
