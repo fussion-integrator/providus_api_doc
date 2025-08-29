@@ -10,17 +10,8 @@ https://api.providusbank.com
 
 ## Endpoint
 
-<div class="method post">POST</div> `/api/v1/bills/payment`
+<div class="method get">GET</div> `/api/v1/payment`
 
-## Request Body
-
-```json
-{
-  "billerId": "101",
-  "amount": 5000,
-  "customerReference": "12345"
-}
-```
 
 
 ## Response Body
@@ -30,57 +21,42 @@ https://api.providusbank.com
 ```json
 {
   "status": "success",
+  "message": "Operation completed successfully",
   "data": {
-    "transactionId": "BILL123456",
-    "status": "successful"
+    "items": [],
+    "total": 0
   }
 }
 ```
 
-
 ## Sample Implementation
 
 ```curl
-curl -X POST "https://api.providusbank.com/api/v1/bills/payment" \
+curl -X GET "https://api.providusbank.com/api/v1/payment" \
   -H "Authorization: Bearer YOUR_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-  "billerId": "101",
-  "amount": 5000,
-  "customerReference": "12345"
-}'
+  -H "Content-Type: application/json"
 ```
 
 ```python
 import requests
 
-url = "https://api.providusbank.com/api/v1/bills/payment"
+url = "https://api.providusbank.com/api/v1/payment"
 headers = {
     "Authorization": "Bearer YOUR_API_KEY",
     "Content-Type": "application/json"
 }
 
-data = {
-  "billerId": "101",
-  "amount": 5000,
-  "customerReference": "12345"
-}
-response = requests.post(url, headers=headers, json=data)
+response = requests.get(url, headers=headers)
 print(response.json())
 ```
 
 ```javascript
-const response = await fetch('https://api.providusbank.com/api/v1/bills/payment', {
-  method: 'POST',
+const response = await fetch('https://api.providusbank.com/api/v1/payment', {
+  method: 'GET',
   headers: {
     'Authorization': 'Bearer YOUR_API_KEY',
     'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-  "billerId": "101",
-  "amount": 5000,
-  "customerReference": "12345"
-})
+  }
 });
 
 const data = await response.json();
@@ -89,22 +65,16 @@ console.log(data);
 
 ```php
 <?php
-$url = "https://api.providusbank.com/api/v1/bills/payment";
+$url = "https://api.providusbank.com/api/v1/payment";
 $headers = [
     "Authorization: Bearer YOUR_API_KEY",
     "Content-Type: application/json"
 ];
 
-$data = json_encode({
-  \"billerId\": \"101\",
-  \"amount\": 5000,
-  \"customerReference\": \"12345\"
-});
 $context = stream_context_create([
     'http' => [
-        'method' => 'POST',
-        'header' => implode("\r\n", $headers),
-        'content' => $data
+        'method' => 'GET',
+        'header' => implode("\r\n", $headers)
     ]
 ]);
 
@@ -119,10 +89,10 @@ import java.net.URI;
 
 HttpClient client = HttpClient.newHttpClient();
 HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create("https://api.providusbank.com/api/v1/bills/payment"))
+    .uri(URI.create("https://api.providusbank.com/api/v1/payment"))
     .header("Authorization", "Bearer YOUR_API_KEY")
     .header("Content-Type", "application/json")
-    .POST(HttpRequest.BodyPublishers.ofString("{\"billerId\":\"101\",\"amount\":5000,\"customerReference\":\"12345\"}"))
+    .GET(HttpRequest.BodyPublishers.noBody())
     .build();
 
 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -137,13 +107,7 @@ using System.Text;
 var client = new HttpClient();
 client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
 
-var json = @"{
-  "billerId": "101",
-  "amount": 5000,
-  "customerReference": "12345"
-}";
-var content = new StringContent(json, Encoding.UTF8, "application/json");
-var response = await client.PostAsync("https://api.providusbank.com/api/v1/bills/payment", content);
+var response = await client.GetAsync("https://api.providusbank.com/api/v1/payment");
 
 var responseContent = await response.Content.ReadAsStringAsync();
 Console.WriteLine(responseContent);
