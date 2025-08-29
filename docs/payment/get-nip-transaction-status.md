@@ -332,5 +332,3 @@ Console.WriteLine(response.Content);
 ```
 
 [PreviousGet Providus Account](/payment/get-providus-account)[NextGet Providus Transaction Status](/payment/get-providus-transaction-status)
-
-Last updated 1 year ago
