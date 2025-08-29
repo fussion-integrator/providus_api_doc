@@ -85,5 +85,3 @@ if (response.statusCode == 200) {
 ```
 
 [PreviousUser](/xpress-wallet-api/user)[NextChange user password](/xpress-wallet-api/user/change-user-password)
-
-Last updated 1 month ago
