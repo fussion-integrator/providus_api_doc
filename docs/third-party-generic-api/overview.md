@@ -134,5 +134,3 @@ Notes
 · Blacklisted accounts can still receive funds, but no notifications will be sent until whitelisted.
 
 [PreviousWebhook Specification](/digital-collection-service-dcs/webhook-specification)[NextGetNIPAccount](/third-party-generic-api/getnipaccount)
-
-Last updated 1 month ago
