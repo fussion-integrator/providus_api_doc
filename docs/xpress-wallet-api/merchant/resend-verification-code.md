@@ -55,5 +55,3 @@ Resend a verification code to a merchant's email.
     
 
 [PreviousAccount verification](/xpress-wallet-api/merchant/account-verification)[NextComplete Merchant KYC](/xpress-wallet-api/merchant/complete-merchant-kyc)
-
-Last updated 26 days ago
