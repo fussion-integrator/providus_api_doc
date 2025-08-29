@@ -44,5 +44,3 @@ Submit KYC documents for merchant registration.
     
 
 [PreviousResend Verification Code](/xpress-wallet-api/merchant/resend-verification-code)[NextGet Merchant Profile](/xpress-wallet-api/merchant/get-merchant-profile)
-
-Last updated 26 days ago
