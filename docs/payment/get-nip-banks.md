@@ -14,8 +14,6 @@ https://api.providusbank.com
 
 
 
-
-
 ## Response Body
 
 ### Success Response (200 OK)
@@ -23,15 +21,13 @@ https://api.providusbank.com
 ```json
 {
   "status": "success",
-  "data": [
-    {
-      "bankCode": "044",
-      "bankName": "Access Bank"
-    }
-  ]
+  "message": "Operation completed successfully",
+  "data": {
+    "items": [],
+    "total": 0
+  }
 }
 ```
-
 
 ## Sample Implementation
 
