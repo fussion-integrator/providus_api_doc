@@ -256,5 +256,3 @@ class Program
 ```
 
 [PreviousTHIRD PARTY GENERIC API](/third-party-generic-api)[NextNIPFundTransfer](/third-party-generic-api/nipfundtransfer)
-
-Last updated 1 month ago
