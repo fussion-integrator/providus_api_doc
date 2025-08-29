@@ -10,9 +10,7 @@ https://api.providusbank.com
 
 ## Endpoint
 
-<div class="method get">GET</div> `/api/v1/account/statement`
-
-
+<div class="method get">GET</div> `/api/v1`
 
 
 
@@ -23,18 +21,18 @@ https://api.providusbank.com
 ```json
 {
   "status": "success",
+  "message": "Operation completed successfully",
   "data": {
-    "transactions": [],
-    "balance": 50000
+    "items": [],
+    "total": 0
   }
 }
 ```
 
-
 ## Sample Implementation
 
 ```curl
-curl -X GET "https://api.providusbank.com/api/v1/account/statement" \
+curl -X GET "https://api.providusbank.com/api/v1" \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json"
 ```
@@ -42,7 +40,7 @@ curl -X GET "https://api.providusbank.com/api/v1/account/statement" \
 ```python
 import requests
 
-url = "https://api.providusbank.com/api/v1/account/statement"
+url = "https://api.providusbank.com/api/v1"
 headers = {
     "Authorization": "Bearer YOUR_API_KEY",
     "Content-Type": "application/json"
@@ -53,7 +51,7 @@ print(response.json())
 ```
 
 ```javascript
-const response = await fetch('https://api.providusbank.com/api/v1/account/statement', {
+const response = await fetch('https://api.providusbank.com/api/v1', {
   method: 'GET',
   headers: {
     'Authorization': 'Bearer YOUR_API_KEY',
@@ -67,7 +65,7 @@ console.log(data);
 
 ```php
 <?php
-$url = "https://api.providusbank.com/api/v1/account/statement";
+$url = "https://api.providusbank.com/api/v1";
 $headers = [
     "Authorization: Bearer YOUR_API_KEY",
     "Content-Type: application/json"
@@ -91,7 +89,7 @@ import java.net.URI;
 
 HttpClient client = HttpClient.newHttpClient();
 HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create("https://api.providusbank.com/api/v1/account/statement"))
+    .uri(URI.create("https://api.providusbank.com/api/v1"))
     .header("Authorization", "Bearer YOUR_API_KEY")
     .header("Content-Type", "application/json")
     .GET(HttpRequest.BodyPublishers.noBody())
@@ -109,7 +107,7 @@ using System.Text;
 var client = new HttpClient();
 client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
 
-var response = await client.GetAsync("https://api.providusbank.com/api/v1/account/statement");
+var response = await client.GetAsync("https://api.providusbank.com/api/v1");
 
 var responseContent = await response.Content.ReadAsStringAsync();
 Console.WriteLine(responseContent);
