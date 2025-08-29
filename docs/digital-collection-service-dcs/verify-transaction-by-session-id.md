@@ -324,5 +324,3 @@ class Program
 ```
 
 [PreviousBlacklist/Whitelist Account](/digital-collection-service-dcs/blacklist-whitelist-account)[NextVerify Transaction by Settlement ID](/digital-collection-service-dcs/verify-transaction-by-settlement-id)
-
-Last updated 1 month ago
