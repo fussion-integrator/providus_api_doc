@@ -15,5 +15,3 @@ You can generate an API key from your Dashboard at any time.
 [Request API Key](http://developer.providusbank.com/users/register)
 
 [PreviousWelcome!](/)[NextAccount](/account)
-
-Last updated 1 year ago
