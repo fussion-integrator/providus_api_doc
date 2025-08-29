@@ -283,5 +283,3 @@ class Program
 ```
 
 [PreviousGet Field](/provi-bill/get-field)[NextPayment](/provi-bill/payment)
-
-Last updated 24 days ago
