@@ -47,5 +47,3 @@ Retrieve the merchant's access keys.
     
 
 [PreviousUpdate Merchant Profile](/xpress-wallet-api/merchant/update-merchant-profile)[NextGenerate Access Keys](/xpress-wallet-api/merchant/generate-access-keys)
-
-Last updated 26 days ago
