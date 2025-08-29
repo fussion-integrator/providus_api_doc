@@ -39,5 +39,3 @@ Authorization: Basic dXNlcjpwYXNz
 * * *
 
 [PreviousInitiate a Transaction Request](/transactions/initiate-a-transaction-request)[NextGet Categories](/provi-bill/get-categories)
-
-Last updated 24 days ago
