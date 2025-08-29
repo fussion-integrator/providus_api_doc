@@ -365,5 +365,3 @@ Console.WriteLine(response.Content);
 ```
 
 [PreviousNIP Fund Transfer](/payment/nip-fund-transfer)[NextTransactions](/transactions)
-
-Last updated 1 year ago
