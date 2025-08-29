@@ -107,5 +107,3 @@ jsonCopy code{
 ```
 
 [PreviousError Handling](/reference/api-reference/error-handling)[NextSandbox](/reference/sandbox)
-
-Last updated 1 year ago
