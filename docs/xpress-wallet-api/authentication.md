@@ -437,5 +437,3 @@ class Program
 ```
 
 [PreviousXpress Wallet API](/xpress-wallet-api)[NextLogin](/xpress-wallet-api/authentication/login)
-
-Last updated 1 month ago
