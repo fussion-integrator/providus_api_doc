@@ -57,5 +57,3 @@ Switch the merchant's account mode between SANDBOX and PRODUCTION.
     
 
 [PreviousGenerate Access Keys](/xpress-wallet-api/merchant/generate-access-keys)[NextMerchant Registration](/xpress-wallet-api/merchant/merchant-registration)
-
-Last updated 26 days ago
