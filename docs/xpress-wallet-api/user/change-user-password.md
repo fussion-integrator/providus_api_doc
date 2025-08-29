@@ -1,57 +1,115 @@
 # Change user password
 
-#### 
-
 [](#put-user-password)
 
-PUT /user/password
-
-Changes the password of the authenticated user.
-
-**Request Headers:**
-
-*   X-Access-Token: Access token
-    
-*   X-Refresh-Token: Refresh token
-    
-
-**Request Body:**
+## Base URL
 
 ```
+https://api.providusbank.com
+```
+
+## Endpoint
+
+<div class="method get">GET</div> `/api/v1/wallet/user`
+
+
+
+## Response Body
+
+### Success Response (200 OK)
+
+```json
 {
-  "password": "password"
+  "status": "success",
+  "message": "Operation completed successfully",
+  "data": {
+    "items": [],
+    "total": 0
+  }
 }
 ```
 
-**Example Request (Dart - http):**
+## Sample Implementation
 
+```curl
+curl -X GET "https://api.providusbank.com/api/v1/wallet/user" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"
 ```
-var headers = {
-  'X-Access-Token': '{{access-token}}',
-  'X-Refresh-Token': '{{refresh-token}}'
-};
-var request = http.Request('PUT', Uri.parse('{{base-url}}/user/password'));
-request.body = '''{\n    "password": "123456"\n}''';
-request.headers.addAll(headers);
-http.StreamedResponse response = await request.send();
-if (response.statusCode == 200) {
-  print(await response.stream.bytesToString());
-} else {
-  print(response.reasonPhrase);
+
+```python
+import requests
+
+url = "https://api.providusbank.com/api/v1/wallet/user"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
 }
+
+response = requests.get(url, headers=headers)
+print(response.json())
 ```
 
-**Response (200 OK):**
+```javascript
+const response = await fetch('https://api.providusbank.com/api/v1/wallet/user', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  }
+});
 
+const data = await response.json();
+console.log(data);
 ```
-{
-  "status": true,
-  "message": "Password successfully changed."
-}
+
+```php
+<?php
+$url = "https://api.providusbank.com/api/v1/wallet/user";
+$headers = [
+    "Authorization: Bearer YOUR_API_KEY",
+    "Content-Type: application/json"
+];
+
+$context = stream_context_create([
+    'http' => [
+        'method' => 'GET',
+        'header' => implode("\r\n", $headers)
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
+echo $response;
+?>
 ```
 
-### 
+```java
+import java.net.http.*;
+import java.net.URI;
 
-[](#undefined)
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.providusbank.com/api/v1/wallet/user"))
+    .header("Authorization", "Bearer YOUR_API_KEY")
+    .header("Content-Type", "application/json")
+    .GET(HttpRequest.BodyPublishers.noBody())
+    .build();
 
-[PreviousGet user profile](/xpress-wallet-api/user/get-user-profile)[NextMerchant](/xpress-wallet-api/merchant)
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+System.out.println(response.body());
+```
+
+```csharp
+using System;
+using System.Net.Http;
+using System.Text;
+
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
+
+var response = await client.GetAsync("https://api.providusbank.com/api/v1/wallet/user");
+
+var responseContent = await response.Content.ReadAsStringAsync();
+Console.WriteLine(responseContent);
+```
+
