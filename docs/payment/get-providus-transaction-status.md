@@ -282,5 +282,3 @@ Console.WriteLine(response.Content);
 ```
 
 [PreviousGet NIP Transaction Status](/payment/get-nip-transaction-status)[NextNIP Fund Transfer Multiple Debit Accounts](/payment/nip-fund-transfer-multiple-debit-accounts)
-
-Last updated 1 year ago
