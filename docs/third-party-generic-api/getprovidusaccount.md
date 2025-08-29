@@ -257,5 +257,3 @@ class Program
 ```
 
 [PreviousGetProvidusTransactionStatus](/third-party-generic-api/getprovidustransactionstatus)[NextNIPFundTransferMultipleDebitAccounts](/third-party-generic-api/nipfundtransfermultipledebitaccounts)
-
-Last updated 1 month ago
