@@ -310,5 +310,3 @@ class Program
 ```
 
 [PreviousCreate Reserved Account](/digital-collection-service-dcs/create-reserved-account)[NextUpdate Account Name](/digital-collection-service-dcs/update-account-name)
-
-Last updated 1 month ago
