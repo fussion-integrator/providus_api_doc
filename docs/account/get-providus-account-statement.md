@@ -306,5 +306,3 @@ Console.WriteLine(response.Content);
 ```
 
 [PreviousRetrieve Account Number](/account/retrieve-account-number)[NextPayment](/payment)
-
-Last updated 1 year ago
