@@ -49,5 +49,3 @@ Retrieve a list of supported banks.
     
 
 [PreviousTransfer](/xpress-wallet-api/merchant/transfer)[NextGet bank account details](/xpress-wallet-api/merchant/transfer/get-bank-account-details)
-
-Last updated 26 days ago
