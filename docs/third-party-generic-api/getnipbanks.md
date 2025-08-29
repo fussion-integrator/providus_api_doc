@@ -221,5 +221,3 @@ class Program
 ```
 
 [PreviousGetNIPTransactionStatus](/third-party-generic-api/getniptransactionstatus)[NextProvidusFundTransfer](/third-party-generic-api/providusfundtransfer)
-
-Last updated 1 month ago
