@@ -34,5 +34,3 @@ When an error occurs, the API response includes a JSON object with an `error` fi
 ```
 
 [PreviousOAuth 2.0 Authentication](/reference/api-reference/oauth-2.0-authentication)[NextData Formats](/reference/api-reference/data-formats)
-
-Last updated 1 year ago
