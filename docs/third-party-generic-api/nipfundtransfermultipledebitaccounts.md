@@ -276,5 +276,3 @@ class Program
 ```
 
 [PreviousGetProvidusAccount](/third-party-generic-api/getprovidusaccount)[NextXpress Wallet API](/xpress-wallet-api)
-
-Last updated 1 month ago
