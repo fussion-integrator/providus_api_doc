@@ -41,5 +41,3 @@ Verify a merchant account using an activation code.
     
 
 [PreviousUpdate Role](/xpress-wallet-api/merchant/roles-and-permission/update-role)[NextResend Verification Code](/xpress-wallet-api/merchant/resend-verification-code)
-
-Last updated 26 days ago
