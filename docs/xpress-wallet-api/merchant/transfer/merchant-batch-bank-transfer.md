@@ -85,5 +85,3 @@ Initiate multiple bank transfers in a single batch.
     
 
 [PreviousCustomer Bank Transfer](/xpress-wallet-api/merchant/transfer/customer-bank-transfer)[NextCustomer to Customer Wallet Transfer](/xpress-wallet-api/merchant/transfer/customer-to-customer-wallet-transfer)
-
-Last updated 26 days ago
