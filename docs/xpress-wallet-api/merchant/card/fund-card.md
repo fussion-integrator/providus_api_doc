@@ -57,5 +57,3 @@ Add funds to a customer's card.
     
 
 [PreviousGet Card Balance](/xpress-wallet-api/merchant/card/get-card-balance)[NextTeam](/xpress-wallet-api/merchant/team)
-
-Last updated 26 days ago
