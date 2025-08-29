@@ -80,5 +80,3 @@ Initiate a bank transfer from a customer account.
     
 
 [PreviousMerchant bank transfer](/xpress-wallet-api/merchant/transfer/merchant-bank-transfer)[NextMerchant Batch Bank Transfer](/xpress-wallet-api/merchant/transfer/merchant-batch-bank-transfer)
-
-Last updated 26 days ago
