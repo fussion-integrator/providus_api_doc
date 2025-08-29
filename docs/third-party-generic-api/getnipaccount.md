@@ -2,257 +2,146 @@
 
 * * *
 
-**URI**: /GetNIPAccount
-
-**HTTP Method**: POST
-
-**Headers**:
-
-*   Accept: application/json
-    
-*   Content-Type: application/json
-    
-
-**Request Parameters** (JSON):
-
-* * *
+## Base URL
 
 ```
+https://api.providusbank.com
+```
+
+## Endpoint
+
+<div class="method post">POST</div> `/api/v1/third-party/nip`
+
+
+
+## Request Body
+
+```json
 {
-  "accountNumber": "1018996198",
-  "beneficiaryBank": "110000",
-  "userName": "test",
-  "password": "test"
+  "customerName": "John Doe",
+  "customerEmail": "john@example.com"
 }
 ```
 
-200 Success
 
-[](#tab-id-200-success)
+## Response Body
 
-401: Unauthorized Permission denied
+### Success Response (200 OK)
 
-[](#tab-id-401-unauthorized-permission-denied)
-
-400: Bad Request .
-
-[](#tab-id-400-bad-request)
-
-500: Internal Server Error
-
-[](#tab-id-500-internal-server-error)
-
-```
+```json
 {
-  "bankCode": "110000",
-  "accountName": "NNAJI, JOSHUA & VIVIAN",
-  "transactionReference": "",
-  "bvn": "",
-  "responseMessage": "Approved or completed successfully",
-  "accountNumber": "1018996198",
-  "responseCode": "00"
+  "status": "success",
+  "message": "Operation completed successfully",
+  "data": {
+    "accountNumber": "9876543210",
+    "accountName": "John Doe"
+  }
 }
 ```
 
-```
-{
-  "requestSuccessful": false,
-  "responseMessage": "Error Completing Operation",
-  "responseCode": "11"
-}
-```
+## Sample Implementation
 
-```
-{
-  "requestSuccessful": false,
-  "responseMessage": "Error Completing Operation",
-  "responseCode": "11"
-}
+```curl
+curl -X POST "https://api.providusbank.com/api/v1/third-party/nip" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "customerName": "John Doe",
+  "customerEmail": "john@example.com"
+}'
 ```
 
-```
-{
-  "requestSuccessful": false,
-  "responseMessage": "Error Completing Operation",
-  "responseCode": "11"
-}
-```
-
-* * *
-
-### 
-
-[](#sample-implementation)
-
-Sample Implementation
-
-Curl
-
-[](#tab-curl)
-
-Python
-
-[](#tab-python)
-
-Java
-
-[](#tab-java)
-
-JavaScript
-
-[](#tab-javascript)
-
-PHP
-
-[](#tab-php)
-
-C#
-
-[](#tab-c)
-
-```
-curl -X POST http://154.113.16.142:8882/postingrest/GetNIPAccount \
--H "Accept: application/json" \
--H "Content-Type: application/json" \
--d '{"accountNumber":"1018996198","beneficiaryBank":"110000","userName":"test","password":"test"}'
-```
-
-```
+```python
 import requests
 
-url = "http://154.113.16.142:8882/postingrest/GetNIPAccount"
-headers = {"Accept": "application/json", "Content-Type": "application/json"}
-data = {
-    "accountNumber": "1018996198",
-    "beneficiaryBank": "110000",
-    "userName": "test",
-    "password": "test"
+url = "https://api.providusbank.com/api/v1/third-party/nip"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
 }
-response = requests.post(url, json=data, headers=headers)
+
+data = {
+  "customerName": "John Doe",
+  "customerEmail": "john@example.com"
+}
+response = requests.post(url, headers=headers, json=data)
 print(response.json())
 ```
 
-```
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.io.OutputStream;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
-public class GetNIPAccount {
-    public static void main(String[] args) throws Exception {
-        URL url = new URL("http://154.113.16.142:8882/postingrest/GetNIPAccount");
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestMethod("POST");
-        conn.setRequestProperty("Accept", "application/json");
-        conn.setRequestProperty("Content-Type", "application/json");
-        conn.setDoOutput(true);
-
-        String jsonInput = "{\"accountNumber\":\"1018996198\",\"beneficiaryBank\":\"110000\",\"userName\":\"test\",\"password\":\"test\"}";
-        try (OutputStream os = conn.getOutputStream()) {
-            byte[] input = jsonInput.getBytes("utf-8");
-            os.write(input, 0, input.length);
-        }
-
-        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"));
-        StringBuilder response = new StringBuilder();
-        String responseLine;
-        while ((responseLine = br.readLine()) != null) {
-            response.append(responseLine.trim());
-        }
-        System.out.println(response.toString());
-    }
-}
-```
-
-```
-const fetch = require('node-fetch');
-
-const url = 'http://154.113.16.142:8882/postingrest/GetNIPAccount';
-const headers = {
-    'Accept': 'application/json',
+```javascript
+const response = await fetch('https://api.providusbank.com/api/v1/third-party/nip', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
     'Content-Type': 'application/json'
-};
-const data = {
-    accountNumber: '1018996198',
-    beneficiaryBank: '110000',
-    userName: 'test',
-    password: 'test'
-};
-
-fetch(url, {
-    method: 'POST',
-    headers: headers,
-    body: JSON.stringify(data)
+  },
+  body: JSON.stringify({
+  "customerName": "John Doe",
+  "customerEmail": "john@example.com"
 })
-.then(response => response.json())
-.then(data => console.log(data))
-.catch(error => console.error('Error:', error));
+});
+
+const data = await response.json();
+console.log(data);
 ```
 
-```
+```php
 <?php
-$url = "http://154.113.16.142:8882/postingrest/GetNIPAccount";
+$url = "https://api.providusbank.com/api/v1/third-party/nip";
 $headers = [
-    "Accept: application/json",
+    "Authorization: Bearer YOUR_API_KEY",
     "Content-Type: application/json"
 ];
-$data = [
-    "accountNumber" => "1018996198",
-    "beneficiaryBank" => "110000",
-    "userName" => "test",
-    "password" => "test"
-];
 
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$response = curl_exec($ch);
-curl_close($ch);
+$data = json_encode({
+  \"customerName\": \"John Doe\",
+  \"customerEmail\": \"john@example.com\"
+});
+$context = stream_context_create([
+    'http' => [
+        'method' => 'POST',
+        'header' => implode("\r\n", $headers),
+        'content' => $data
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
 echo $response;
 ?>
 ```
 
+```java
+import java.net.http.*;
+import java.net.URI;
+
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.providusbank.com/api/v1/third-party/nip"))
+    .header("Authorization", "Bearer YOUR_API_KEY")
+    .header("Content-Type", "application/json")
+    .POST(HttpRequest.BodyPublishers.ofString("{\"customerName\":\"John Doe\",\"customerEmail\":\"john@example.com\"}"))
+    .build();
+
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+System.out.println(response.body());
 ```
+
+```csharp
 using System;
 using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 
-class Program
-{
-    static async Task Main()
-    {
-        using (var client = new HttpClient())
-        {
-            client.DefaultRequestHeaders.Add("Accept", "application/json");
-            var content = new StringContent(
-                "{\"accountNumber\":\"1018996198\",\"beneficiaryBank\":\"110000\",\"userName\":\"test\",\"password\":\"test\"}",
-                Encoding.UTF8,
-                "application/json"
-            );
-            var response = await client.PostAsync("http://154.113.16.142:8882/postingrest/GetNIPAccount", content);
-            var responseString = await response.Content.ReadAsStringAsync();
-            Console.WriteLine(responseString);
-        }
-    }
-}
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
+
+var json = @"{
+  "customerName": "John Doe",
+  "customerEmail": "john@example.com"
+}";
+var content = new StringContent(json, Encoding.UTF8, "application/json");
+var response = await client.PostAsync("https://api.providusbank.com/api/v1/third-party/nip", content);
+
+var responseContent = await response.Content.ReadAsStringAsync();
+Console.WriteLine(responseContent);
 ```
 
-> The above command returns JSON structured like this:
-
-```
-{
-  "bankCode": "110000",
-  "accountName": "NNAJI, JOSHUA & VIVIAN",
-  "transactionReference": "",
-  "bvn": "",
-  "responseMessage": "Approved or completed successfully",
-  "accountNumber": "1018996198",
-  "responseCode": "00"
-}
-```
-
-[PreviousTHIRD PARTY GENERIC API](/third-party-generic-api)[NextNIPFundTransfer](/third-party-generic-api/nipfundtransfer)
