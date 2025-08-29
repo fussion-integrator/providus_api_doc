@@ -2,146 +2,114 @@
 
 Retrieve a paginated list of all customers associated with the merchant.
 
-*   **Endpoint**: `GET {{base-url}}/customer`
-    
-*   **Query Parameters**:
-    
-    *   `page`: Page number (e.g., `1`).
-        
-    
-
-**Headers**:
+## Base URL
 
 ```
+https://api.providusbank.com
+```
+
+## Endpoint
+
+<div class="method get">GET</div> `/api/v1/wallet/merchant`
+
+
+
+## Response Body
+
+### Success Response (200 OK)
+
+```json
 {
-  "Authorization": "Bearer {{vault:authorization-secret}}",
-  "X-Access-Token": "{{access-token}}",
-  "X-Refresh-Token": "{{refresh-token}}"
-}
-```
-
-**Response**:
-
-**200 OK**:
-
-```
-{
-  "status": true,
-  "customers": [
-    {
-      "id": "1149d065-c5c9-4382-aec6-323090f31d9d",
-      "bvn": "22192640723",
-      "firstName": "Emma",
-      "lastName": "Godwin",
-      "BVNLastName": "OBAGUNWA",
-      "BVNFirstName": "EMMANUEL",
-      "email": "[email protected]",
-      "nameMatch": false,
-      "phoneNumber": "08030223346",
-      "dateOfBirth": "1991-09-13",
-      "createdAt": "2020-09-16T12:01:51.520Z",
-      "updatedAt": "2020-09-16T12:01:51.520Z",
-      "walletId": "0bea0968-c43a-47fe-a83a-f7b514194aba"
-    },
-    ...
-  ],
-  "metadata": {
-    "page": 1,
-    "totalRecords": 7,
-    "totalPages": 1
+  "status": "success",
+  "message": "Operation completed successfully",
+  "data": {
+    "items": [],
+    "total": 0
   }
 }
 ```
 
-### 
+## Sample Implementation
 
-[](#sample-implementation)
-
-Sample Implementation
-
-Curl
-
-[](#tab-curl)
-
-Dart
-
-[](#tab-dart)
-
-Python
-
-[](#tab-python)
-
-Java
-
-[](#tab-java)
-
-JavaScript
-
-[](#tab-javascript)
-
-PHP
-
-[](#tab-php)
-
-```
-curl --request GET \
-  --url '{{base-url}}/customer?page=1' \
-  --header 'X-Access-Token: {{access-token}}' \
-  --header 'X-Refresh-Token: {{refresh-token}}'
+```curl
+curl -X GET "https://api.providusbank.com/api/v1/wallet/merchant" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"
 ```
 
-```
-// Some code
-```
-
-```
+```python
 import requests
 
+url = "https://api.providusbank.com/api/v1/wallet/merchant"
 headers = {
-    'X-Access-Token': '{{access-token}}',
-    'X-Refresh-Token': '{{refresh-token}}'
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
 }
 
-response = requests.get('{{base-url}}/customer?page=1', headers=headers)
-if response.status_code == 200:
-    print(response.json())
-else:
-    print(response.reason)
+response = requests.get(url, headers=headers)
+print(response.json())
 ```
 
-```
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+```javascript
+const response = await fetch('https://api.providusbank.com/api/v1/wallet/merchant', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  }
+});
 
-public class Main {
-    public static void main(String[] args) throws Exception {
-        URL url = new URL("{{base-url}}/customer?page=1");
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestMethod("GET");
-        conn.setRequestProperty("X-Access-Token", "{{access-token}}");
-        conn.setRequestProperty("X-Refresh-Token", "{{refresh-token}}");
-
-        int responseCode = conn.getResponseCode();
-        if (responseCode == 200) {
-            BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            String inputLine;
-            StringBuilder response = new StringBuilder();
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
-            }
-            in.close();
-            System.out.println(response.toString());
-        } else {
-            System.out.println(conn.getResponseMessage());
-        }
-    }
-}
+const data = await response.json();
+console.log(data);
 ```
 
-#### 
+```php
+<?php
+$url = "https://api.providusbank.com/api/v1/wallet/merchant";
+$headers = [
+    "Authorization: Bearer YOUR_API_KEY",
+    "Content-Type: application/json"
+];
 
-[](#undefined-1)
+$context = stream_context_create([
+    'http' => [
+        'method' => 'GET',
+        'header' => implode("\r\n", $headers)
+    ]
+]);
 
-[PreviousCustomers](/xpress-wallet-api/merchant/customers)[NextGet Customer Details](/xpress-wallet-api/merchant/customers/get-customer-details)
+$response = file_get_contents($url, false, $context);
+echo $response;
+?>
+```
+
+```java
+import java.net.http.*;
+import java.net.URI;
+
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.providusbank.com/api/v1/wallet/merchant"))
+    .header("Authorization", "Bearer YOUR_API_KEY")
+    .header("Content-Type", "application/json")
+    .GET(HttpRequest.BodyPublishers.noBody())
+    .build();
+
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+System.out.println(response.body());
+```
+
+```csharp
+using System;
+using System.Net.Http;
+using System.Text;
+
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
+
+var response = await client.GetAsync("https://api.providusbank.com/api/v1/wallet/merchant");
+
+var responseContent = await response.Content.ReadAsStringAsync();
+Console.WriteLine(responseContent);
+```
+
