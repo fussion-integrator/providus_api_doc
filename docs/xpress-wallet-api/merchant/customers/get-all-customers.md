@@ -145,5 +145,3 @@ public class Main {
 [](#undefined-1)
 
 [PreviousCustomers](/xpress-wallet-api/merchant/customers)[NextGet Customer Details](/xpress-wallet-api/merchant/customers/get-customer-details)
-
-Last updated 26 days ago
