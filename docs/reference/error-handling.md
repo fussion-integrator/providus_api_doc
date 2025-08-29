@@ -30,5 +30,3 @@ Our API communicates errors through standard HTTP status codes and provides deta
   "error": "Invalid API key. Please provide a valid key."
 }
 ```
-
-Last updated 1 year ago
