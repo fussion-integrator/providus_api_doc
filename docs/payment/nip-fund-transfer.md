@@ -1,371 +1,166 @@
 # NIP Fund Transfer
 
-* * *
+Transfer funds to other banks using the Nigeria Inter-Bank Settlement System (NIBSS) Instant Payment (NIP).
 
-#### 
-
-[](#test-base-url)
-
-Test Base URL
-
-[https://api-staging.providusbank.com](https://api-staging.providusbank.com
-
-)
-
-#### 
-
-[](#production-base-url)
-
-Production Base URL
-
-[https://api.providusbank.com](https://api.providusbank.com)
-
-#### 
-
-[](#http-request)
-
-HTTP Request
-
-POST /NIPFundTransfer
-
-* * *
-
-## 
-
-[](#nip-bank)
-
-NIP Bank.
-
-`POST` `https://api-staging.providusbank.com/v1/NIPFundTransfer`
-
-NIP Fund Transfer.
-
-#### 
-
-[](#headers)
-
-Headers
-
-Name
-
-Type
-
-Description
-
-Accept\*
-
-application/json
-
-Content-Type\*
-
-application/json
-
-#### 
-
-[](#request-body)
-
-Request Body
-
-Name
-
-Type
-
-Description
-
-transactionAmount\*
-
-String
-
-currencyCode\*
-
-String
-
-beneficiaryAccountName\*
-
-String
-
-narration
-
-String
-
-sourceAccountName
-
-String
-
-beneficiaryAccountNumber\*
-
-String
-
-beneficiaryBank\*
-
-String
-
-transactionReference\*
-
-String
-
-userName\*
-
-String
-
-password\*
-
-String
-
-200 Status successfully retrieved
-
-[](#tab-id-200-status-successfully-retrieved)
-
-401: Unauthorized Permission denied
-
-[](#tab-id-401-unauthorized-permission-denied)
-
-400: Bad Request The server cannot process the request due to a client error, such as malformed syntax or invalid parameters in the request.
-
-[](#tab-id-400-bad-request-the-server-cannot-process-the-request-due-to-a-client-error-such-as-malformed-syntax)
-
-500: Internal Server Error Server encountered an unexpected error
-
-[](#tab-id-500-internal-server-error-server-encountered-an-unexpected-error)
+## Base URL
 
 ```
+https://api.providusbank.com
+```
+
+## Endpoint
+
+<div class="method post">POST</div> `/api/v1/payment/nip/transfer`
+
+## Request Body
+
+```json
 {
-    "transactionReference": "20191119143854",
-    "sessionId": "999037230913163757005000082268", 
-    "responseMessage": " Approved or completed successfully", 
-    "responseCode": "00"
+  "amount": 1000,
+  "destinationAccountNumber": "1234567890",
+  "destinationBankCode": "044",
+  "narration": "Payment for services",
+  "reference": "TXN123456789"
 }
 ```
 
-* * *
 
-### 
+## Response Body
 
-[](#sample-implementation)
+### Success Response (200 OK)
 
-Sample Implementation
-
-Curl
-
-[](#tab-curl)
-
-Python
-
-[](#tab-python)
-
-Java
-
-[](#tab-java)
-
-JavaScript
-
-[](#tab-javascript)
-
-PHP
-
-[](#tab-php)
-
-C#
-
-[](#tab-c)
-
+```json
+{
+  "status": "success",
+  "data": {
+    "transactionId": "TXN123456789",
+    "reference": "TXN123456789",
+    "amount": 1000,
+    "status": "successful",
+    "sessionId": "SESSION123"
+  }
+}
 ```
-curl --location 'https://api-staging.providusbank.com/NIPFundTransfer' \
---header 'Accept: application/json' \
---header 'Content-Type: application/json' \
---data '{
-"beneficiaryAccountName":"UGBO, CHARLES UMORE", "transactionAmount": "2000.45", "currencyCode":"NGN",
-"narration":"Testing",
-"sourceAccountName":"Nnamdi Adebayo Hamzat" , "beneficiaryAccountNumber":"0045434120", "beneficiaryBank":"000013", "transactionReference":"20191119143854", "userName":"test",
-"password":"test"
+
+
+## Sample Implementation
+
+```curl
+curl -X POST "https://api.providusbank.com/api/v1/payment/nip/transfer" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "amount": 1000,
+  "destinationAccountNumber": "1234567890",
+  "destinationBankCode": "044",
+  "narration": "Payment for services",
+  "reference": "TXN123456789"
 }'
 ```
 
-> The above command returns JSON structured like this:
-
-```
-{
-    "transactionReference": "20191119143854",
-    "sessionId": "999037230913163757005000082268", 
-    "responseMessage": " Approved or completed successfully", 
-    "responseCode": "00"
-}
-```
-
-```
+```python
 import requests
-import json
 
-url = "https://api-staging.providusbank.com/NIPFundTransfer"
-
-payload = json.dumps({
-  "beneficiaryAccountName": "UGBO, CHARLES UMORE",
-  "transactionAmount": "2000.45",
-  "currencyCode": "NGN",
-  "narration": "Testing",
-  "sourceAccountName": "Nnamdi Adebayo Hamzat",
-  "beneficiaryAccountNumber": "0045434120",
-  "beneficiaryBank": "000013",
-  "transactionReference": "20191119143854",
-  "userName": "test",
-  "password": "test"
-})
+url = "https://api.providusbank.com/api/v1/payment/nip/transfer"
 headers = {
-  'Accept': 'application/json',
-  'Content-Type': 'application/json'
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
 }
 
-response = requests.request("POST", url, headers=headers, data=payload)
-
-print(response.text)
-```
-
-> The above command returns JSON structured like this:
-
-```
-{
-    "transactionReference": "20191119143854",
-    "sessionId": "999037230913163757005000082268", 
-    "responseMessage": " Approved or completed successfully", 
-    "responseCode": "00"
+data = {
+  "amount": 1000,
+  "destinationAccountNumber": "1234567890",
+  "destinationBankCode": "044",
+  "narration": "Payment for services",
+  "reference": "TXN123456789"
 }
+response = requests.post(url, headers=headers, json=data)
+print(response.json())
 ```
 
-```
-OkHttpClient client = new OkHttpClient().newBuilder()
-  .build();
-MediaType mediaType = MediaType.parse("application/json");
-RequestBody body = RequestBody.create(mediaType, "{\n\"beneficiaryAccountName\":\"UGBO, CHARLES UMORE\", \"transactionAmount\": \"2000.45\", \"currencyCode\":\"NGN\",\n\"narration\":\"Testing\",\n\"sourceAccountName\":\"Nnamdi Adebayo Hamzat\" , \"beneficiaryAccountNumber\":\"0045434120\", \"beneficiaryBank\":\"000013\", \"transactionReference\":\"20191119143854\", \"userName\":\"test\",\n\"password\":\"test\"\n}");
-Request request = new Request.Builder()
-  .url("https://api-staging.providusbank.com/NIPFundTransfer")
-  .method("POST", body)
-  .addHeader("Accept", "application/json")
-  .addHeader("Content-Type", "application/json")
-  .build();
-Response response = client.newCall(request).execute();
-```
-
-> The above command returns JSON structured like this:
-
-```
-{
-    "transactionReference": "20191119143854",
-    "sessionId": "999037230913163757005000082268", 
-    "responseMessage": " Approved or completed successfully", 
-    "responseCode": "00"
-}
-```
-
-```
-var data = JSON.stringify({
-  "beneficiaryAccountName": "UGBO, CHARLES UMORE",
-  "transactionAmount": "2000.45",
-  "currencyCode": "NGN",
-  "narration": "Testing",
-  "sourceAccountName": "Nnamdi Adebayo Hamzat",
-  "beneficiaryAccountNumber": "0045434120",
-  "beneficiaryBank": "000013",
-  "transactionReference": "20191119143854",
-  "userName": "test",
-  "password": "test"
+```javascript
+const response = await fetch('https://api.providusbank.com/api/v1/payment/nip/transfer', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+  "amount": 1000,
+  "destinationAccountNumber": "1234567890",
+  "destinationBankCode": "044",
+  "narration": "Payment for services",
+  "reference": "TXN123456789"
+})
 });
 
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-
-xhr.addEventListener("readystatechange", function() {
-  if(this.readyState === 4) {
-    console.log(this.responseText);
-  }
-});
-
-xhr.open("POST", "https://api-staging.providusbank.com/NIPFundTransfer");
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "application/json");
-
-xhr.send(data);
+const data = await response.json();
+console.log(data);
 ```
 
-> The above command returns JSON structured like this:
-
-```
-{
-    "transactionReference": "20191119143854",
-    "sessionId": "999037230913163757005000082268", 
-    "responseMessage": " Approved or completed successfully", 
-    "responseCode": "00"
-}
-```
-
-```
+```php
 <?php
-require_once 'HTTP/Request2.php';
-$request = new HTTP_Request2();
-$request->setUrl('https://api-staging.providusbank.com/NIPFundTransfer');
-$request->setMethod(HTTP_Request2::METHOD_POST);
-$request->setConfig(array(
-  'follow_redirects' => TRUE
-));
-$request->setHeader(array(
-  'Accept' => 'application/json',
-  'Content-Type' => 'application/json'
-));
-$request->setBody('{\n"beneficiaryAccountName":"UGBO, CHARLES UMORE", "transactionAmount": "2000.45", "currencyCode":"NGN",\n"narration":"Testing",\n"sourceAccountName":"Nnamdi Adebayo Hamzat" , "beneficiaryAccountNumber":"0045434120", "beneficiaryBank":"000013", "transactionReference":"20191119143854", "userName":"test",\n"password":"test"\n}');
-try {
-  $response = $request->send();
-  if ($response->getStatus() == 200) {
-    echo $response->getBody();
-  }
-  else {
-    echo 'Unexpected HTTP status: ' . $response->getStatus() . ' ' .
-    $response->getReasonPhrase();
-  }
-}
-catch(HTTP_Request2_Exception $e) {
-  echo 'Error: ' . $e->getMessage();
-}
+$url = "https://api.providusbank.com/api/v1/payment/nip/transfer";
+$headers = [
+    "Authorization: Bearer YOUR_API_KEY",
+    "Content-Type: application/json"
+];
+
+$data = json_encode({
+  \"amount\": 1000,
+  \"destinationAccountNumber\": \"1234567890\",
+  \"destinationBankCode\": \"044\",
+  \"narration\": \"Payment for services\",
+  \"reference\": \"TXN123456789\"
+});
+$context = stream_context_create([
+    'http' => [
+        'method' => 'POST',
+        'header' => implode("\r\n", $headers),
+        'content' => $data
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
+echo $response;
+?>
 ```
 
-> The above command returns JSON structured like this:
+```java
+import java.net.http.*;
+import java.net.URI;
 
-```
-{
-    "transactionReference": "20191119143854",
-    "sessionId": "999037230913163757005000082268", 
-    "responseMessage": " Approved or completed successfully", 
-    "responseCode": "00"
-}
-```
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.providusbank.com/api/v1/payment/nip/transfer"))
+    .header("Authorization", "Bearer YOUR_API_KEY")
+    .header("Content-Type", "application/json")
+    .POST(HttpRequest.BodyPublishers.ofString("{\"amount\":1000,\"destinationAccountNumber\":\"1234567890\",\"destinationBankCode\":\"044\",\"narration\":\"Payment for services\",\"reference\":\"TXN123456789\"}"))
+    .build();
 
-```
-var options = new RestClientOptions("https://api-staging.providusbank.com")
-{
-  MaxTimeout = -1,
-};
-var client = new RestClient(options);
-var request = new RestRequest("/NIPFundTransfer", Method.Post);
-request.AddHeader("Accept", "application/json");
-request.AddHeader("Content-Type", "application/json");
-var body = @"{" + "\n" +
-@"""beneficiaryAccountName"":""UGBO, CHARLES UMORE"", ""transactionAmount"": ""2000.45"", ""currencyCode"":""NGN""," + "\n" +
-@"""narration"":""Testing""," + "\n" +
-@"""sourceAccountName"":""Nnamdi Adebayo Hamzat"" , ""beneficiaryAccountNumber"":""0045434120"", ""beneficiaryBank"":""000013"", ""transactionReference"":""20191119143854"", ""userName"":""test""," + "\n" +
-@"""password"":""test""" + "\n" +
-@"}";
-request.AddStringBody(body, DataFormat.Json);
-RestResponse response = await client.ExecuteAsync(request);
-Console.WriteLine(response.Content);
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+System.out.println(response.body());
 ```
 
-> The above command returns JSON structured like this:
+```csharp
+using System;
+using System.Net.Http;
+using System.Text;
 
-```
-{
-    "transactionReference": "20191119143854",
-    "sessionId": "999037230913163757005000082268", 
-    "responseMessage": " Approved or completed successfully", 
-    "responseCode": "00"
-}
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY");
+
+var json = @"{
+  "amount": 1000,
+  "destinationAccountNumber": "1234567890",
+  "destinationBankCode": "044",
+  "narration": "Payment for services",
+  "reference": "TXN123456789"
+}";
+var content = new StringContent(json, Encoding.UTF8, "application/json");
+var response = await client.PostAsync("https://api.providusbank.com/api/v1/payment/nip/transfer", content);
+
+var responseContent = await response.Content.ReadAsStringAsync();
+Console.WriteLine(responseContent);
 ```
 
-[PreviousNIP Fund Transfer Multiple Debit Accounts](/payment/nip-fund-transfer-multiple-debit-accounts)[NextProvidus Fund Transfer](/payment/providus-fund-transfer)
