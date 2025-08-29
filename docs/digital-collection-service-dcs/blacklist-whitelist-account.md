@@ -295,5 +295,3 @@ class Program
 ```
 
 [PreviousUpdate Account Name](/digital-collection-service-dcs/update-account-name)[NextVerify Transaction by Session ID](/digital-collection-service-dcs/verify-transaction-by-session-id)
-
-Last updated 1 month ago
