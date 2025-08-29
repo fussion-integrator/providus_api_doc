@@ -283,5 +283,3 @@ class Program
 ```
 
 [PreviousCreate Dynamic Account](/digital-collection-service-dcs/create-dynamic-account)[NextBlacklist/Whitelist Account](/digital-collection-service-dcs/blacklist-whitelist-account)
-
-Last updated 1 month ago
