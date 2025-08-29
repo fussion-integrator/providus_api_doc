@@ -9,5 +9,3 @@ The transaction API requires an oauth 2.0 authentication type.
 [Exchange authorization code for access token for the transaction API](https://developer.providusbank.com/apidocs/index.html#exchange-authorization-code-for-access-token-for-the-transaction-api)
 
 [PreviousProvidus Fund Transfer](/payment/providus-fund-transfer)[NextGet API authorization code for transaction](/transactions/get-api-authorization-code-for-transaction)
-
-Last updated 1 month ago
