@@ -239,5 +239,3 @@ The above command returns JSON structured like this:
   "responseCode": "00"
 }
 ```
-
-Last updated 23 days ago
