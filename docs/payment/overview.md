@@ -29,5 +29,3 @@ Get list of NIP banks.
 * * *
 
 [PreviousGet Providus Account Statement](/account/get-providus-account-statement)[NextGet NIP Banks](/payment/get-nip-banks)
-
-Last updated 1 month ago
