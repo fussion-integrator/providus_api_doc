@@ -14,8 +14,6 @@ https://api.providusbank.com
 
 
 
-
-
 ## Response Body
 
 ### Success Response (200 OK)
@@ -23,13 +21,13 @@ https://api.providusbank.com
 ```json
 {
   "status": "success",
+  "message": "Operation completed successfully",
   "data": {
-    "accountNumber": "1234567890",
-    "accountName": "John Doe"
+    "items": [],
+    "total": 0
   }
 }
 ```
-
 
 ## Sample Implementation
 
