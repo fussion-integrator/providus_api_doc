@@ -272,5 +272,3 @@ class Program
 ```
 
 [PreviousGetNIPAccount](/third-party-generic-api/getnipaccount)[NextGetNIPTransactionStatus](/third-party-generic-api/getniptransactionstatus)
-
-Last updated 1 month ago
