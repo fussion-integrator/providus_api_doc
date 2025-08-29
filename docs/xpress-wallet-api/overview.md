@@ -102,5 +102,3 @@ For endpoints requiring Bearer Token:
 ```
 
 [PreviousNIPFundTransferMultipleDebitAccounts](/third-party-generic-api/nipfundtransfermultipledebitaccounts)[NextAuthentication](/xpress-wallet-api/authentication)
-
-Last updated 26 days ago
