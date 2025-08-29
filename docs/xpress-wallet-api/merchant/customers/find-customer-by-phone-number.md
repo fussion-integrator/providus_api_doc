@@ -54,5 +54,3 @@ Retrieve customer details using their phone number.
     
 
 [PreviousGet Customer Details](/xpress-wallet-api/merchant/customers/get-customer-details)[NextUpdate Customer Profile](/xpress-wallet-api/merchant/customers/update-customer-profile)
-
-Last updated 26 days ago
