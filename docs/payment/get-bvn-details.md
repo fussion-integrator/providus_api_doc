@@ -12,6 +12,8 @@ https://api.providusbank.com
 
 <div class="method post">POST</div> `/api/v1/payment/bvn`
 
+
+
 ## Request Body
 
 ```json
@@ -19,6 +21,8 @@ https://api.providusbank.com
   "bvn": "12345678901"
 }
 ```
+
+
 
 
 ## Response Body
@@ -31,9 +35,7 @@ https://api.providusbank.com
   "data": {
     "bvn": "12345678901",
     "firstName": "John",
-    "lastName": "Doe",
-    "dateOfBirth": "1990-01-01",
-    "phoneNumber": "08012345678"
+    "lastName": "Doe"
   }
 }
 ```
