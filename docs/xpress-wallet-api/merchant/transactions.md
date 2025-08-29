@@ -65,5 +65,3 @@ Retrieve details of a specific batch transaction using a reference ID.
     
 
 [PreviousGet All Wallets](/xpress-wallet-api/merchant/wallet/get-all-wallets)[NextTransfer](/xpress-wallet-api/merchant/transfer)
-
-Last updated 26 days ago
