@@ -127,5 +127,3 @@ Thank you for exploring our API Reference. If you have any questions or need ass
 Happy coding!
 
 [PreviousCode Samples](/xpress-wallet-api/code-samples)[NextAuthentication](/reference/api-reference/authentication)
-
-Last updated 1 year ago
