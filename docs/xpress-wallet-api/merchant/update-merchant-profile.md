@@ -59,5 +59,3 @@ Update the merchant's profile information.
     
 
 [PreviousGet Merchant Profile](/xpress-wallet-api/merchant/get-merchant-profile)[NextGet Merchant Access Keys](/xpress-wallet-api/merchant/get-merchant-access-keys)
-
-Last updated 26 days ago
