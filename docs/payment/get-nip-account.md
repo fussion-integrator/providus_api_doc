@@ -12,6 +12,8 @@ https://api.providusbank.com
 
 <div class="method post">POST</div> `/api/v1/payment/nip/account`
 
+
+
 ## Request Body
 
 ```json
@@ -20,6 +22,8 @@ https://api.providusbank.com
   "bankCode": "044"
 }
 ```
+
+
 
 
 ## Response Body
