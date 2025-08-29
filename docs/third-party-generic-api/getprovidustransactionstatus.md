@@ -249,5 +249,3 @@ class Program
 ```
 
 [PreviousProvidusFundTransfer](/third-party-generic-api/providusfundtransfer)[NextGetProvidusAccount](/third-party-generic-api/getprovidusaccount)
-
-Last updated 1 month ago
