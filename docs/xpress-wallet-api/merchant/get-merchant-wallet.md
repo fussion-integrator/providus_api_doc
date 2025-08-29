@@ -60,5 +60,3 @@ Retrieve the merchant's wallet details.
 * * *
 
 [PreviousMerchant Registration](/xpress-wallet-api/merchant/merchant-registration)[NextCode Samples](/xpress-wallet-api/code-samples)
-
-Last updated 26 days ago
